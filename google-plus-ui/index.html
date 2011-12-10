@@ -3,9 +3,9 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		<title>Google Plus Theme for jQuery UI </title>
-		<link type="text/css" href="css/googleplus/jquery-ui-1.8.16.google.plus.css" rel="stylesheet" />	
-		<script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
-		<script type="text/javascript" src="js/jquery-ui-1.8.16.custom.min.js"></script>
+		<link type="text/css" href="css/jquery-ui-1.8.16.google.plus.css" rel="stylesheet" />	
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.js"></script>
 		<script type="text/javascript">
 			$(function(){
 
@@ -14,7 +14,8 @@
 	
 				// Tabs
 				$('#tabs').tabs();
-	
+				
+				$('#buttonset').buttonset();
 
 				// Dialog			
 				$('#dialog').dialog({
@@ -179,6 +180,14 @@
 		<div id="dialog" title="Dialog Title">
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 		</div>
+		
+		<!-- ui-buttonset -->
+		<br />
+        <div id="buttonset">
+            <button>B</button>
+            <button>I</button>
+            <button>U</button>
+        </div>
 			
 				
 				
