@@ -356,6 +356,9 @@
             cmd: "underline",
             param: true
         },
+        biu: [
+            'b', 'i', 'u'
+        ],
         indent: {
             title: "Indent",
             'primary-icon': "gpui-icon gpui-icon204",
@@ -387,6 +390,9 @@
             cmd: "justify",
             param: 'right'
         },
+        justify: [
+            'justifyLeft', 'justifyCenter', 'justifyRight'
+        ],
         link: {
             title: "Insert link",
             'primary-icon': "gpui-icon gpui-icon119",
@@ -398,6 +404,9 @@
             'primary-icon': "gpui-icon gpui-icon25",
             cmd: "unlink"
         },
+        linkToggle: [
+            'link', 'unlink'
+        ],
         image: {
             title: "Insert image",
             'primary-icon': "gpui-icon gpui-icon148",
@@ -428,49 +437,49 @@
             cmd: "format", 
             param: "h1", 
             title: "Insert &lt;h1&gt;",
-            html: "Heading 1"
+            html: "<h1>Heading 1</h1>"
         },
         heading2: {
             cmd: "format", 
             param: "h2", 
             title: "Insert &lt;h2&gt;",
-            html: "Heading 2"
+            html: '<h2>Heading 2"</h2>'
         },
         heading3: {
             cmd: "format", 
             param: "h3", 
             title: "Insert &lt;h3&gt;",
-            html: "Heading 3"
+            html: "<h2>Heading 3</h3>"
         },
         heading4: {
             cmd: "format", 
             param: "h4",
             title: "Insert &lt;h4&gt;",
-            html: "Heading 4"
+            html: "<h2>Heading 4</h4>"
         },
         heading5: {
             cmd: "format", 
             param: "h5", 
             title: "Insert &lt;h5&gt;",
-            html: "Heading 5"
+            html: "<h2>Heading 5</h5>"
         },
         heading6: {
             cmd: "format", 
             param: "h6", 
             title: "Insert &lt;h6&gt;",
-            html: "Heading 6"
+            html: "<h6>Heading 6</h6>"
         },
         pre: {
             cmd: "format",
             param: "pre", 
             title: "Insert &lt;pre&gt;",
-            html: "Code"
+            html: "<pre>Code</pre>"
         },
         blockquote: {
             cmd: "format",
             param: "blockquote", 
             title: "Insert &lt;blockquote&gt;",
-            html: "Blockquote"
+            html: "<blockquote>Blockquote</blockquote>"
         },
         fontFaceSerif: {
             cmd: "fontName",
@@ -612,24 +621,22 @@
             param: "6",
             status: "isFontSize",
             html: '<span style="font-size: xx-large">Large XX</span>'
-        }
-    };
-    
-    $.extend(buttonsMap, {
+        },
         formatBlock: {
             title: "Format block",
             'secondary-icon': "ui-icon ui-icon-triangle-1-s",
             html: "Format",
             slider:  {
+                style: 'width: 160px;',
                 buttons: [
-                    buttonsMap.heading1,
-                    buttonsMap.heading2,
-                    buttonsMap.heading3,
-                    buttonsMap.heading4,
-                    buttonsMap.heading5,
-                    buttonsMap.heading6,
-                    buttonsMap.pre,
-                    buttonsMap.blockquote
+                    'heading1',
+                    'heading2',
+                    'heading3',
+                    'heading4',
+                    'heading5',
+                    'heading6',
+                    'pre',
+                    'blockquote'
                 ]
             } 
         },
@@ -641,21 +648,21 @@
            style: "min-width:120px",
            slider: {
                buttons: [
-                   buttonsMap.fontFaceSerif,
-                   buttonsMap.fontFaceSansSerif,
-                   buttonsMap.fontFaceMonospace,
-                   buttonsMap.fontFaceArial,
-                   buttonsMap.fontFaceHelvetica,
-                   buttonsMap.fontFacePalatino,
-                   buttonsMap.fontFaceGaramond,
-                   buttonsMap.fontFaceBookman,
-                   buttonsMap.fontFaceAvantGarde,
-                   buttonsMap.fontFaceVerdana,
-                   buttonsMap.fontFaceGeorgia,
-                   buttonsMap.fontFaceComicSansMS,
-                   buttonsMap.fontFaceTrebuchetMS,
-                   buttonsMap.fontFaceArialBlack,
-                   buttonsMap.fontFaceImpact
+                   'fontFaceSerif',
+                   'fontFaceSansSerif',
+                   'fontFaceMonospace',
+                   'fontFaceArial',
+                   'fontFaceHelvetica',
+                   'fontFacePalatino',
+                   'fontFaceGaramond',
+                   'fontFaceBookman',
+                   'fontFaceAvantGarde',
+                   'fontFaceVerdana',
+                   'fontFaceGeorgia',
+                   'fontFaceComicSansMS',
+                   'fontFaceTrebuchetMS',
+                   'fontFaceArialBlack',
+                   'fontFaceImpact'
                ]
            }
        },
@@ -668,12 +675,12 @@
            slider: {
                style: "width:200px",
                buttons: [
-                   buttonsMap.fontSize1,
-                   buttonsMap.fontSize2,
-                   buttonsMap.fontSize3,
-                   buttonsMap.fontSize4,
-                   buttonsMap.fontSize5,
-                   buttonsMap.fontSize6
+                   'fontSize1',
+                   'fontSize2',
+                   'fontSize3',
+                   'fontSize4',
+                   'fontSize5',
+                   'fontSize6'
                ]
            }
        },
@@ -696,7 +703,7 @@
                html: '<div class="toolbar-colorpicker" name="foreColor"></div>'
            }
        }
-    });
+    };
     
     /**
      * Wysiwyg widget
@@ -802,6 +809,10 @@
             if (_self.options.resizable) {
                 var $element = $(_self.element);
                 var $frame = $element.data('frame');
+                
+                $frame = $frame.add($frame.closest('.' + _self.options.frameWrapperClass))
+                               .add($widget.find('.' + _self.options.frameOverlayClass));
+                
                 $widget.resizable(
                     $.extend({}, _self.options.resizable, {
                         start: function(event, ui) {
@@ -812,14 +823,14 @@
                             //$frame.show();
                             _self._frameOverlay(false);
                         },
-                        alsoResize: []//$frame
+                        alsoResize: $frame
                     }
                 ));
-                //alsoResize does not support multiple elements
                 setInterval(function(){
                     if (!$element.is(':visible')) {
                         $element.width($widget.width());
                         $element.height($widget.height());
+                        return;
                     } else {
                         $widget.width($element.width());
                         $widget.height($element.height());
@@ -832,10 +843,9 @@
                         height += $this.height();
                     });
                     
-                    $frame.add($widget.find('.' + _self.options.frameOverlayClass))
-                          .height($widget.height() - height);
+                    $frame.height($widget.height() - height -1);
                     
-                }, 1000);
+                }, 2000);
             } else {
                 $widget.resizable('disable');
             }
@@ -1031,7 +1041,7 @@
                         //$frame.focus();
                     }
                 } catch (e) {
-                    if (window['console']) {
+                    if (window.console) {
                         console.log(e);
                     }
                 }
@@ -1273,20 +1283,21 @@
                 if (typeof(toolbar) == 'string') {
                     toolbar = $(toolbar).wysiwygToolbar();
                 }
+                if (!(toolbar instanceof $)) {
+                    toolbar = $('<div>').wysiwygToolbar(toolbar);
+                }
+                var $li = $('<li>').addClass(this.options.toolbarWrapperClass).append(toolbar);
+                
                 var $frame = $widget.children('li.' + this.options.frameWrapperClass);
                 if ($frame.length) {
-                    $frame.before(
-                        $('<li>').addClass(this.options.toolbarWrapperClass).append(toolbar)
-                    );
+                    $frame.before($li);
                 } else {
-                   $widget.append(
-                        $('<li>').addClass(this.options.toolbarWrapperClass).append(toolbar)
-                    );
+                    $widget.append($li);
                 }
                 
                 toolbar.wysiwygToolbar('option' , 'editor', this);
                 
-                $frame.height($frame.height() - toolbar.height());
+                $frame.height($frame.height() - toolbar.height() - 1/*border*/);
 
             } else {
                 return $widget.children('li.' + this.options.toolbarWrapperClass).children();
@@ -1384,6 +1395,9 @@
          */
         _createButton: function(options) {
             var $button;
+            if ('string' == typeof(options)) {
+                options = buttonsMap[options];
+            }
             if (options.length) {
                 $button = $('<div>', {'class': this.options.buttonsetClass});
                 for (var j in options) {
@@ -1411,6 +1425,9 @@
                     }
                     $slider.addClass(this.options.dropdownSliderClass);
                     options.slider = false;
+                }
+                if (!options.type) {
+                    options.type = 'button';
                 }
                 $button = $('<button>', options).addClass(this.options.buttonClass);
                 
