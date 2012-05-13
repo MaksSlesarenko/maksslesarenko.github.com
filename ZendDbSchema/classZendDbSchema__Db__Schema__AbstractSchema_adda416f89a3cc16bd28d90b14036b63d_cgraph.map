@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classZendDbSchema__Db__Schema__AbstractSchema.html#a47d95912f6bf6d26d023597887dafacb" title="ZendDbSchema_Db_Schema_AbstractSchema\\getAdapter" alt="" coords="415,59,780,88"/>
+<area shape="rect" id="node5" href="$classZendDbSchema__Db__Schema__AbstractSchema.html#a6349649e5e09d67a5b5e0abe96298db8" title="ZendDbSchema_Db_Schema_AbstractSchema\\setAdapter" alt="" coords="831,59,1196,88"/>
+<area shape="rect" id="node7" href="$classZendDbSchema__Db__Schema__AbstractSchema.html#a53a1974dbc8822792a8d7b9c618d3a02" title="ZendDbSchema_Db_Schema_AbstractSchema\\setGenerator" alt="" coords="1245,5,1624,35"/>
+<area shape="rect" id="node9" href="$classZendDbSchema__Db__Schema__AbstractSchema.html#aa0e6c9f8d58702dc41d988f064f62698" title="ZendDbSchema_Db_Schema_AbstractSchema\\setParser" alt="" coords="1256,59,1613,88"/>
+<area shape="rect" id="node11" href="$classZendDbSchema__Db__Schema__AbstractSchema.html#ac0161e2c24dafba8433fb86205a147fe" title="ZendDbSchema_Db_Schema_AbstractSchema\\setValidator" alt="" coords="1249,112,1620,141"/>
+</map>

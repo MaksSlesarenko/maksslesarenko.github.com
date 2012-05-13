@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classZendDbSchema__Db__Migration__Manager.html#a87a8f6699a75e4b89a0657ae0999203b" title="ZendDbSchema_Db_Migration_Manager\\isDirty" alt="" coords="392,5,691,35"/>
+<area shape="rect" id="node5" href="$classZendDbSchema__Db__Migration__Manager.html#a3acd09811b23c39aa97fed97b4012ac9" title="ZendDbSchema_Db_Migration_Manager\\rolldown" alt="" coords="387,59,696,88"/>
+<area shape="rect" id="node7" href="$classZendDbSchema__Db__Migration__Manager.html#afbaee9196407b68350626e8601a44a9a" title="ZendDbSchema_Db_Migration_Manager\\rollup" alt="" coords="396,112,687,141"/>
+</map>

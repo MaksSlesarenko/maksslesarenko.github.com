@@ -1,0 +1,11 @@
+<map id="G" name="G">
+<area shape="rect" id="node1" href="$classZendDbSchema__Db__Schema__AbstractSchema.html" title="ZendDbSchema_Db_Schema_AbstractSchema" alt="" coords="5,112,304,141"/>
+<area shape="rect" id="node3" href="$classZendDbSchema__Db__Schema__AbstractEntity.html" title="ZendDbSchema_Db_Schema_AbstractEntity" alt="" coords="383,59,668,88"/>
+<area shape="rect" id="node9" href="$classZendDbSchema__Db__Schema__Table__AbstractDefinition.html" title="ZendDbSchema_Db_Schema_Table_AbstractDefinition" alt="" coords="353,165,697,195"/>
+<area shape="rect" id="node5" href="$classZendDbSchema__Db__Schema__Database.html" title="ZendDbSchema_Db_Schema_Database" alt="" coords="772,5,1031,35"/>
+<area shape="rect" id="node7" href="$classZendDbSchema__Db__Schema__Table.html" title="ZendDbSchema_Db_Schema_Table" alt="" coords="784,59,1019,88"/>
+<area shape="rect" id="node11" href="$classZendDbSchema__Db__Schema__Table__Column.html" title="ZendDbSchema_Db_Schema_Table_Column" alt="" coords="759,112,1044,141"/>
+<area shape="rect" id="node13" href="$classZendDbSchema__Db__Schema__Table__ForeignKey.html" title="ZendDbSchema_Db_Schema_Table_ForeignKey" alt="" coords="748,165,1055,195"/>
+<area shape="rect" id="node15" href="$classZendDbSchema__Db__Schema__Table__Index.html" title="ZendDbSchema_Db_Schema_Table_Index" alt="" coords="765,219,1037,248"/>
+<area shape="rect" id="node17" href="$classZendDbSchema__Db__Schema__Table__PrimaryKey.html" title="ZendDbSchema_Db_Schema_Table_PrimaryKey" alt="" coords="747,272,1056,301"/>
+</map>

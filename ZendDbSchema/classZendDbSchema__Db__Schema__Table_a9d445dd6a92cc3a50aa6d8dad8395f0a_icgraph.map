@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classZendDbSchema__Db__Schema__Table.html#aa51f7ef4e3b157d408deec87d519c4ca" title="ZendDbSchema_Db_Schema_Table\\add" alt="" coords="365,5,624,35"/>
+<area shape="rect" id="node5" href="$classZendDbSchema__Db__Schema__Table.html#a21a2a75870207a989576655fec7507c3" title="ZendDbSchema_Db_Schema_Table\\isDirty" alt="" coords="357,59,632,88"/>
+<area shape="rect" id="node9" href="$classZendDbSchema__Db__Schema__Table.html#a6178edaeea7e08d97e2196dd991532f9" title="ZendDbSchema_Db_Schema_Table\\toSql" alt="" coords="749,111,1016,140"/>
+<area shape="rect" id="node11" href="$classZendDbSchema__Db__Schema__Table.html#abeba5309be6269e72b2818fcabc01fec" title="ZendDbSchema_Db_Schema_Table\\setFromArray" alt="" coords="336,163,653,192"/>
+<area shape="rect" id="node15" href="$classZendDbSchema__Db__Schema__Table.html#aad47d08cebd042ad8e64d825b65859ab" title="ZendDbSchema_Db_Schema_Table\\toArray" alt="" coords="355,216,635,245"/>
+<area shape="rect" id="node7" href="$classZendDbSchema__Db__Schema__Generator__Mysql.html#aebe278ab07f38d58f8f440f9cad01565" title="ZendDbSchema_Db_Schema_Generator_Mysql\\alterTable" alt="" coords="701,57,1064,87"/>
+<area shape="rect" id="node13" href="$classZendDbSchema__Db__Schema__Table.html#a1fcef515c845c7770e17f997f80cafa9" title="ZendDbSchema_Db_Schema_Table\\__clone" alt="" coords="741,189,1024,219"/>
+</map>

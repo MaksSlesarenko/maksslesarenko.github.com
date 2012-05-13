@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classZendDbSchema__Db__Schema__AbstractSchema.html#abe3de4a43bc5df22c0e3dd270b0176f9" title="ZendDbSchema_Db_Schema_AbstractSchema\\refresh" alt="" coords="393,59,735,88"/>
+<area shape="rect" id="node5" href="$classZendDbSchema__Db__Schema__AbstractSchema.html#a95b8986f7fa3a4e26be024d3a621e4f6" title="ZendDbSchema_Db_Schema_AbstractSchema\\__construct" alt="" coords="784,5,1155,35"/>
+<area shape="rect" id="node7" href="$classZendDbSchema__Db__Schema__AbstractEntity.html#a26fcff2268495fcdbfa265f394ee93d9" title="ZendDbSchema_Db_Schema_AbstractEntity\\delete" alt="" coords="808,59,1131,88"/>
+<area shape="rect" id="node9" href="$classZendDbSchema__Db__Schema__AbstractEntity.html#a5b1c93da76c3708f90d330b4643e55b2" title="ZendDbSchema_Db_Schema_AbstractEntity\\save" alt="" coords="811,112,1128,141"/>
+</map>

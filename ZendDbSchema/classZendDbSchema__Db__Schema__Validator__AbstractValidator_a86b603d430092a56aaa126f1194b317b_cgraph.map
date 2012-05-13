@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classZendDbSchema__Db__Schema__Validator__AbstractValidator.html#abb84d37eb5e10ce0549831b7ad9d13f4" title="ZendDbSchema_Db_Schema_Validator_AbstractValidator\\validateDatabase" alt="" coords="471,5,935,35"/>
+<area shape="rect" id="node5" href="$classZendDbSchema__Db__Schema__Validator__AbstractValidator.html#a097f3953952902e3a2d48e200427ed8b" title="ZendDbSchema_Db_Schema_Validator_AbstractValidator\\validateTable" alt="" coords="483,59,923,88"/>
+<area shape="rect" id="node7" href="$classZendDbSchema__Db__Schema__Validator__AbstractValidator.html#a676a382f8473dc61a6f037c768d18d67" title="ZendDbSchema_Db_Schema_Validator_AbstractValidator\\validateColumn" alt="" coords="476,112,929,141"/>
+<area shape="rect" id="node9" href="$classZendDbSchema__Db__Schema__Validator__AbstractValidator.html#ad23ee9d8c93ea569ed25aaf27b306a1a" title="ZendDbSchema_Db_Schema_Validator_AbstractValidator\\validateIndex" alt="" coords="483,165,923,195"/>
+<area shape="rect" id="node11" href="$classZendDbSchema__Db__Schema__Validator__AbstractValidator.html#a9f62f245e92b12be87b633dfb5810470" title="ZendDbSchema_Db_Schema_Validator_AbstractValidator\\validatePrimaryKey" alt="" coords="464,219,941,248"/>
+<area shape="rect" id="node13" href="$classZendDbSchema__Db__Schema__Validator__AbstractValidator.html#a0fa9765711f41a11dd69511b9d1cc11b" title="ZendDbSchema_Db_Schema_Validator_AbstractValidator\\validateForeignKey" alt="" coords="465,272,940,301"/>
+</map>

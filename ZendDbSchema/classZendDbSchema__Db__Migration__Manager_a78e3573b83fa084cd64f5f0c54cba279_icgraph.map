@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classZendDbSchema__Db__Migration__Manager.html#af33cb75756ed27dd86665110800003a4" title="ZendDbSchema_Db_Migration_Manager\\__construct" alt="" coords="379,5,707,35"/>
+<area shape="rect" id="node5" href="$classZendDbSchema__Db__Migration__Manager.html#a36ca7d64e6a7518a55cdd9db37e90195" title="ZendDbSchema_Db_Migration_Manager\\getMigration" alt="" coords="377,112,708,141"/>
+<area shape="rect" id="node9" href="$classZendDbSchema__Db__Migration__Manager.html#a3acd09811b23c39aa97fed97b4012ac9" title="ZendDbSchema_Db_Migration_Manager\\rolldown" alt="" coords="757,165,1067,195"/>
+<area shape="rect" id="node13" href="$classZendDbSchema__Db__Migration__Manager.html#a44b43dda1fc2c04b444663de58e26e86" title="ZendDbSchema_Db_Migration_Manager\\getNext" alt="" coords="389,59,696,88"/>
+<area shape="rect" id="node16" href="$classZendDbSchema__Db__Migration__Manager.html#a05f0581b2a3a234ab0fbe4092f25e0d1" title="ZendDbSchema_Db_Migration_Manager\\getPrevious" alt="" coords="377,216,708,245"/>
+<area shape="rect" id="node7" href="$classZendDbSchema__Db__Migration__Manager.html#afbaee9196407b68350626e8601a44a9a" title="ZendDbSchema_Db_Migration_Manager\\rollup" alt="" coords="767,59,1057,88"/>
+<area shape="rect" id="node11" href="$classZendDbSchema__Db__Migration__Manager.html#a87a8f6699a75e4b89a0657ae0999203b" title="ZendDbSchema_Db_Migration_Manager\\isDirty" alt="" coords="763,112,1061,141"/>
+</map>

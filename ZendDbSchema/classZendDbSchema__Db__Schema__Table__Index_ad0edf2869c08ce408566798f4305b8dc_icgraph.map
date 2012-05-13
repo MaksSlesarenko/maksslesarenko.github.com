@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classZendDbSchema__Db__Schema__Table__Index.html#a6717d976c5b0d47369d3c87ef17b1e9b" title="ZendDbSchema_Db_Schema_Table_Index\\addColumn" alt="" coords="833,72,1175,101"/>
+<area shape="rect" id="node5" href="$classZendDbSchema__Db__Schema__Generator__Mysql.html#a5546e56c0c78f9c9d3e830fb5ffcd72d" title="ZendDbSchema_Db_Schema_Generator_Mysql\\createIndex" alt="" coords="400,5,773,35"/>
+<area shape="rect" id="node9" href="$classZendDbSchema__Db__Schema__Table__Index.html#af7c29da0f52c5270ffa3587a95295f82" title="ZendDbSchema_Db_Schema_Table_Index\\hasColumn" alt="" coords="416,109,757,139"/>
+<area shape="rect" id="node12" href="$classZendDbSchema__Db__Schema__Table__Index.html#a3cfd358621bb3330ef9e7ffcf2f7b229" title="ZendDbSchema_Db_Schema_Table_Index\\removeColumn" alt="" coords="821,149,1187,179"/>
+<area shape="rect" id="node7" href="$classZendDbSchema__Db__Schema__Generator__Mysql.html#a0f94d6cabe125b387efa64fc7160a9e5" title="ZendDbSchema_Db_Schema_Generator_Mysql\\alterIndex" alt="" coords="823,5,1185,35"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classZendDbSchema__Db__Schema__AbstractSchema.html#a219012c80be57ace4b1db43a9c48eb3d" title="ZendDbSchema_Db_Schema_AbstractSchema\\getSchema" alt="" coords="448,5,816,35"/>
+<area shape="rect" id="node5" href="$classZendDbSchema__Db__Schema__Table__AbstractDefinition.html#a224b6a0c1df1d6ed40e03657782ef6fc" title="ZendDbSchema_Db_Schema_Table_AbstractDefinition\\getTable" alt="" coords="433,59,831,88"/>
+<area shape="rect" id="node7" href="$classZendDbSchema__Db__Schema__AbstractSchema.html#adacb1417b461310c5c87f72c459c1985" title="ZendDbSchema_Db_Schema_AbstractSchema\\getOriginName" alt="" coords="437,112,827,141"/>
+<area shape="rect" id="node9" href="$classZendDbSchema__Db__Schema__AbstractSchema.html#a54d32c6f15463eaad2321a9f0e7225d7" title="ZendDbSchema_Db_Schema_AbstractSchema\\__get" alt="" coords="881,112,1215,141"/>
+<area shape="rect" id="node11" href="$classZendDbSchema__Db__Schema__AbstractSchema.html#ac4e121ba7932163eb1950fabe06fb9db" title="ZendDbSchema_Db_Schema_AbstractSchema\\__isset" alt="" coords="1265,112,1609,141"/>
+</map>

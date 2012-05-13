@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classZendDbSchema__Db__Schema__AbstractSchema.html#a55787c21deddba427842809d589c2df6" title="ZendDbSchema_Db_Schema_AbstractSchema\\getName" alt="" coords="449,5,804,35"/>
+<area shape="rect" id="node9" href="$classZendDbSchema__Db__Schema__Generator__Mysql.html#ab808aafb85b6359cacdb4cc3fe757d6b" title="ZendDbSchema_Db_Schema_Generator_Mysql\\_columnSql" alt="" coords="440,59,813,88"/>
+<area shape="rect" id="node5" href="$classZendDbSchema__Db__Schema__AbstractSchema.html#a54d32c6f15463eaad2321a9f0e7225d7" title="ZendDbSchema_Db_Schema_AbstractSchema\\__get" alt="" coords="1257,57,1591,87"/>
+<area shape="rect" id="node7" href="$classZendDbSchema__Db__Schema__AbstractSchema.html#ac4e121ba7932163eb1950fabe06fb9db" title="ZendDbSchema_Db_Schema_AbstractSchema\\__isset" alt="" coords="1641,57,1985,87"/>
+<area shape="rect" id="node11" href="$classZendDbSchema__Db__Schema__Table__Column.html#aeeed5820cfc4fac67507a196e9faa638" title="ZendDbSchema_Db_Schema_Table_Column\\isNullable" alt="" coords="861,57,1208,87"/>
+<area shape="rect" id="node14" href="$classZendDbSchema__Db__Schema__Table__Column.html#a49887d783c47fa509e229ca61dd113ef" title="ZendDbSchema_Db_Schema_Table_Column\\isSigned" alt="" coords="865,111,1204,140"/>
+</map>

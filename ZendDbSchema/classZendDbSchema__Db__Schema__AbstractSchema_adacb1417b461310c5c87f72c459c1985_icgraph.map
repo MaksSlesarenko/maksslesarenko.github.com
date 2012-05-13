@@ -1,0 +1,19 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classZendDbSchema__Db__Schema__Database.html#aad388b374fd5913946204230760b2d86" title="ZendDbSchema_Db_Schema_Database\\_doReload" alt="" coords="523,5,845,35"/>
+<area shape="rect" id="node5" href="$classZendDbSchema__Db__Schema__Table.html#abc05b1f219611fefdd0e9eaeff1761d9" title="ZendDbSchema_Db_Schema_Table\\_doReload" alt="" coords="535,59,833,88"/>
+<area shape="rect" id="node7" href="$classZendDbSchema__Db__Schema__Table__AbstractDefinition.html#a355febe0ff6ed1a3b95ae1edd91b807e" title="ZendDbSchema_Db_Schema_Table_AbstractDefinition\\_getCleanSchema" alt="" coords="456,112,912,141"/>
+<area shape="rect" id="node9" href="$classZendDbSchema__Db__Schema__Table__DefinitionManager__AbstractManager.html#a6d815884ca03c003ac7f8d633e97f7c6" title="ZendDbSchema_Db_Schema_Table_DefinitionManager_AbstractManager\\add" alt="" coords="445,165,923,195"/>
+<area shape="rect" id="node17" href="$classZendDbSchema__Db__Schema__Generator__Mysql.html#a4b0c6d7fbd4d21f027facb6e495d1f6b" title="ZendDbSchema_Db_Schema_Generator_Mysql\\addForeignKey" alt="" coords="488,219,880,248"/>
+<area shape="rect" id="node21" href="$classZendDbSchema__Db__Schema__Generator__Mysql.html#a57a5e637e2c19faee40597d96d6b71b3" title="ZendDbSchema_Db_Schema_Generator_Mysql\\alterColumn" alt="" coords="497,272,871,301"/>
+<area shape="rect" id="node23" href="$classZendDbSchema__Db__Schema__Generator__Mysql.html#aebe278ab07f38d58f8f440f9cad01565" title="ZendDbSchema_Db_Schema_Generator_Mysql\\alterTable" alt="" coords="503,325,865,355"/>
+<area shape="rect" id="node25" href="$classZendDbSchema__Db__Schema__Generator__Mysql.html#afa7990c889464576d30d4a110e9b0fac" title="ZendDbSchema_Db_Schema_Generator_Mysql\\dropForeignKey" alt="" coords="487,379,881,408"/>
+<area shape="rect" id="node28" href="$classZendDbSchema__Db__Schema__AbstractEntity.html#aa35a80275bd3c811dd8ad39835a985a9" title="ZendDbSchema_Db_Schema_AbstractEntity\\reload" alt="" coords="523,432,845,461"/>
+<area shape="rect" id="node11" href="$classZendDbSchema__Db__Schema__Table__DefinitionManager__AbstractManager.html#a40677ee7cb91e19c1587bdda9e73d3d5" title="ZendDbSchema_Db_Schema_Table_DefinitionManager_AbstractManager\\setFromArray" alt="" coords="972,165,1505,195"/>
+<area shape="rect" id="node13" href="$classZendDbSchema__Db__Schema__Table__DefinitionManager__AbstractManager.html#a7503e344823c2a1e1e3beb80b8541116" title="ZendDbSchema_Db_Schema_Table_DefinitionManager_AbstractManager\\refresh" alt="" coords="1555,165,2051,195"/>
+<area shape="rect" id="node15" href="$classZendDbSchema__Db__Schema__Table__DefinitionManager__AbstractManager.html#a5cf66698784c55ebbd70292e268505af" title="ZendDbSchema_Db_Schema_Table_DefinitionManager_AbstractManager\\__construct" alt="" coords="2100,165,2623,195"/>
+<area shape="rect" id="node19" href="$classZendDbSchema__Db__Schema__Generator__Mysql.html#a16b347a1c95888775b09d14505bae2b2" title="ZendDbSchema_Db_Schema_Generator_Mysql\\alterForeignKey" alt="" coords="1041,272,1436,301"/>
+<area shape="rect" id="node30" href="$classZendDbSchema__Db__Schema__AbstractEntity.html#ad92ca2449257a587b336367f109cdde2" title="ZendDbSchema_Db_Schema_AbstractEntity\\__wakeup" alt="" coords="1065,405,1412,435"/>
+<area shape="rect" id="node32" href="$classZendDbSchema__Db__Schema__AbstractEntity.html#abee9675e11d86dace1abed3d94a0fda1" title="ZendDbSchema_Db_Schema_AbstractEntity\\refresh" alt="" coords="1075,459,1403,488"/>
+<area shape="rect" id="node34" href="$classZendDbSchema__Db__Schema__AbstractEntity.html#a26fcff2268495fcdbfa265f394ee93d9" title="ZendDbSchema_Db_Schema_AbstractEntity\\delete" alt="" coords="1641,432,1964,461"/>
+<area shape="rect" id="node36" href="$classZendDbSchema__Db__Schema__AbstractEntity.html#a5b1c93da76c3708f90d330b4643e55b2" title="ZendDbSchema_Db_Schema_AbstractEntity\\save" alt="" coords="1644,485,1961,515"/>
+</map>

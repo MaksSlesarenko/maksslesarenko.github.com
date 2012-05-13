@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classZendDbSchema__Db__Schema__Table__Manager__AbstractManager.html#a5198d6d1091f70119853defc477f9cf2" title="ZendDbSchema_Db_Schema_Table_Manager_AbstractManager\\__construct" alt="" coords="477,5,947,35"/>
+<area shape="rect" id="node5" href="$classZendDbSchema__Db__Schema__Table__Manager__Column.html#a1265f7c88df7401761b8e5dde4e94da1" title="ZendDbSchema_Db_Schema_Table_Manager_Column\\add" alt="" coords="528,59,896,88"/>
+<area shape="rect" id="node9" href="$classZendDbSchema__Db__Schema__Table__Manager__Index.html#aad5593d15638018cb662002f35f1a975" title="ZendDbSchema_Db_Schema_Table_Manager_Index\\add" alt="" coords="535,112,889,141"/>
+<area shape="rect" id="node7" href="$classZendDbSchema__Db__Schema__Table__Manager__Column.html#a2fe390d7ee88040f30bb31329d4ed5b9" title="ZendDbSchema_Db_Schema_Table_Manager_Column\\refresh" alt="" coords="995,59,1381,88"/>
+<area shape="rect" id="node11" href="$classZendDbSchema__Db__Schema__Table__Manager__Index.html#ae736a0eff081db2c7de80e635021ccc9" title="ZendDbSchema_Db_Schema_Table_Manager_Index\\refresh" alt="" coords="1001,112,1375,141"/>
+</map>

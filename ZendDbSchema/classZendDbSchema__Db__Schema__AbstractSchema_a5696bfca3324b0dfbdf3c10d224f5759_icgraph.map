@@ -1,0 +1,18 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classZendDbSchema__Db__Schema__Table__PrimaryKey.html#a3f48dd085068f13258957efeb0f7257b" title="ZendDbSchema_Db_Schema_Table_PrimaryKey\\_getAlterSql" alt="" coords="439,5,823,35"/>
+<area shape="rect" id="node5" href="$classZendDbSchema__Db__Schema__Database.html#a4f5a636c4e7d8ab57f6e090cdf8841dc" title="ZendDbSchema_Db_Schema_Database\\_getAlterSql" alt="" coords="464,59,797,88"/>
+<area shape="rect" id="node7" href="$classZendDbSchema__Db__Schema__Table__ForeignKey.html#ae7cb55b4ec471ccb54ef38ef4bb33558" title="ZendDbSchema_Db_Schema_Table_ForeignKey\\_getAlterSql" alt="" coords="440,112,821,141"/>
+<area shape="rect" id="node9" href="$classZendDbSchema__Db__Schema__Table__Index.html#ab87e33f2415eaf43730ca6d43ec540b6" title="ZendDbSchema_Db_Schema_Table_Index\\_getAlterSql" alt="" coords="457,165,804,195"/>
+<area shape="rect" id="node11" href="$classZendDbSchema__Db__Schema__Table__Column.html#ae49fb9ae5b0f6d6258dc71f644e00991" title="ZendDbSchema_Db_Schema_Table_Column\\_getAlterSql" alt="" coords="451,219,811,248"/>
+<area shape="rect" id="node13" href="$classZendDbSchema__Db__Schema__Table.html#a385e32fefac9fd4c6e4274c1e0c0b810" title="ZendDbSchema_Db_Schema_Table\\_getAlterSql" alt="" coords="476,272,785,301"/>
+<area shape="rect" id="node15" href="$classZendDbSchema__Db__Schema__Table__PrimaryKey.html#a97fe22c0e5758e1ee04616ccf3218e2a" title="ZendDbSchema_Db_Schema_Table_PrimaryKey\\_getCreateSql" alt="" coords="433,325,828,355"/>
+<area shape="rect" id="node17" href="$classZendDbSchema__Db__Schema__Database.html#a48ad6cd38cc07c3c350335d21d7c11e9" title="ZendDbSchema_Db_Schema_Database\\_getCreateSql" alt="" coords="459,379,803,408"/>
+<area shape="rect" id="node19" href="$classZendDbSchema__Db__Schema__Table__Column.html#a2312222bd78d06775dacb19b92638b69" title="ZendDbSchema_Db_Schema_Table_Column\\_getCreateSql" alt="" coords="444,432,817,461"/>
+<area shape="rect" id="node21" href="$classZendDbSchema__Db__Schema__Table__ForeignKey.html#a8b8ab754bf3b5bcda1e8c70e83a6b7b9" title="ZendDbSchema_Db_Schema_Table_ForeignKey\\_getCreateSql" alt="" coords="433,485,828,515"/>
+<area shape="rect" id="node23" href="$classZendDbSchema__Db__Schema__Table__Index.html#afec61cbe6c22bd42e30103bc3d37ef2d" title="ZendDbSchema_Db_Schema_Table_Index\\_getCreateSql" alt="" coords="451,539,811,568"/>
+<area shape="rect" id="node25" href="$classZendDbSchema__Db__Schema__Table.html#aefb813dece15a26017e580acc64e3406" title="ZendDbSchema_Db_Schema_Table\\_getCreateSql" alt="" coords="471,592,791,621"/>
+<area shape="rect" id="node27" href="$classZendDbSchema__Db__Schema__Table__PrimaryKey.html#a1da04c2b8330ad70171fd6b1802d14f2" title="ZendDbSchema_Db_Schema_Table_PrimaryKey\\_getDeleteSql" alt="" coords="433,645,828,675"/>
+<area shape="rect" id="node29" href="$classZendDbSchema__Db__Schema__Table__Index.html#a54a12dab52e17f1218fafcd13b334d16" title="ZendDbSchema_Db_Schema_Table_Index\\_getDeleteSql" alt="" coords="452,699,809,728"/>
+<area shape="rect" id="node31" href="$classZendDbSchema__Db__Schema__Table__Column.html#a9b1cc87143098c64df381066af91222c" title="ZendDbSchema_Db_Schema_Table_Column\\_getDeleteSql" alt="" coords="445,752,816,781"/>
+<area shape="rect" id="node33" href="$classZendDbSchema__Db__Schema__Table__ForeignKey.html#acc96fbb08d8271259f56bd77c37f2da4" title="ZendDbSchema_Db_Schema_Table_ForeignKey\\_getDeleteSql" alt="" coords="435,805,827,835"/>
+</map>
