@@ -1,0 +1,179 @@
+\hypertarget{Migration_8php}{\section{Migration.\-php}
+\label{Migration_8php}\index{Tool/\-Project/\-Provider/\-Migration.\-php@{Tool/\-Project/\-Provider/\-Migration.\-php}}
+}
+
+\begin{DoxyCode}
+00001 <?php
+\hypertarget{Migration_8php_source_l00029}{}\hyperlink{classZendDbSchema__Tool__Project__Provider__Migration}{00029} \textcolor{keyword}{class }\hyperlink{classZendDbSchema__Tool__Project__Provider__Migration}{ZendDbSchema\_Tool\_Project\_Provider\_Migration}
+00030     \textcolor{keyword}{extends} Zend\_Tool\_Project\_Provider\_Abstract
+00031     implements Zend\_Tool\_Framework\_Provider\_Pretendable
+00032 \{
+\hypertarget{Migration_8php_source_l00046}{}\hyperlink{classZendDbSchema__Tool__Project__Provider__Migration_a01f328a7b171f989907b86ab88a070df}{00046}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Tool__Project__Provider__Migration_a01f328a7b171f989907b86ab88a070df}{createResource}(
+      Zend\_Tool\_Project\_Profile $profile, $useSchema)
+00047     \{
+00048         $version = \hyperlink{classZendDbSchema__Db__Migration__Skeleton_a51234b84a2f9886f3e08d63519a6eb9d}{ZendDbSchema\_Db\_Migration\_Skeleton::generateVersion}
+      ();
+00049         $file =  \hyperlink{classZendDbSchema__Db__Migration__Skeleton_a1dabe0c3a95ba3b2f0a479ff1eee3351}{ZendDbSchema\_Db\_Migration\_Skeleton::getFilename}
+      ($version);
+00050 
+00051         \textcolor{comment}{// check to see if a model already exists}
+00052         $existingMigrationFile = $profile->search(array(
+00053             \textcolor{stringliteral}{'migrationsDirectory'},
+00054             \textcolor{stringliteral}{'migrationFile'} => array(\textcolor{stringliteral}{'filesystemName'} => $file))
+00055         );
+00056 
+00057         \textcolor{keywordflow}{if} ($existingMigrationFile !== \textcolor{keyword}{false}) \{
+00058             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} Zend\_Tool\_Project\_Provider\_Exception(
+00059                 \textcolor{stringliteral}{'Migration '} . $file . \textcolor{stringliteral}{' already exists.'}
+00060             );
+00061         \}
+00062 
+00063         $newMigration = $profile->createResourceAt(
+00064                 \textcolor{stringliteral}{'migrationsDirectory'},                  \textcolor{comment}{// where to create at}
+00065                 \textcolor{stringliteral}{'migrationFile'},                        \textcolor{comment}{// what to create}
+00066                 array(\textcolor{stringliteral}{'filesystemName'} => $file, \textcolor{stringliteral}{'useSchema'} => $useSchema)    \textcolor{comment}{
+      // attrs to initiate with}
+00067         );
+00068 
+00069         \textcolor{keywordflow}{return} $newMigration;
+00070     \}
+00071 
+\hypertarget{Migration_8php_source_l00078}{}\hyperlink{classZendDbSchema__Tool__Project__Provider__Migration_a7f2668ee9510542ce73b6edfb34ddff7}{00078}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Tool__Project__Provider__Migration_a7f2668ee9510542ce73b6edfb34ddff7}{getContextClasses}()
+00079     \{
+00080         \textcolor{keywordflow}{return} array(
+00081             \textcolor{stringliteral}{'ZendDbSchema\_Tool\_Project\_Context\_Migration\_File'},
+00082             \textcolor{stringliteral}{'ZendDbSchema\_Tool\_Project\_Context\_Migration\_Directory'}
+00083         );
+00084     \}
+00085 
+\hypertarget{Migration_8php_source_l00093}{}\hyperlink{classZendDbSchema__Tool__Project__Provider__Migration_a50a6e8f60a7d71a74883b26797fa9f25}{00093}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Tool__Project__Provider__Migration_a50a6e8f60a7d71a74883b26797fa9f25}{create}($useSchema = \textcolor{keyword}{true})
+00094     \{
+00095         $profile = $this->\_bootstrap();
+00096 
+00097         $migrationFile = \hyperlink{classZendDbSchema__Tool__Project__Provider__Migration_a01f328a7b171f989907b86ab88a070df}{self::createResource}($profile, 
+      $useSchema);
+00098 
+00099         \textcolor{keywordflow}{if} ($this->\_registry->getRequest()->isPretend()) \{
+00100             $this->\_registry->getResponse()->appendContent(
+00101                 \textcolor{stringliteral}{'Would create migration at '} . $migrationFile->getPath()
+00102             );
+00103         \} \textcolor{keywordflow}{else} \{
+00104             $this->\_registry->getResponse()->appendContent(
+00105                 \textcolor{stringliteral}{'Creating migration at '} . $migrationFile->getPath()
+00106             );
+00107             $migrationFile->create();
+00108             $this->\_storeProfile();
+00109         \}
+00110     \}
+00111 
+\hypertarget{Migration_8php_source_l00116}{}\hyperlink{classZendDbSchema__Tool__Project__Provider__Migration_a655dfecdd97d178fe409092d1111416d}{00116}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Tool__Project__Provider__Migration_a655dfecdd97d178fe409092d1111416d}{show}()
+00117     \{
+00118         $profile = $this->\_bootstrap();
+00119 
+00120         $profileSearchParams = array(\textcolor{stringliteral}{'migrationsDirectory'});
+00121 
+00122         $directory = $profile->search($profileSearchParams);
+00123 
+00124         \textcolor{keywordflow}{if} (!$directory instanceof Zend\_Tool\_Project\_Profile\_Resource) \{
+00125             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00126         \}
+00127         $blockize = \textcolor{keyword}{new} 
+      Zend\_Tool\_Framework\_Client\_Console\_ResponseDecorator\_Blockize;
+00128         $colorizer = \textcolor{keyword}{new} 
+      Zend\_Tool\_Framework\_Client\_Console\_ResponseDecorator\_Colorizer;
+00129 
+00130         $colors = array(\textcolor{stringliteral}{'white'}, \textcolor{stringliteral}{'yellow'}, \textcolor{stringliteral}{'green'});
+00131 
+00132         \textcolor{keywordflow}{foreach} ($directory as $i => $migrationFile) \{
+00133             $change = \hyperlink{classZendDbSchema__Db__Migration__Change_abd5253380521e63e91099a6ab3b89387}{ZendDbSchema\_Db\_Migration\_Change::fromFile}
+      ($migrationFile->getPath());
+00134             $version = $change->getVersion();
+00135 
+00136             $version = preg\_replace(\textcolor{stringliteral}{'/(\(\backslash\)d\{4\})(\(\backslash\)d\{2\})(\(\backslash\)d\{2\})\(\backslash\)\_(\(\backslash\)d\{2\})(\(\backslash\)d\{2\})(\(\backslash\)d
+      \{2\})\(\backslash\)\_(\(\backslash\)d\{2\})/'}, \textcolor{stringliteral}{'$1-$2-$3 $4:$5:$6.$7'}, $version);
+00137 
+00138             $message = \textcolor{stringliteral}{""};
+00139             $color = $colors[$i % 2];
+00140             \textcolor{keywordflow}{if} ($change->compareVersion($directory->getVersion(), \textcolor{charliteral}{'='})) \{
+00141                 $message .= \textcolor{charliteral}{'*'};
+00142                 $color = \textcolor{stringliteral}{'green'};
+00143             \}
+00144             $message .= \textcolor{stringliteral}{"\(\backslash\)t"} . $blockize->decorate($version, 25) . $change->
+      getDescription();
+00145 
+00146             $message = $colorizer->decorate($message, $color);
+00147 
+00148             echo $message . PHP\_EOL;
+00149         \}
+00150     \}
+00151 
+00152     \textcolor{keyword}{public} \textcolor{keyword}{function} rollup()
+00153     \{
+00154         $profile = $this->\_bootstrap();
+00155 
+00156         $profileSearchParams = array(\textcolor{stringliteral}{'migrationsDirectory'});
+00157 
+00158         $directory = $profile->search($profileSearchParams);
+00159 
+00160         \textcolor{keywordflow}{if} (!$directory instanceof Zend\_Tool\_Project\_Profile\_Resource) \{
+00161             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00162         \}
+00163 
+00164         $directory->getVersion();
+00165 
+00166         \textcolor{keywordflow}{foreach} ($directory as $i => $migrationFile) \{
+00167             $change = \hyperlink{classZendDbSchema__Db__Migration__Change_abd5253380521e63e91099a6ab3b89387}{ZendDbSchema\_Db\_Migration\_Change::fromFile}
+      ($migrationFile->getPath());
+00168             \textcolor{keywordflow}{if} ($change->compareVersion($directory->getVersion(), \textcolor{charliteral}{'<'})) \{
+00169 
+00170                 $directory->setVersion($change->getVersion());
+00171 
+00172                 $this->\_storeProfile();
+00173 
+00174                 $message = \textcolor{stringliteral}{"Updated to "} . $change->getVersion();
+00175                 echo $message . PHP\_EOL;
+00176                 \textcolor{keywordflow}{break};
+00177             \}
+00178         \}
+00179     \}
+00180 
+\hypertarget{Migration_8php_source_l00185}{}\hyperlink{classZendDbSchema__Tool__Project__Provider__Migration_a6818e8df15f087c869ed9edf28d97f1f}{00185}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Tool__Project__Provider__Migration_a6818e8df15f087c869ed9edf28d97f1f}{status}()
+00186     \{
+00187         $this->\_bootstrap();
+00188 
+00189         $directory = $profile->search($profileSearchParams);
+00190 
+00191         \textcolor{keywordflow}{if} (!$directory instanceof Zend\_Tool\_Project\_Profile\_Resource) \{
+00192             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00193         \}
+00194 
+00195         $manager = \textcolor{keyword}{new} \hyperlink{classZendDbSchema__Db__Migration__Manager}{ZendDbSchema\_Db\_Migration\_Manager}
+      (
+00196             $directory->getVersion(),
+00197             $directory->getChildren()
+00198         );
+00199         $manager->\hyperlink{classZendDbSchema__Db__Migration__Manager_a87a8f6699a75e4b89a0657ae0999203b}{isDirty}();
+00200     \}
+00201 
+00202     \textcolor{keyword}{protected} \textcolor{keyword}{function} \_bootstrap()
+00203     \{
+00204         $profile = $this->\_loadProfile(self::NO\_PROFILE\_THROW\_EXCEPTION);
+00205 
+00206         $bootstrapResource = $this->\_loadedProfile->search(\textcolor{stringliteral}{'BootstrapFile'});
+00207 
+00208         \textcolor{comment}{/* @var $zendApp Zend\_Application */}
+00209         $zendApp = $bootstrapResource->getApplicationInstance();
+00210 
+00211         \textcolor{keywordflow}{try} \{
+00212             $zendApp->bootstrap(\textcolor{stringliteral}{'db'});
+00213             Zend\_Loader\_Autoloader::getInstance()->registerNamespace(\textcolor{stringliteral}{'
+      ZendDbSchema'});
+00214         \} \textcolor{keywordflow}{catch} (Zend\_Application\_Exception $e) \{
+00215             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} Zend\_Tool\_Project\_Provider\_Exception(\textcolor{stringliteral}{'Db resource not
+       available, you might need to configure a DbAdapter.'});
+00216             \textcolor{keywordflow}{return};
+00217         \}
+00218         \textcolor{keywordflow}{return} $profile;
+00219     \}
+00220 \}
+\end{DoxyCode}

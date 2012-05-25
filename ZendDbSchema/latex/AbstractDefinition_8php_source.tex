@@ -1,0 +1,101 @@
+\hypertarget{AbstractDefinition_8php}{\section{Abstract\-Definition.\-php}
+\label{AbstractDefinition_8php}\index{Db/\-Schema/\-Table/\-Abstract\-Definition.\-php@{Db/\-Schema/\-Table/\-Abstract\-Definition.\-php}}
+}
+
+\begin{DoxyCode}
+00001 <?php
+\hypertarget{AbstractDefinition_8php_source_l00029}{}\hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition}{00029} \textcolor{keyword}{abstract} \textcolor{keyword}{class }\hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition}{ZendDbSchema\_Db\_Schema\_Table\_AbstractDefinition}
+00030     \textcolor{keyword}{extends} \hyperlink{classZendDbSchema__Db__Schema__AbstractSchema}{ZendDbSchema\_Db\_Schema\_AbstractSchema}
+00031 \{
+00035     \textcolor{keyword}{protected} $\_table;
+00036 
+00040     \textcolor{keyword}{protected} $\_toDelete;
+00041 
+00047     \textcolor{keyword}{abstract} \textcolor{keyword}{protected} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_a2fb894602c4b7fbba5dd1d180f93c181}{\_getSchemaKey}();
+00048 
+\hypertarget{AbstractDefinition_8php_source_l00056}{}\hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_afe6a6cfdfa739f1feea4dbd8b6122550}{00056}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_afe6a6cfdfa739f1feea4dbd8b6122550}{\_\_construct}($name, \hyperlink{classZendDbSchema__Db__Schema__Table}{ZendDbSchema\_Db\_Schema\_Table}
+       $table = null)
+00057     \{
+00058         \textcolor{keywordflow}{if} ($table) \{
+00059             $this->\_table = $table;
+00060         \}
+00061         \hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_afe6a6cfdfa739f1feea4dbd8b6122550}{parent::\_\_construct}($name);
+00062     \}
+00063 
+\hypertarget{AbstractDefinition_8php_source_l00068}{}\hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_aff0739c3d85d7d6c27944a7fee2d0f38}{00068}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_aff0739c3d85d7d6c27944a7fee2d0f38}{\_\_clone}()
+00069     \{
+00070         $this->\_table = null;
+00071     \}
+00072 
+\hypertarget{AbstractDefinition_8php_source_l00079}{}\hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_a65498451683b2cf8fd1dc65f7f03581d}{00079}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_a65498451683b2cf8fd1dc65f7f03581d}{\_\_set}($name, $value)
+00080     \{
+00081         \textcolor{keywordflow}{if} (self::NAME\_KEY == $name && $value) \{
+00082             \textcolor{keywordflow}{if} ($this->\_name != $value) \{
+00083                 $data = $this->\hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_a224b6a0c1df1d6ed40e03657782ef6fc}{getTable}()->getCleanSchema();
+00084                 \textcolor{keywordflow}{if} (isset($data[$this->\hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_a2fb894602c4b7fbba5dd1d180f93c181}{\_getSchemaKey}()][$value])) 
+      \{
+00085                     \textcolor{keywordflow}{throw} \textcolor{keyword}{new} \hyperlink{classZendDbSchema__Db__Schema__Exception}{ZendDbSchema\_Db\_Schema\_Exception}
+      (\textcolor{stringliteral}{"Definition with name '\{$value\}' already exists"});
+00086                 \}
+00087             \}
+00088         \}
+00089         \hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_a65498451683b2cf8fd1dc65f7f03581d}{parent::\_\_set}($name, $value);
+00090     \}
+00091 
+\hypertarget{AbstractDefinition_8php_source_l00097}{}\hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_a355febe0ff6ed1a3b95ae1edd91b807e}{00097}     \textcolor{keyword}{protected} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_a355febe0ff6ed1a3b95ae1edd91b807e}{\_getCleanSchema}()
+00098     \{
+00099         $schema = array();
+00100         \textcolor{keywordflow}{if} ($this->\hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_a224b6a0c1df1d6ed40e03657782ef6fc}{getTable}()) \{
+00101             $data = $this->\hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_a224b6a0c1df1d6ed40e03657782ef6fc}{getTable}()->getCleanSchema();
+00102             $name = $this->\hyperlink{classZendDbSchema__Db__Schema__AbstractSchema_adacb1417b461310c5c87f72c459c1985}{getOriginName}();
+00103 
+00104             \textcolor{keywordflow}{if} (isset($data[$this->\hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_a2fb894602c4b7fbba5dd1d180f93c181}{\_getSchemaKey}()][$name])) \{
+00105                 $schema = $data[$this->\hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_a2fb894602c4b7fbba5dd1d180f93c181}{\_getSchemaKey}()][$name];
+00106                 $schema[self::NAME\_KEY] = $name;
+00107             \}
+00108         \}
+00109         \textcolor{keywordflow}{return} $schema;
+00110     \}
+00111 
+\hypertarget{AbstractDefinition_8php_source_l00115}{}\hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_a92b77fa23ce49db1c39edcc583ec6cfe}{00115}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_a92b77fa23ce49db1c39edcc583ec6cfe}{isDirty}($param = null)
+00116     \{
+00117         \textcolor{keywordflow}{if} (!$param && $this->\hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_ae3276a6f60f556eb468d3f2ef102a3ab}{isDeleted}()) \{
+00118             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+00119         \}
+00120         \textcolor{keywordflow}{return} \hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_a92b77fa23ce49db1c39edcc583ec6cfe}{parent::isDirty}($param);
+00121     \}
+00122 
+\hypertarget{AbstractDefinition_8php_source_l00128}{}\hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_a75c1b3ef1005c2d6aa371ecef07d530d}{00128}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_a75c1b3ef1005c2d6aa371ecef07d530d}{toSql}($alter = \textcolor{keyword}{false})
+00129     \{
+00130         \textcolor{keywordflow}{if} (!$this->\hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_a224b6a0c1df1d6ed40e03657782ef6fc}{getTable}()) \{
+00131             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} \hyperlink{classZendDbSchema__Db__Schema__Exception}{ZendDbSchema\_Db\_Schema\_Exception}
+      (\textcolor{stringliteral}{'Table not set'});
+00132         \}
+00133 
+00134         \textcolor{keywordflow}{if} ($alter && $this->\hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_ae3276a6f60f556eb468d3f2ef102a3ab}{isDeleted}()) \{
+00135             \textcolor{keywordflow}{return} $this->\hyperlink{classZendDbSchema__Db__Schema__AbstractSchema_aec661ede88f500caaf2a09e98c31d3b0}{getDropSql}();
+00136         \}
+00137         \textcolor{keywordflow}{return} \hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_a75c1b3ef1005c2d6aa371ecef07d530d}{parent::toSql}($alter);
+00138     \}
+00139 
+\hypertarget{AbstractDefinition_8php_source_l00145}{}\hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_a224b6a0c1df1d6ed40e03657782ef6fc}{00145}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_a224b6a0c1df1d6ed40e03657782ef6fc}{getTable}()
+00146     \{
+00147         \textcolor{keywordflow}{return} $this->\_table;
+00148     \}
+00149 
+\hypertarget{AbstractDefinition_8php_source_l00156}{}\hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_a018fe3e134417675da482608579910a5}{00156}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_a018fe3e134417675da482608579910a5}{markDeleted}($toDelete = \textcolor{keyword}{true})
+00157     \{
+00158         \textcolor{keywordflow}{if} (!$this->\hyperlink{classZendDbSchema__Db__Schema__AbstractSchema_a1680a8fd22360f74d29b641d7257a52f}{isExist}()) \{
+00159             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} \hyperlink{classZendDbSchema__Db__Schema__Exception}{ZendDbSchema\_Db\_Schema\_Exception}
+      (\textcolor{stringliteral}{'Definition is not exist'});
+00160         \}
+00161         $this->\_toDelete = (bool) $toDelete;
+00162         \textcolor{keywordflow}{return} $this;
+00163     \}
+00164 
+\hypertarget{AbstractDefinition_8php_source_l00170}{}\hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_ae3276a6f60f556eb468d3f2ef102a3ab}{00170}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_ae3276a6f60f556eb468d3f2ef102a3ab}{isDeleted}()
+00171     \{
+00172         \textcolor{keywordflow}{return}  $this->\_toDelete;
+00173     \}
+00174 \}
+\end{DoxyCode}

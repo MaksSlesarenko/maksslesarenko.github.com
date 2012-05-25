@@ -1,0 +1,4 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classZendDbSchema__Db__Schema__Generator__Mysql__Table.html" title="{ZendDbSchema_Db_Schema\l_Generator_Mysql_Table\n||+ createTable()\l+ alterTable()\l+ dropTable()\l+ createColumn()\l+ alterColumn()\l+ dropColumn()\l+ createIndex()\l+ alterIndex()\l+ dropIndex()\l+ addPrimaryKey()\l+ alterPrimaryKey()\l+ dropPrimaryKey()\l+ addForeignKey()\l+ alterForeignKey()\l+ dropForeignKey()\l# _columnSql()\l}" alt="" coords="5,381,200,744"/>
+<area shape="rect" id="node5" href="$classZendDbSchema__Db__Schema__Generator__Pgsql__Table.html" title="{ZendDbSchema_Db_Schema\l_Generator_Pgsql_Table\n||+ createTable()\l+ alterTable()\l+ dropTable()\l+ createColumn()\l+ alterColumn()\l+ dropColumn()\l+ createIndex()\l+ alterIndex()\l+ dropIndex()\l+ addPrimaryKey()\l+ dropPrimaryKey()\l+ addForeignKey()\l+ alterForeignKey()\l+ dropForeignKey()\l# _columnSql()\l}" alt="" coords="224,390,419,735"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classZendDbSchema__Db__Schema__AbstractSchema.html#a55787c21deddba427842809d589c2df6" title="ZendDbSchema_Db_Schema\l_AbstractSchema\\getName" alt="" coords="491,5,685,51"/>
+<area shape="rect" id="node9" href="$classZendDbSchema__Db__Schema__Generator__Pgsql__Table.html#ad02c019065d6f7e1e6a1ba713b6c9934" title="ZendDbSchema_Db_Schema\l_Generator_Pgsql_Table\l\\_columnSql" alt="" coords="248,65,443,129"/>
+<area shape="rect" id="node5" href="$classZendDbSchema__Db__Schema__AbstractSchema.html#a54d32c6f15463eaad2321a9f0e7225d7" title="ZendDbSchema_Db_Schema\l_AbstractSchema\\__get" alt="" coords="733,39,928,86"/>
+<area shape="rect" id="node7" href="$classZendDbSchema__Db__Schema__AbstractSchema.html#ac4e121ba7932163eb1950fabe06fb9db" title="ZendDbSchema_Db_Schema\l_AbstractSchema\\__isset" alt="" coords="976,39,1171,86"/>
+<area shape="rect" id="node11" href="$classZendDbSchema__Db__Schema__Table__Column.html#aeeed5820cfc4fac67507a196e9faa638" title="ZendDbSchema_Db_Schema\l_Table_Column\\isNullable" alt="" coords="491,74,685,121"/>
+</map>

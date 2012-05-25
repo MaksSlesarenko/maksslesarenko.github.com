@@ -1,0 +1,21 @@
+\hypertarget{DefinitionManager_2ForeignKey_8php}{\section{Foreign\-Key.\-php}
+\label{DefinitionManager_2ForeignKey_8php}\index{Db/\-Schema/\-Table/\-Definition\-Manager/\-Foreign\-Key.\-php@{Db/\-Schema/\-Table/\-Definition\-Manager/\-Foreign\-Key.\-php}}
+}
+
+\begin{DoxyCode}
+00001 <?php
+\hypertarget{DefinitionManager_2ForeignKey_8php_source_l00029}{}\hyperlink{classZendDbSchema__Db__Schema__Table__DefinitionManager__ForeignKey}{00029} \textcolor{keyword}{class }\hyperlink{classZendDbSchema__Db__Schema__Table__DefinitionManager__ForeignKey}{ZendDbSchema\_Db\_Schema\_Table\_DefinitionManager\_ForeignKey}
+00030     \textcolor{keyword}{extends} \hyperlink{classZendDbSchema__Db__Schema__Table__DefinitionManager__AbstractManager}{ZendDbSchema\_Db\_Schema\_Table\_DefinitionManager\_AbstractManager}
+00031 \{
+\hypertarget{DefinitionManager_2ForeignKey_8php_source_l00035}{}\hyperlink{classZendDbSchema__Db__Schema__Table__DefinitionManager__ForeignKey_a0115ad0d19116a1e2154193d3a204862}{00035}     \textcolor{keyword}{protected} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Table__DefinitionManager__ForeignKey_a0115ad0d19116a1e2154193d3a204862}{\_getItemClass}()
+00036     \{
+00037         \textcolor{keywordflow}{return} $this->\_table->getForeignClass();
+00038     \}
+00039 
+\hypertarget{DefinitionManager_2ForeignKey_8php_source_l00045}{}\hyperlink{classZendDbSchema__Db__Schema__Table__DefinitionManager__ForeignKey_a58d87365153cc9ffd9c9636b1dde918d}{00045}     \textcolor{keyword}{protected} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Table__DefinitionManager__ForeignKey_a58d87365153cc9ffd9c9636b1dde918d}{\_getSchemaKey}()
+00046     \{
+00047         \textcolor{keywordflow}{return} ZendDbSchema\_Db\_Schema\_Table::FOREIGNS\_KEY;
+00048     \}
+00049 
+00050 \}
+\end{DoxyCode}

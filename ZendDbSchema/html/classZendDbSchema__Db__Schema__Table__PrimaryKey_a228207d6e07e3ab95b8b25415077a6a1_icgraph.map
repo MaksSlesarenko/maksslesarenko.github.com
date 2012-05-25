@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classZendDbSchema__Db__Schema__Table__PrimaryKey.html#a0b84ee828c689a3da5790e123583f691" title="ZendDbSchema_Db_Schema\l_Table_PrimaryKey\\addColumn" alt="" coords="532,185,737,231"/>
+<area shape="rect" id="node5" href="$classZendDbSchema__Db__Schema__Generator__Pgsql__Table.html#a25c94e6add05e3ead557398dd62ae214" title="ZendDbSchema_Db_Schema\l_Generator_Pgsql_Table\l\\addPrimaryKey" alt="" coords="271,93,465,157"/>
+<area shape="rect" id="node7" href="$classZendDbSchema__Db__Schema__Generator__Mysql__Table.html#a9daf95057d9d7a294b6ef45487818503" title="ZendDbSchema_Db_Schema\l_Generator_Mysql_Table\l\\addPrimaryKey" alt="" coords="271,5,465,69"/>
+<area shape="rect" id="node11" href="$classZendDbSchema__Db__Schema__Table__PrimaryKey.html#a97ed55c2479299d4e75e98154f12c409" title="ZendDbSchema_Db_Schema\l_Table_PrimaryKey\\hasColumn" alt="" coords="265,231,471,278"/>
+<area shape="rect" id="node14" href="$classZendDbSchema__Db__Schema__Table__PrimaryKey.html#a6deb586d1cc0935f5c0d50afa47667de" title="ZendDbSchema_Db_Schema\l_Table_PrimaryKey\\removeColumn" alt="" coords="521,279,748,326"/>
+<area shape="rect" id="node9" href="$classZendDbSchema__Db__Schema__Generator__Mysql__Table.html#ade1a7272ca13e357fed6a1f96179bb8c" title="ZendDbSchema_Db_Schema\l_Generator_Mysql_Table\l\\alterPrimaryKey" alt="" coords="537,5,732,69"/>
+</map>

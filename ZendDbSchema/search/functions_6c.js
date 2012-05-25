@@ -1,6 +1,0 @@
-var searchData=
-[
-  ['listdatabases',['listDatabases',['../classZendDbSchema__Db__Adapter__Mysqli.html#abc74258342f5cd4b637feb4561b6ab37',1,'ZendDbSchema_Db_Adapter_Mysqli\listDatabases()'],['../classZendDbSchema__Db__Adapter__Pdo__Mysql.html#afa634812c724a9fcf35aeea357707d64',1,'ZendDbSchema_Db_Adapter_Pdo_Mysql\listDatabases()'],['../classZendDbSchema__Db__Adapter__Pdo__Pgsql.html#a869a9fd424bcb256dd16682c4b549ece',1,'ZendDbSchema_Db_Adapter_Pdo_Pgsql\listDatabases()'],['../interfaceZendDbSchema__Db__Adapter__SchemaCompatible.html#a4c7951a6b329d2106502dbbaae82e51d',1,'ZendDbSchema_Db_Adapter_SchemaCompatible\listDatabases()']]],
-  ['loaddatabase',['loadDatabase',['../interfaceZendDbSchema__Db__Schema__Loader__Interface.html#a1c1c3235cdcb31939507aa988a4df708',1,'ZendDbSchema_Db_Schema_Loader_Interface\loadDatabase()'],['../classZendDbSchema__Db__Schema__Loader__Mysql.html#a35f3291dc4087bbdd730e77f19ce68c8',1,'ZendDbSchema_Db_Schema_Loader_Mysql\loadDatabase()']]],
-  ['loadtable',['loadTable',['../interfaceZendDbSchema__Db__Schema__Loader__Interface.html#acc4d40a1927e6c3679d6070956683fb6',1,'ZendDbSchema_Db_Schema_Loader_Interface\loadTable()'],['../classZendDbSchema__Db__Schema__Loader__Mysql.html#addcd32dd3bea3f01f0442291d5e48568',1,'ZendDbSchema_Db_Schema_Loader_Mysql\loadTable()']]]
-];

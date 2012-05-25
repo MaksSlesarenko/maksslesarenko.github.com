@@ -1,5 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classZendDbSchema__Db__Migration__Skeleton.html#a1d08bca816aaff3ac27087d5e5daa2ff" title="ZendDbSchema_Db_Migration_Skeleton\\getAdapter" alt="" coords="384,32,709,61"/>
-<area shape="rect" id="node5" href="$classZendDbSchema__Db__Schema__AbstractEntity.html#aeeb617d5d385796ccbe95e0aa85cf491" title="ZendDbSchema_Db_Schema_AbstractEntity\\getDefaultAdapter" alt="" coords="757,5,1152,35"/>
-<area shape="rect" id="node7" href="$classZendDbSchema__Db__Migration__Skeleton.html#aa36d3a36801a4fe2dc5369f4fe68a516" title="ZendDbSchema_Db_Migration_Skeleton\\setAdapter" alt="" coords="792,59,1117,88"/>
-</map>

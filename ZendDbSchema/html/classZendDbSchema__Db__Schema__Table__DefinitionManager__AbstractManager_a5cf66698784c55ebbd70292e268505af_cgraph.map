@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classZendDbSchema__Db__Schema__Table__DefinitionManager__AbstractManager.html#a7503e344823c2a1e1e3beb80b8541116" title="ZendDbSchema_Db_Schema\l_Table_DefinitionManager\l_AbstractManager\\refresh" alt="" coords="253,30,448,94"/>
+<area shape="rect" id="node5" href="$classZendDbSchema__Db__Schema__Table__DefinitionManager__AbstractManager.html#ac62cf058c89132b0ff9223d9fcefdb8a" title="ZendDbSchema_Db_Schema\l_Table_DefinitionManager\l_AbstractManager\\_getItemClass" alt="" coords="1017,21,1233,85"/>
+<area shape="rect" id="node7" href="$classZendDbSchema__Db__Schema__Table__DefinitionManager__AbstractManager.html#ab930802b470913f09f29877ed094a760" title="ZendDbSchema_Db_Schema\l_Table_DefinitionManager\l_AbstractManager\\_getSchemaKey" alt="" coords="497,30,724,94"/>
+<area shape="rect" id="node9" href="$classZendDbSchema__Db__Schema__Table__DefinitionManager__AbstractManager.html#a40677ee7cb91e19c1587bdda9e73d3d5" title="ZendDbSchema_Db_Schema\l_Table_DefinitionManager\l_AbstractManager\\setFromArray" alt="" coords="505,118,716,182"/>
+<area shape="rect" id="node12" href="$classZendDbSchema__Db__Schema__Table__DefinitionManager__AbstractManager.html#ad0261d0db60ff459f97adc23b2d16931" title="ZendDbSchema_Db_Schema\l_Table_DefinitionManager\l_AbstractManager\\has" alt="" coords="1028,178,1223,242"/>
+<area shape="rect" id="node14" href="$classZendDbSchema__Db__Schema__Table__DefinitionManager__AbstractManager.html#a6d815884ca03c003ac7f8d633e97f7c6" title="ZendDbSchema_Db_Schema\l_Table_DefinitionManager\l_AbstractManager\\add" alt="" coords="773,102,968,166"/>
+<area shape="rect" id="node17" href="$classZendDbSchema__Db__Schema__AbstractSchema.html#adacb1417b461310c5c87f72c459c1985" title="ZendDbSchema_Db_Schema\l_AbstractSchema\\getOriginName" alt="" coords="1017,108,1233,155"/>
+<area shape="rect" id="node19" href="$classZendDbSchema__Db__Schema__AbstractSchema.html#a55787c21deddba427842809d589c2df6" title="ZendDbSchema_Db_Schema\l_AbstractSchema\\getName" alt="" coords="1283,108,1477,155"/>
+<area shape="rect" id="node21" href="$classZendDbSchema__Db__Schema__AbstractSchema.html#a54d32c6f15463eaad2321a9f0e7225d7" title="ZendDbSchema_Db_Schema\l_AbstractSchema\\__get" alt="" coords="1525,108,1720,155"/>
+<area shape="rect" id="node23" href="$classZendDbSchema__Db__Schema__AbstractSchema.html#ac4e121ba7932163eb1950fabe06fb9db" title="ZendDbSchema_Db_Schema\l_AbstractSchema\\__isset" alt="" coords="1768,108,1963,155"/>
+</map>

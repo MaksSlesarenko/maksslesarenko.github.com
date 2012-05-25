@@ -1,0 +1,381 @@
+\hypertarget{classZendDbSchema__Tool__Project__Provider__Schema}{\section{Zend\-Db\-Schema\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Provider\-\_\-\-Schema Class Reference}
+\label{classZendDbSchema__Tool__Project__Provider__Schema}\index{Zend\-Db\-Schema\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Provider\-\_\-\-Schema@{Zend\-Db\-Schema\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Provider\-\_\-\-Schema}}
+}
+
+
+Collaboration diagram for Zend\-Db\-Schema\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Provider\-\_\-\-Schema\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{classZendDbSchema__Tool__Project__Provider__Schema__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classZendDbSchema__Tool__Project__Provider__Schema_ae23994cc878a689226c458de95a7ecd1}{create\-Resource} (Zend\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Profile \$profile, \$schema\-Name, \$contents, \$force=false)
+\item 
+\hyperlink{classZendDbSchema__Tool__Project__Provider__Schema_a785beba0921fd9df3111a88499406d64}{get\-Context\-Classes} ()
+\item 
+\hyperlink{classZendDbSchema__Tool__Project__Provider__Schema_a5f0f3101bb7b9e252f6d6bed1ddadbe5}{pull} (\$type= 'table', \$name= '', \$force=false)
+\item 
+\hyperlink{classZendDbSchema__Tool__Project__Provider__Schema_aa7746bd0ed044ad415b1b7b884f7a007}{push} (\$type= 'table', \$name= '', \$force=false)
+\item 
+\hyperlink{classZendDbSchema__Tool__Project__Provider__Schema_a5741419511310dc38038399e9f4ac5e1}{status} (\$type, \$name)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classZendDbSchema__Tool__Project__Provider__Schema_a4bab978eff99970636ddf863266e9d96}{\-\_\-findfile} (\$profile, \$name)
+\item 
+\hyperlink{classZendDbSchema__Tool__Project__Provider__Schema_ae00f032a9818a3227d29bde827856256}{\-\_\-get\-Schema} (\$type, \$name)
+\item 
+\hyperlink{classZendDbSchema__Tool__Project__Provider__Schema_a7ec839cde120f748f3b0d6f24fa56d34}{\-\_\-get\-Filename} (\$type, \$name)
+\item 
+\hyperlink{classZendDbSchema__Tool__Project__Provider__Schema_a4bfcbf170571b61e24662b9d8bb8c95c}{\-\_\-bootstrap} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line \hyperlink{Schema_8php_source_l00029}{29} of file \hyperlink{Schema_8php_source}{Schema.\-php}.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classZendDbSchema__Tool__Project__Provider__Schema_a4bfcbf170571b61e24662b9d8bb8c95c}{\index{Zend\-Db\-Schema\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Provider\-\_\-\-Schema@{Zend\-Db\-Schema\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Provider\-\_\-\-Schema}!\-\_\-bootstrap@{\-\_\-bootstrap}}
+\index{\-\_\-bootstrap@{\-\_\-bootstrap}!ZendDbSchema_Tool_Project_Provider_Schema@{Zend\-Db\-Schema\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Provider\-\_\-\-Schema}}
+\subsubsection[{\-\_\-bootstrap}]{\setlength{\rightskip}{0pt plus 5cm}Zend\-Db\-Schema\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Provider\-\_\-\-Schema\-::\-\_\-bootstrap (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classZendDbSchema__Tool__Project__Provider__Schema_a4bfcbf170571b61e24662b9d8bb8c95c}
+Bootstrap
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Zend\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Provider\-\_\-\-Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \hyperlink{Schema_8php_source_l00267}{267} of file \hyperlink{Schema_8php_source}{Schema.\-php}.
+
+
+
+Referenced by \hyperlink{Schema_8php_source_l00139}{pull()}, \hyperlink{Schema_8php_source_l00177}{push()}, and \hyperlink{Schema_8php_source_l00225}{status()}.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classZendDbSchema__Tool__Project__Provider__Schema_a4bfcbf170571b61e24662b9d8bb8c95c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classZendDbSchema__Tool__Project__Provider__Schema_a4bab978eff99970636ddf863266e9d96}{\index{Zend\-Db\-Schema\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Provider\-\_\-\-Schema@{Zend\-Db\-Schema\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Provider\-\_\-\-Schema}!\-\_\-findfile@{\-\_\-findfile}}
+\index{\-\_\-findfile@{\-\_\-findfile}!ZendDbSchema_Tool_Project_Provider_Schema@{Zend\-Db\-Schema\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Provider\-\_\-\-Schema}}
+\subsubsection[{\-\_\-findfile}]{\setlength{\rightskip}{0pt plus 5cm}Zend\-Db\-Schema\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Provider\-\_\-\-Schema\-::\-\_\-findfile (
+\begin{DoxyParamCaption}
+\item[{}]{\$profile, }
+\item[{}]{\$name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classZendDbSchema__Tool__Project__Provider__Schema_a4bab978eff99970636ddf863266e9d96}
+Find file
+
+
+\begin{DoxyParams}[1]{Parameters}
+object & {\em \$profile} & \\
+\hline
+string & {\em \$name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object 
+\end{DoxyReturn}
+
+
+Definition at line \hyperlink{Schema_8php_source_l00092}{92} of file \hyperlink{Schema_8php_source}{Schema.\-php}.
+
+
+
+Referenced by \hyperlink{Schema_8php_source_l00046}{create\-Resource()}, \hyperlink{Schema_8php_source_l00177}{push()}, and \hyperlink{Schema_8php_source_l00225}{status()}.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classZendDbSchema__Tool__Project__Provider__Schema_a4bab978eff99970636ddf863266e9d96_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classZendDbSchema__Tool__Project__Provider__Schema_a7ec839cde120f748f3b0d6f24fa56d34}{\index{Zend\-Db\-Schema\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Provider\-\_\-\-Schema@{Zend\-Db\-Schema\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Provider\-\_\-\-Schema}!\-\_\-get\-Filename@{\-\_\-get\-Filename}}
+\index{\-\_\-get\-Filename@{\-\_\-get\-Filename}!ZendDbSchema_Tool_Project_Provider_Schema@{Zend\-Db\-Schema\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Provider\-\_\-\-Schema}}
+\subsubsection[{\-\_\-get\-Filename}]{\setlength{\rightskip}{0pt plus 5cm}Zend\-Db\-Schema\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Provider\-\_\-\-Schema\-::\-\_\-get\-Filename (
+\begin{DoxyParamCaption}
+\item[{}]{\$type, }
+\item[{}]{\$name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classZendDbSchema__Tool__Project__Provider__Schema_a7ec839cde120f748f3b0d6f24fa56d34}
+Get filename
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$type} & \\
+\hline
+string & {\em \$name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line \hyperlink{Schema_8php_source_l00257}{257} of file \hyperlink{Schema_8php_source}{Schema.\-php}.
+
+
+
+Referenced by \hyperlink{Schema_8php_source_l00139}{pull()}, \hyperlink{Schema_8php_source_l00177}{push()}, and \hyperlink{Schema_8php_source_l00225}{status()}.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classZendDbSchema__Tool__Project__Provider__Schema_a7ec839cde120f748f3b0d6f24fa56d34_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classZendDbSchema__Tool__Project__Provider__Schema_ae00f032a9818a3227d29bde827856256}{\index{Zend\-Db\-Schema\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Provider\-\_\-\-Schema@{Zend\-Db\-Schema\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Provider\-\_\-\-Schema}!\-\_\-get\-Schema@{\-\_\-get\-Schema}}
+\index{\-\_\-get\-Schema@{\-\_\-get\-Schema}!ZendDbSchema_Tool_Project_Provider_Schema@{Zend\-Db\-Schema\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Provider\-\_\-\-Schema}}
+\subsubsection[{\-\_\-get\-Schema}]{\setlength{\rightskip}{0pt plus 5cm}Zend\-Db\-Schema\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Provider\-\_\-\-Schema\-::\-\_\-get\-Schema (
+\begin{DoxyParamCaption}
+\item[{}]{\$type, }
+\item[{}]{\$name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classZendDbSchema__Tool__Project__Provider__Schema_ae00f032a9818a3227d29bde827856256}
+Get schema object
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$type} & \\
+\hline
+string & {\em \$name} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Zend\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Provider\-\_\-\-Exception} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classZendDbSchema__Db__Schema__AbstractEntity}{Zend\-Db\-Schema\-\_\-\-Db\-\_\-\-Schema\-\_\-\-Abstract\-Entity} 
+\end{DoxyReturn}
+
+
+Definition at line \hyperlink{Schema_8php_source_l00111}{111} of file \hyperlink{Schema_8php_source}{Schema.\-php}.
+
+
+
+Referenced by \hyperlink{Schema_8php_source_l00139}{pull()}, \hyperlink{Schema_8php_source_l00177}{push()}, and \hyperlink{Schema_8php_source_l00225}{status()}.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classZendDbSchema__Tool__Project__Provider__Schema_ae00f032a9818a3227d29bde827856256_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classZendDbSchema__Tool__Project__Provider__Schema_ae23994cc878a689226c458de95a7ecd1}{\index{Zend\-Db\-Schema\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Provider\-\_\-\-Schema@{Zend\-Db\-Schema\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Provider\-\_\-\-Schema}!create\-Resource@{create\-Resource}}
+\index{create\-Resource@{create\-Resource}!ZendDbSchema_Tool_Project_Provider_Schema@{Zend\-Db\-Schema\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Provider\-\_\-\-Schema}}
+\subsubsection[{create\-Resource}]{\setlength{\rightskip}{0pt plus 5cm}Zend\-Db\-Schema\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Provider\-\_\-\-Schema\-::create\-Resource (
+\begin{DoxyParamCaption}
+\item[{Zend\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Profile}]{\$profile, }
+\item[{}]{\$schema\-Name, }
+\item[{}]{\$contents, }
+\item[{}]{\$force = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{classZendDbSchema__Tool__Project__Provider__Schema_ae23994cc878a689226c458de95a7ecd1}
+This method is static for 2 reasons\-: 1) so that its not identifiable by the framework as something to execute 2) so that other providers can utilize this method to be able to \char`\"{}create\char`\"{} model resources. For example, you might have a larger system that wishes to create models. Instead of proxying through the Zend\-\_\-\-Tool\-\_\-\-Framework client and calling a command, it can setup the environment an call this method on an already known profile.
+
+
+\begin{DoxyParams}[1]{Parameters}
+Zend\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Profile & {\em \$profile} & \\
+\hline
+string & {\em \$model\-Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Zend\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Profile\-\_\-\-Resource 
+\end{DoxyReturn}
+
+
+Definition at line \hyperlink{Schema_8php_source_l00046}{46} of file \hyperlink{Schema_8php_source}{Schema.\-php}.
+
+
+
+Referenced by \hyperlink{Schema_8php_source_l00139}{pull()}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classZendDbSchema__Tool__Project__Provider__Schema_ae23994cc878a689226c458de95a7ecd1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classZendDbSchema__Tool__Project__Provider__Schema_ae23994cc878a689226c458de95a7ecd1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classZendDbSchema__Tool__Project__Provider__Schema_a785beba0921fd9df3111a88499406d64}{\index{Zend\-Db\-Schema\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Provider\-\_\-\-Schema@{Zend\-Db\-Schema\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Provider\-\_\-\-Schema}!get\-Context\-Classes@{get\-Context\-Classes}}
+\index{get\-Context\-Classes@{get\-Context\-Classes}!ZendDbSchema_Tool_Project_Provider_Schema@{Zend\-Db\-Schema\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Provider\-\_\-\-Schema}}
+\subsubsection[{get\-Context\-Classes}]{\setlength{\rightskip}{0pt plus 5cm}Zend\-Db\-Schema\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Provider\-\_\-\-Schema\-::get\-Context\-Classes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classZendDbSchema__Tool__Project__Provider__Schema_a785beba0921fd9df3111a88499406d64}
+This method returns the classes to load as contexts. Since this provider is creating 'Model\-File', it will need this context
+
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Definition at line \hyperlink{Schema_8php_source_l00077}{77} of file \hyperlink{Schema_8php_source}{Schema.\-php}.
+
+\hypertarget{classZendDbSchema__Tool__Project__Provider__Schema_a5f0f3101bb7b9e252f6d6bed1ddadbe5}{\index{Zend\-Db\-Schema\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Provider\-\_\-\-Schema@{Zend\-Db\-Schema\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Provider\-\_\-\-Schema}!pull@{pull}}
+\index{pull@{pull}!ZendDbSchema_Tool_Project_Provider_Schema@{Zend\-Db\-Schema\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Provider\-\_\-\-Schema}}
+\subsubsection[{pull}]{\setlength{\rightskip}{0pt plus 5cm}Zend\-Db\-Schema\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Provider\-\_\-\-Schema\-::pull (
+\begin{DoxyParamCaption}
+\item[{}]{\$type = {\ttfamily 'table'}, }
+\item[{}]{\$name = {\ttfamily ''}, }
+\item[{}]{\$force = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{classZendDbSchema__Tool__Project__Provider__Schema_a5f0f3101bb7b9e252f6d6bed1ddadbe5}
+Pull schema to config file
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$type} & table or database \\
+\hline
+string & {\em \$name} & entity name \\
+\hline
+boolen & {\em \$force} & overwrite existing file \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{Schema_8php_source_l00139}{139} of file \hyperlink{Schema_8php_source}{Schema.\-php}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classZendDbSchema__Tool__Project__Provider__Schema_a5f0f3101bb7b9e252f6d6bed1ddadbe5_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classZendDbSchema__Tool__Project__Provider__Schema_aa7746bd0ed044ad415b1b7b884f7a007}{\index{Zend\-Db\-Schema\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Provider\-\_\-\-Schema@{Zend\-Db\-Schema\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Provider\-\_\-\-Schema}!push@{push}}
+\index{push@{push}!ZendDbSchema_Tool_Project_Provider_Schema@{Zend\-Db\-Schema\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Provider\-\_\-\-Schema}}
+\subsubsection[{push}]{\setlength{\rightskip}{0pt plus 5cm}Zend\-Db\-Schema\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Provider\-\_\-\-Schema\-::push (
+\begin{DoxyParamCaption}
+\item[{}]{\$type = {\ttfamily 'table'}, }
+\item[{}]{\$name = {\ttfamily ''}, }
+\item[{}]{\$force = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{classZendDbSchema__Tool__Project__Provider__Schema_aa7746bd0ed044ad415b1b7b884f7a007}
+Push schema from config file to database
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$type} & table or database \\
+\hline
+string & {\em \$name} & entity name \\
+\hline
+boolen & {\em \$force} & overwrite existing file \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{Schema_8php_source_l00177}{177} of file \hyperlink{Schema_8php_source}{Schema.\-php}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classZendDbSchema__Tool__Project__Provider__Schema_aa7746bd0ed044ad415b1b7b884f7a007_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classZendDbSchema__Tool__Project__Provider__Schema_a5741419511310dc38038399e9f4ac5e1}{\index{Zend\-Db\-Schema\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Provider\-\_\-\-Schema@{Zend\-Db\-Schema\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Provider\-\_\-\-Schema}!status@{status}}
+\index{status@{status}!ZendDbSchema_Tool_Project_Provider_Schema@{Zend\-Db\-Schema\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Provider\-\_\-\-Schema}}
+\subsubsection[{status}]{\setlength{\rightskip}{0pt plus 5cm}Zend\-Db\-Schema\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Provider\-\_\-\-Schema\-::status (
+\begin{DoxyParamCaption}
+\item[{}]{\$type, }
+\item[{}]{\$name}
+\end{DoxyParamCaption}
+)}}\label{classZendDbSchema__Tool__Project__Provider__Schema_a5741419511310dc38038399e9f4ac5e1}
+Show status
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$type} & \\
+\hline
+string & {\em \$name} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Zend\-\_\-\-Tool\-\_\-\-Project\-\_\-\-Provider\-\_\-\-Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \hyperlink{Schema_8php_source_l00225}{225} of file \hyperlink{Schema_8php_source}{Schema.\-php}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classZendDbSchema__Tool__Project__Provider__Schema_a5741419511310dc38038399e9f4ac5e1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Tool/\-Project/\-Provider/Schema.\-php\end{DoxyCompactItemize}

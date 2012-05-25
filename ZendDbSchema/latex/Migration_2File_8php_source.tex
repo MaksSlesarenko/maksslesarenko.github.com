@@ -1,0 +1,27 @@
+\hypertarget{Migration_2File_8php}{\section{File.\-php}
+\label{Migration_2File_8php}\index{Tool/\-Project/\-Context/\-Migration/\-File.\-php@{Tool/\-Project/\-Context/\-Migration/\-File.\-php}}
+}
+
+\begin{DoxyCode}
+00001 <?php
+\hypertarget{Migration_2File_8php_source_l00029}{}\hyperlink{classZendDbSchema__Tool__Project__Context__Migration__File}{00029} \textcolor{keyword}{class }\hyperlink{classZendDbSchema__Tool__Project__Context__Migration__File}{ZendDbSchema\_Tool\_Project\_Context\_Migration\_File}
+00030     \textcolor{keyword}{extends} Zend\_Tool\_Project\_Context\_Filesystem\_File
+00031 \{
+\hypertarget{Migration_2File_8php_source_l00037}{}\hyperlink{classZendDbSchema__Tool__Project__Context__Migration__File_ac1d388b7231c122b2f0cc65f7e2bb4e1}{00037}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Tool__Project__Context__Migration__File_ac1d388b7231c122b2f0cc65f7e2bb4e1}{getName}()
+00038     \{
+00039         \textcolor{keywordflow}{return} \textcolor{stringliteral}{'MigrationFile'};
+00040     \}
+00041 
+\hypertarget{Migration_2File_8php_source_l00045}{}\hyperlink{classZendDbSchema__Tool__Project__Context__Migration__File_a28e346990ae4a5381ed7246e66af48e5}{00045}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Tool__Project__Context__Migration__File_a28e346990ae4a5381ed7246e66af48e5}{getContents}()
+00046     \{
+00047         $skeleton = \textcolor{keyword}{new} \hyperlink{classZendDbSchema__Db__Migration__Skeleton}{ZendDbSchema\_Db\_Migration\_Skeleton}
+      ();
+00048         $skeleton->setMethodUp();
+00049         $skeleton->setMethodDown();
+00050         $skeleton->addSchema();
+00051         $skeleton->setVersion($this->\_filesystemName);
+00052 
+00053         \textcolor{keywordflow}{return} $skeleton->getFile();
+00054     \}
+00055 \}
+\end{DoxyCode}

@@ -1,8 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node1" href="$classZendDbSchema__Validate__Db__Schema__Chain.html" title="ZendDbSchema_Validate_Db_Schema_Chain" alt="" coords="5,59,296,88"/>
-<area shape="rect" id="node3" href="$classZendDbSchema__Validate__Db__Schema__AbstractDatabase.html" title="ZendDbSchema_Validate_Db_Schema_AbstractDatabase" alt="" coords="356,5,716,35"/>
-<area shape="rect" id="node7" href="$classZendDbSchema__Validate__Db__Schema__AbstractTable.html" title="ZendDbSchema_Validate_Db_Schema_AbstractTable" alt="" coords="368,59,704,88"/>
-<area shape="rect" id="node11" href="$classZendDbSchema__Validate__Db__Schema__Table__Mysql__Column.html" title="ZendDbSchema_Validate_Db_Schema_Table_Mysql_Column" alt="" coords="345,112,727,141"/>
-<area shape="rect" id="node5" href="$classZendDbSchema__Validate__Db__Schema__Database__MysqlDatabase.html" title="ZendDbSchema_Validate_Db_Schema_Database_MysqlDatabase" alt="" coords="776,5,1187,35"/>
-<area shape="rect" id="node9" href="$classZendDbSchema__Validate__Db__Schema__Table__MysqlTable.html" title="ZendDbSchema_Validate_Db_Schema_Table_MysqlTable" alt="" coords="800,59,1163,88"/>
-</map>

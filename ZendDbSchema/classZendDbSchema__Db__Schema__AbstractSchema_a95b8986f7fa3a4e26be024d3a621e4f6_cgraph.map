@@ -1,8 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classZendDbSchema__Db__Schema__AbstractSchema.html#a84673a5d69f10fec5b31294bf53f6d56" title="ZendDbSchema_Db_Schema_AbstractSchema\\refresh" alt="" coords="425,31,767,60"/>
-<area shape="rect" id="node14" href="$classZendDbSchema__Db__Schema__AbstractSchema.html#abdb3f6e9b394b51512ce1567bb252b63" title="ZendDbSchema_Db_Schema_AbstractSchema\\init" alt="" coords="436,84,756,113"/>
-<area shape="rect" id="node5" href="$classZendDbSchema__Db__Schema__AbstractSchema.html#ab4282a1fd6f4d9f23d01de8328072c71" title="ZendDbSchema_Db_Schema_AbstractSchema\\__set" alt="" coords="1305,5,1639,35"/>
-<area shape="rect" id="node7" href="$classZendDbSchema__Db__Schema__AbstractSchema.html#a46da7a60c7e5fd605607afbc1dac4baa" title="ZendDbSchema_Db_Schema_AbstractSchema\\getCleanSchema" alt="" coords="816,84,1219,113"/>
-<area shape="rect" id="node11" href="$classZendDbSchema__Db__Schema__AbstractSchema.html#acd81590f02c831ff4c4a442c5cf47074" title="ZendDbSchema_Db_Schema_AbstractSchema\\setFromArray" alt="" coords="827,31,1208,60"/>
-<area shape="rect" id="node9" href="$classZendDbSchema__Db__Schema__AbstractSchema.html#af99e5bb9adfe0da8c94d3d3848efe7b5" title="ZendDbSchema_Db_Schema_AbstractSchema\\_getCleanSchema" alt="" coords="1267,84,1677,113"/>
-</map>

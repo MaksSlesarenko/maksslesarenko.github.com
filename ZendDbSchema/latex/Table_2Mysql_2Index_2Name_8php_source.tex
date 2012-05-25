@@ -1,0 +1,39 @@
+\hypertarget{Table_2Mysql_2Index_2Name_8php}{\section{Name.\-php}
+\label{Table_2Mysql_2Index_2Name_8php}\index{Validate/\-Db/\-Schema/\-Table/\-Mysql/\-Index/\-Name.\-php@{Validate/\-Db/\-Schema/\-Table/\-Mysql/\-Index/\-Name.\-php}}
+}
+
+\begin{DoxyCode}
+00001 <?php
+\hypertarget{Table_2Mysql_2Index_2Name_8php_source_l00029}{}\hyperlink{classZendDbSchema__Validate__Db__Schema__Table__Mysql__Index__Name}{00029} \textcolor{keyword}{class }\hyperlink{classZendDbSchema__Validate__Db__Schema__Table__Mysql__Index__Name}{ZendDbSchema\_Validate\_Db\_Schema\_Table\_Mysql\_Index\_Name}
+00030     \textcolor{keyword}{extends} Zend\_Validate\_Abstract
+00031 \{
+00032     \textcolor{keyword}{const} NAME\_EMPTY      = \textcolor{stringliteral}{'indexNameEmpty'};
+00033     \textcolor{keyword}{const} RENAME          = \textcolor{stringliteral}{'indexRename'};
+00034 
+00038     \textcolor{keyword}{protected} $\_messageTemplates = array(
+00039         self::NAME\_EMPTY      => \textcolor{stringliteral}{"Index name can not be empty"},
+00040         self::RENAME          => \textcolor{stringliteral}{"Cannot change name of existing index"}
+00041     );
+00042 
+\hypertarget{Table_2Mysql_2Index_2Name_8php_source_l00049}{}\hyperlink{classZendDbSchema__Validate__Db__Schema__Table__Mysql__Index__Name_a3d89ef5c6c90596b33569a18698a8b54}{00049}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Validate__Db__Schema__Table__Mysql__Index__Name_a3d89ef5c6c90596b33569a18698a8b54}{isValid}($value)
+00050     \{
+00051         $schema = null;
+00052         \textcolor{keywordflow}{if} ($value instanceof \hyperlink{classZendDbSchema__Db__Schema__Table__Index}{ZendDbSchema\_Db\_Schema\_Table\_Index}
+      ) \{
+00053             $schema = $value;
+00054             $value = $schema->getName();
+00055         \}
+00056         \textcolor{keywordflow}{if} (empty($value)) \{
+00057             $this->\_error(self::NAME\_EMPTY);
+00058             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00059         \}
+00060         \textcolor{keywordflow}{if} ($schema && $schema->isDirty(\textcolor{stringliteral}{'name'})) \{
+00061             \textcolor{keywordflow}{if} ($schema->isExist()) \{
+00062                 $this->\_error(self::RENAME, $value);
+00063                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00064             \}
+00065         \}
+00066         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+00067     \}
+00068 \}
+\end{DoxyCode}

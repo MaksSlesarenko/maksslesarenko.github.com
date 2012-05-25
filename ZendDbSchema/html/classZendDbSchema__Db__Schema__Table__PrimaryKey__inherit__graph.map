@@ -1,0 +1,4 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$classZendDbSchema__Db__Schema__Table__AbstractDefinition.html" title="{ZendDbSchema_Db_Schema\l_Table_AbstractDefinition\n|# $_table\l# $_toDelete\l|+ __construct()\l+ __clone()\l+ __set()\l+ isDirty()\l+ toSql()\l+ getTable()\l+ markDeleted()\l+ isDeleted()\l# _getSchemaKey()\l# _getCleanSchema()\l}" alt="" coords="5,435,200,711"/>
+<area shape="rect" id="node4" href="$classZendDbSchema__Db__Schema__AbstractSchema.html" title="{ZendDbSchema_Db_Schema\l_AbstractSchema\n|+ NAME_KEY\l# $_params\l# $_name\l|+ isExist()\l+ isDirty()\l+ getCleanSchema()\l+ refresh()\l+ __construct()\l+ init()\l+ __toString()\l+ __get()\l+ __isset()\l+ __set()\land 10 more...\l# _getCleanSchema()\l# _getAlterSql()\l# _getCreateSql()\l# _getDropSql()\l}" alt="" coords="5,6,200,386"/>
+</map>

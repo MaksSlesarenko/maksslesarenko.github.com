@@ -1,0 +1,28 @@
+\hypertarget{Mysqli_8php}{\section{Mysqli.\-php}
+\label{Mysqli_8php}\index{Db/\-Adapter/\-Mysqli.\-php@{Db/\-Adapter/\-Mysqli.\-php}}
+}
+
+\begin{DoxyCode}
+00001 <?php
+\hypertarget{Mysqli_8php_source_l00029}{}\hyperlink{classZendDbSchema__Db__Adapter__Mysqli}{00029} \textcolor{keyword}{class }\hyperlink{classZendDbSchema__Db__Adapter__Mysqli}{ZendDbSchema\_Db\_Adapter\_Mysqli} \textcolor{keyword}{extends} 
+      Zend\_Db\_Adapter\_Mysqli
+00030     implements \hyperlink{interfaceZendDbSchema__Db__Adapter__SchemaCompatible}{ZendDbSchema\_Db\_Adapter\_SchemaCompatible}
+00031 \{
+\hypertarget{Mysqli_8php_source_l00038}{}\hyperlink{classZendDbSchema__Db__Adapter__Mysqli_a6ccb0e30dd7c6eae3e91079f1f978444}{00038}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Adapter__Mysqli_a6ccb0e30dd7c6eae3e91079f1f978444}{hasDatabase}($name)
+00039     \{
+00040         \textcolor{keywordflow}{return} in\_array($name, $this->\hyperlink{classZendDbSchema__Db__Adapter__Mysqli_abc74258342f5cd4b637feb4561b6ab37}{listDatabases}());
+00041     \}
+00042 
+\hypertarget{Mysqli_8php_source_l00048}{}\hyperlink{classZendDbSchema__Db__Adapter__Mysqli_abc74258342f5cd4b637feb4561b6ab37}{00048}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Adapter__Mysqli_abc74258342f5cd4b637feb4561b6ab37}{listDatabases}()
+00049     \{
+00050         \textcolor{keywordflow}{return} $this->fetchCol(\textcolor{stringliteral}{"SHOW DATABASES"});
+00051     \}
+00052 
+\hypertarget{Mysqli_8php_source_l00059}{}\hyperlink{classZendDbSchema__Db__Adapter__Mysqli_a15fe5991fb07fff863ea1bde93baca0a}{00059}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Adapter__Mysqli_a15fe5991fb07fff863ea1bde93baca0a}{hasTable}($name)
+00060     \{
+00061         $tables = $this->listTables();
+00062 
+00063         \textcolor{keywordflow}{return} in\_array($name, $tables);
+00064     \}
+00065 \}
+\end{DoxyCode}

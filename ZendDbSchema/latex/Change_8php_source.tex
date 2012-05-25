@@ -1,0 +1,84 @@
+\hypertarget{Change_8php}{\section{Change.\-php}
+\label{Change_8php}\index{Db/\-Migration/\-Change.\-php@{Db/\-Migration/\-Change.\-php}}
+}
+
+\begin{DoxyCode}
+00001 <?php
+\hypertarget{Change_8php_source_l00029}{}\hyperlink{classZendDbSchema__Db__Migration__Change}{00029} \textcolor{keyword}{abstract} \textcolor{keyword}{class }\hyperlink{classZendDbSchema__Db__Migration__Change}{ZendDbSchema\_Db\_Migration\_Change}
+00030 \{
+00034     \textcolor{keyword}{protected} $\_downgradable = \textcolor{keyword}{true};
+00035 
+00039     \textcolor{keyword}{protected} $\_databasesConfig = array();
+00040 
+00044     \textcolor{keyword}{protected} $\_tablesConfig = array();
+00045 
+00046 
+00050     \textcolor{keyword}{protected} $\_description = \textcolor{stringliteral}{''};
+00051 
+00055     \textcolor{keyword}{abstract} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Migration__Change_a86704d3490f84843fc211d69519a3c45}{up}();
+00056 
+00060     \textcolor{keyword}{abstract} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Migration__Change_a1f4e03bb7407c472f19ccef2eaa95c04}{down}();
+00061 
+\hypertarget{Change_8php_source_l00065}{}\hyperlink{classZendDbSchema__Db__Migration__Change_ab2d12c5db5ac9d0504df4627cbf681f0}{00065}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Migration__Change_ab2d12c5db5ac9d0504df4627cbf681f0}{\_\_toString}()
+00066     \{
+00067         \textcolor{keywordflow}{return} $this->\hyperlink{classZendDbSchema__Db__Migration__Change_a924196733cc66d840a96a5faae311ed4}{getVersion}();
+00068     \}
+00069 
+\hypertarget{Change_8php_source_l00075}{}\hyperlink{classZendDbSchema__Db__Migration__Change_a3cd467163053caf7a3da8f23258c0546}{00075}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Migration__Change_a3cd467163053caf7a3da8f23258c0546}{getName}()
+00076     \{
+00077         \textcolor{keywordflow}{return} get\_class($this);
+00078     \}
+00079 
+\hypertarget{Change_8php_source_l00085}{}\hyperlink{classZendDbSchema__Db__Migration__Change_acd9a6ab871cc3feb9f0ec89c3ddc9425}{00085}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Migration__Change_acd9a6ab871cc3feb9f0ec89c3ddc9425}{getDescription}()
+00086     \{
+00087         \textcolor{keywordflow}{return} $this->\_description;
+00088     \}
+00089 
+\hypertarget{Change_8php_source_l00095}{}\hyperlink{classZendDbSchema__Db__Migration__Change_aeafd5d65ad6c164bb095f9c534ae3d2d}{00095}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Migration__Change_aeafd5d65ad6c164bb095f9c534ae3d2d}{isDowngradable}()
+00096     \{
+00097         \textcolor{keywordflow}{return} (\textcolor{keywordtype}{bool}) $this->\_downgradable;
+00098     \}
+00099 
+\hypertarget{Change_8php_source_l00105}{}\hyperlink{classZendDbSchema__Db__Migration__Change_a4415665402752a745bc97b5f6228a1b5}{00105}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Migration__Change_a4415665402752a745bc97b5f6228a1b5}{getTablesConfig}()
+00106     \{
+00107         \textcolor{keywordflow}{return} $this->\_tablesConfig;
+00108     \}
+00109 
+\hypertarget{Change_8php_source_l00115}{}\hyperlink{classZendDbSchema__Db__Migration__Change_ab859a88754ae761808fbf3ecb1e11160}{00115}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Migration__Change_ab859a88754ae761808fbf3ecb1e11160}{getDatabasesConfig}()
+00116     \{
+00117         \textcolor{keywordflow}{return} $this->\_databasesConfig;
+00118     \}
+00119 
+\hypertarget{Change_8php_source_l00125}{}\hyperlink{classZendDbSchema__Db__Migration__Change_a924196733cc66d840a96a5faae311ed4}{00125}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Migration__Change_a924196733cc66d840a96a5faae311ed4}{getVersion}()
+00126     \{
+00127         \textcolor{keywordflow}{return} substr(get\_class($this), 10);
+00128     \}
+00129 
+\hypertarget{Change_8php_source_l00138}{}\hyperlink{classZendDbSchema__Db__Migration__Change_ac90aa7dd80e395fe3ba86d3f89ae5b7b}{00138}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Migration__Change_ac90aa7dd80e395fe3ba86d3f89ae5b7b}{compareVersion}($version, $operator = null)
+00139     \{
+00140         \textcolor{keywordflow}{if} ($version instanceof \hyperlink{classZendDbSchema__Db__Migration__Change}{ZendDbSchema\_Db\_Migration\_Change}
+      ) \{
+00141             $version = $version->getVersion();
+00142         \}
+00143         $version = strtolower($version);
+00144         $current = strtolower($this->\hyperlink{classZendDbSchema__Db__Migration__Change_a924196733cc66d840a96a5faae311ed4}{getVersion}());
+00145 
+00146         \textcolor{keywordflow}{return} version\_compare($version, $current, $operator);
+00147     \}
+00148 
+\hypertarget{Change_8php_source_l00156}{}\hyperlink{classZendDbSchema__Db__Migration__Change_abd5253380521e63e91099a6ab3b89387}{00156}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Migration__Change_abd5253380521e63e91099a6ab3b89387}{fromFile}($file)
+00157     \{
+00158         \textcolor{keywordflow}{if} ($file instanceof SplFileInfo) \{
+00159             $file =  $file->getPathname();
+00160         \}
+00161         \textcolor{keywordflow}{if} (!realpath($file) || !is\_file($file)) \{
+00162             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} \hyperlink{classZendDbSchema__Db__Migration__Exception}{ZendDbSchema\_Db\_Migration\_Exception}
+      (\textcolor{stringliteral}{"\{$file\} not exists"});
+00163         \}
+00164         include\_once $file;
+00165         $class = \hyperlink{classZendDbSchema__Db__Migration__Skeleton_a5846d949a449ef981b1c1e1be9eed03a}{ZendDbSchema\_Db\_Migration\_Skeleton::getClassName}
+      ($file);
+00166         \textcolor{keywordflow}{return} \textcolor{keyword}{new} $class;
+00167     \}
+00168 \}
+\end{DoxyCode}

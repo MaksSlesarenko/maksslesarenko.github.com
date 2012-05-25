@@ -1,0 +1,47 @@
+\hypertarget{AbstractValidator_8php_source}{\section{\-Db/\-Schema/\-Validator/\-Abstract\-Validator.php}
+}
+
+\begin{DoxyCode}
+00001 <?php
+\hypertarget{AbstractValidator_8php_source_l00029}{}\hyperlink{classZendDbSchema__Db__Schema__Validator__AbstractValidator}{00029} \textcolor{keyword}{abstract} \textcolor{keyword}{class }\hyperlink{classZendDbSchema__Db__Schema__Validator__AbstractValidator}{ZendDbSchema_Db_Schema_Validator_AbstractValidator}
+00030 \{
+00039     \textcolor{keyword}{abstract} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Validator__AbstractValidator_abb84d37eb5e10ce0549831b7ad9d13f4}{validateDatabase}(\hyperlink{classZendDbSchema__Db__Schema__Database}{ZendDbSchema_Db_Schema_Database} $schema,
+       $option, $value);
+00040 
+00049     \textcolor{keyword}{abstract} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Validator__AbstractValidator_a097f3953952902e3a2d48e200427ed8b}{validateTable}(\hyperlink{classZendDbSchema__Db__Schema__Table}{ZendDbSchema_Db_Schema_Table} $schema, 
+      $option, $value);
+00050 
+00059     \textcolor{keyword}{abstract} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Validator__AbstractValidator_a676a382f8473dc61a6f037c768d18d67}{validateColumn}(\hyperlink{classZendDbSchema__Db__Schema__Table__Column}{ZendDbSchema_Db_Schema_Table_Column} 
+      $schema, $option, $value);
+00060 
+00069     \textcolor{keyword}{abstract} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Validator__AbstractValidator_ad23ee9d8c93ea569ed25aaf27b306a1a}{validateIndex}(\hyperlink{classZendDbSchema__Db__Schema__Table__Index}{ZendDbSchema_Db_Schema_Table_Index} $schema,
+       $option, $value);
+00070 
+00079     \textcolor{keyword}{abstract} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Validator__AbstractValidator_a9f62f245e92b12be87b633dfb5810470}{validatePrimaryKey}(\hyperlink{classZendDbSchema__Db__Schema__Table__PrimaryKey}{ZendDbSchema_Db_Schema_Table_PrimaryKey}
+       $schema, $option, $value);
+00080 
+00089     \textcolor{keyword}{abstract} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Validator__AbstractValidator_a0fa9765711f41a11dd69511b9d1cc11b}{validateForeignKey}(\hyperlink{classZendDbSchema__Db__Schema__Table__ForeignKey}{ZendDbSchema_Db_Schema_Table_ForeignKey}
+       $schema, $option, $value);
+00090 
+\hypertarget{AbstractValidator_8php_source_l00099}{}\hyperlink{classZendDbSchema__Db__Schema__Validator__AbstractValidator_a86b603d430092a56aaa126f1194b317b}{00099}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Validator__AbstractValidator_a86b603d430092a56aaa126f1194b317b}{validate}(\hyperlink{classZendDbSchema__Db__Schema__AbstractSchema}{ZendDbSchema_Db_Schema_AbstractSchema} $schema, 
+      $option = null, $value = null)
+00100     \{
+00101         \textcolor{keywordflow}{switch} ($type = get\_class($schema)) \{
+00102             \textcolor{keywordflow}{case} \textcolor{stringliteral}{'ZendDbSchema\_Db\_Schema\_Database'}:
+00103                 \textcolor{keywordflow}{return} $this->\hyperlink{classZendDbSchema__Db__Schema__Validator__AbstractValidator_abb84d37eb5e10ce0549831b7ad9d13f4}{validateDatabase}($schema, $option, $value);
+00104             \textcolor{keywordflow}{case} \textcolor{stringliteral}{'ZendDbSchema\_Db\_Schema\_Table'}:
+00105                 \textcolor{keywordflow}{return} $this->\hyperlink{classZendDbSchema__Db__Schema__Validator__AbstractValidator_a097f3953952902e3a2d48e200427ed8b}{validateTable}($schema, $option, $value);
+00106             \textcolor{keywordflow}{case} \textcolor{stringliteral}{'ZendDbSchema\_Db\_Schema\_Table\_Column'}:
+00107                 \textcolor{keywordflow}{return} $this->\hyperlink{classZendDbSchema__Db__Schema__Validator__AbstractValidator_a676a382f8473dc61a6f037c768d18d67}{validateColumn}($schema, $option, $value);
+00108             \textcolor{keywordflow}{case} \textcolor{stringliteral}{'ZendDbSchema\_Db\_Schema\_Table\_Index'}:
+00109                 \textcolor{keywordflow}{return} $this->\hyperlink{classZendDbSchema__Db__Schema__Validator__AbstractValidator_ad23ee9d8c93ea569ed25aaf27b306a1a}{validateIndex}($schema, $option, $value);
+00110             \textcolor{keywordflow}{case} \textcolor{stringliteral}{'ZendDbSchema\_Db\_Schema\_Table\_PrimaryKey'}:
+00111                 \textcolor{keywordflow}{return} $this->\hyperlink{classZendDbSchema__Db__Schema__Validator__AbstractValidator_a9f62f245e92b12be87b633dfb5810470}{validatePrimaryKey}($schema, $option, $value);
+00112             \textcolor{keywordflow}{case} \textcolor{stringliteral}{'ZendDbSchema\_Db\_Schema\_Table\_ForeignKey'}:
+00113                 \textcolor{keywordflow}{return} $this->\hyperlink{classZendDbSchema__Db__Schema__Validator__AbstractValidator_a0fa9765711f41a11dd69511b9d1cc11b}{validateForeignKey}($schema, $option, $value);
+00114         \}
+00115         \textcolor{keywordflow}{throw} \textcolor{keyword}{new} \hyperlink{classZendDbSchema__Db__Schema__Exception}{ZendDbSchema_Db_Schema_Exception}(\textcolor{stringliteral}{"Unknown schema type
+       '\{$type\}'"});
+00116     \}
+00117 \}
+\end{DoxyCode}

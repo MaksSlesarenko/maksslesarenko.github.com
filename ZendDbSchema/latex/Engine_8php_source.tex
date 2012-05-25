@@ -1,0 +1,52 @@
+\hypertarget{Engine_8php}{\section{Engine.\-php}
+\label{Engine_8php}\index{Validate/\-Db/\-Schema/\-Table/\-Mysql/\-Engine.\-php@{Validate/\-Db/\-Schema/\-Table/\-Mysql/\-Engine.\-php}}
+}
+
+\begin{DoxyCode}
+00001 <?php
+\hypertarget{Engine_8php_source_l00029}{}\hyperlink{classZendDbSchema__Validate__Db__Schema__Table__Mysql__Engine}{00029} \textcolor{keyword}{class }\hyperlink{classZendDbSchema__Validate__Db__Schema__Table__Mysql__Engine}{ZendDbSchema\_Validate\_Db\_Schema\_Table\_Mysql\_Engine}
+00030     \textcolor{keyword}{extends} Zend\_Validate\_Abstract
+00031 \{
+00032     \textcolor{keyword}{const} ENGINE\_EMPTY = \textcolor{stringliteral}{'tableEngineEmpty'};
+00033     \textcolor{keyword}{const} INVALID      = \textcolor{stringliteral}{'tableEngineInvalid'};
+00034     \textcolor{keyword}{const} NOT\_AVAIBLE  = \textcolor{stringliteral}{'tableEngineNotAvaible'};
+00035 
+00039     \textcolor{keyword}{protected} $\_messageTemplates = array(
+00040         self::ENGINE\_EMPTY => \textcolor{stringliteral}{"table engine can not be empty"},
+00041         self::INVALID      => \textcolor{stringliteral}{'Engine %value% is not valid engine type'},
+00042         self::NOT\_AVAIBLE  => \textcolor{stringliteral}{"Engine %value% is not avaible"}
+00043     );
+00044 
+00048     \textcolor{keyword}{protected} $\_tableEngines = array(
+00049         \textcolor{stringliteral}{'MYISAM'},
+00050         \textcolor{stringliteral}{'MEMORY'},
+00051         \textcolor{stringliteral}{'INNODB'},
+00052         \textcolor{stringliteral}{'FEDERATED'},
+00053         \textcolor{stringliteral}{'BLACKHOLE'},
+00054         \textcolor{stringliteral}{'MERGE'},
+00055         \textcolor{stringliteral}{'EXAMPLE'},
+00056         \textcolor{stringliteral}{'ARCHIVE'},
+00057         \textcolor{stringliteral}{'CSV'}
+00058     );
+00059 
+\hypertarget{Engine_8php_source_l00066}{}\hyperlink{classZendDbSchema__Validate__Db__Schema__Table__Mysql__Engine_aaa4950844a26ade073c1ffcee79d9c14}{00066}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Validate__Db__Schema__Table__Mysql__Engine_aaa4950844a26ade073c1ffcee79d9c14}{isValid}($value)
+00067     \{
+00068         $schema = null;
+00069         \textcolor{keywordflow}{if} ($value instanceof \hyperlink{classZendDbSchema__Db__Schema__Table}{ZendDbSchema\_Db\_Schema\_Table}
+      ) \{
+00070             $schema = $value;
+00071             $value = $schema->\_\_get(\textcolor{stringliteral}{'engine'});
+00072         \}
+00073 
+00074         \textcolor{keywordflow}{if} (empty($value)) \{
+00075             $this->\_error(self::ENGINE\_EMPTY);
+00076             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00077         \}
+00078         \textcolor{keywordflow}{if} (!in\_array(strtoupper($value), $this->\_tableEngines)) \{
+00079             $this->\_error(self::INVALID, $value);
+00080             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00081         \}
+00082         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+00083     \}
+00084 \}
+\end{DoxyCode}

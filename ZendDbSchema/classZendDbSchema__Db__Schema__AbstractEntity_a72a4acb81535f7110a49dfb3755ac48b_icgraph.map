@@ -1,8 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classZendDbSchema__Db__Schema__Database.html#a4f5a636c4e7d8ab57f6e090cdf8841dc" title="ZendDbSchema_Db_Schema_Database\\_getAlterSql" alt="" coords="425,5,759,35"/>
-<area shape="rect" id="node5" href="$classZendDbSchema__Db__Schema__Table.html#a385e32fefac9fd4c6e4274c1e0c0b810" title="ZendDbSchema_Db_Schema_Table\\_getAlterSql" alt="" coords="437,59,747,88"/>
-<area shape="rect" id="node7" href="$classZendDbSchema__Db__Schema__Database.html#a48ad6cd38cc07c3c350335d21d7c11e9" title="ZendDbSchema_Db_Schema_Database\\_getCreateSql" alt="" coords="420,112,764,141"/>
-<area shape="rect" id="node9" href="$classZendDbSchema__Db__Schema__Table.html#aefb813dece15a26017e580acc64e3406" title="ZendDbSchema_Db_Schema_Table\\_getCreateSql" alt="" coords="432,165,752,195"/>
-<area shape="rect" id="node11" href="$classZendDbSchema__Db__Schema__Database.html#ad0a851f47e7766bef9f0a54d01bffa6e" title="ZendDbSchema_Db_Schema_Database\\_getDropSql" alt="" coords="425,219,759,248"/>
-<area shape="rect" id="node13" href="$classZendDbSchema__Db__Schema__Table.html#a7be2ac66a479e6264cc9b04980f65df6" title="ZendDbSchema_Db_Schema_Table\\_getDropSql" alt="" coords="437,272,747,301"/>
-</map>

@@ -1,0 +1,128 @@
+\hypertarget{AbstractManager_8php}{\section{Abstract\-Manager.\-php}
+\label{AbstractManager_8php}\index{Db/\-Schema/\-Table/\-Definition\-Manager/\-Abstract\-Manager.\-php@{Db/\-Schema/\-Table/\-Definition\-Manager/\-Abstract\-Manager.\-php}}
+}
+
+\begin{DoxyCode}
+00001 <?php
+\hypertarget{AbstractManager_8php_source_l00029}{}\hyperlink{classZendDbSchema__Db__Schema__Table__DefinitionManager__AbstractManager}{00029} \textcolor{keyword}{abstract} \textcolor{keyword}{class }\hyperlink{classZendDbSchema__Db__Schema__Table__DefinitionManager__AbstractManager}{ZendDbSchema\_Db\_Schema\_Table\_DefinitionManager\_AbstractManager}
+00030     \textcolor{keyword}{implements} IteratorAggregate, Countable
+00031 \{
+00035     \textcolor{keyword}{protected} $\_data = array();
+00036 
+00040     \textcolor{keyword}{protected} $\_table;
+00041 
+00047     \textcolor{keyword}{abstract} \textcolor{keyword}{protected} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Table__DefinitionManager__AbstractManager_ac62cf058c89132b0ff9223d9fcefdb8a}{\_getItemClass}();
+00048 
+00054     \textcolor{keyword}{abstract} \textcolor{keyword}{protected} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Table__DefinitionManager__AbstractManager_ab930802b470913f09f29877ed094a760}{\_getSchemaKey}();
+00055 
+\hypertarget{AbstractManager_8php_source_l00062}{}\hyperlink{classZendDbSchema__Db__Schema__Table__DefinitionManager__AbstractManager_a5cf66698784c55ebbd70292e268505af}{00062}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Table__DefinitionManager__AbstractManager_a5cf66698784c55ebbd70292e268505af}{\_\_construct}(\hyperlink{classZendDbSchema__Db__Schema__Table}{ZendDbSchema\_Db\_Schema\_Table}
+       $table)
+00063     \{
+00064         $this->\_table = $table;
+00065 
+00066         $this->\hyperlink{classZendDbSchema__Db__Schema__Table__DefinitionManager__AbstractManager_a7503e344823c2a1e1e3beb80b8541116}{refresh}();
+00067     \}
+00068 
+\hypertarget{AbstractManager_8php_source_l00074}{}\hyperlink{classZendDbSchema__Db__Schema__Table__DefinitionManager__AbstractManager_a7503e344823c2a1e1e3beb80b8541116}{00074}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Table__DefinitionManager__AbstractManager_a7503e344823c2a1e1e3beb80b8541116}{refresh}()
+00075     \{
+00076         $itemClass = $this->\hyperlink{classZendDbSchema__Db__Schema__Table__DefinitionManager__AbstractManager_ac62cf058c89132b0ff9223d9fcefdb8a}{\_getItemClass}();
+00077 
+00078         $key = $this->\hyperlink{classZendDbSchema__Db__Schema__Table__DefinitionManager__AbstractManager_ab930802b470913f09f29877ed094a760}{\_getSchemaKey}();
+00079 
+00080         $data = $this->\_table->getCleanSchema();
+00081         $schema = array();
+00082         \textcolor{keywordflow}{if} (!empty($data[$key])) \{
+00083             $schema = $data[$key];
+00084         \}
+00085         $this->\hyperlink{classZendDbSchema__Db__Schema__Table__DefinitionManager__AbstractManager_a40677ee7cb91e19c1587bdda9e73d3d5}{setFromArray}($schema);
+00086         \textcolor{keywordflow}{return} $this;
+00087     \}
+00088 
+\hypertarget{AbstractManager_8php_source_l00095}{}\hyperlink{classZendDbSchema__Db__Schema__Table__DefinitionManager__AbstractManager_a40677ee7cb91e19c1587bdda9e73d3d5}{00095}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Table__DefinitionManager__AbstractManager_a40677ee7cb91e19c1587bdda9e73d3d5}{setFromArray}(array $config)
+00096     \{
+00097         $classname = $this->\hyperlink{classZendDbSchema__Db__Schema__Table__DefinitionManager__AbstractManager_ac62cf058c89132b0ff9223d9fcefdb8a}{\_getItemClass}();
+00098 
+00099         \textcolor{keywordflow}{foreach} ($config as $itemName => $itemConfig) \{
+00100             \textcolor{keywordflow}{if} (!$this->\hyperlink{classZendDbSchema__Db__Schema__Table__DefinitionManager__AbstractManager_ad0261d0db60ff459f97adc23b2d16931}{has}($itemName)) \{
+00101                 $this->\hyperlink{classZendDbSchema__Db__Schema__Table__DefinitionManager__AbstractManager_a6d815884ca03c003ac7f8d633e97f7c6}{add}(\textcolor{keyword}{new} $classname($itemName, $this->\_table));
+00102             \}
+00103             $this->\textcolor{keyword}{get}($itemName)->\hyperlink{classZendDbSchema__Db__Schema__Table__DefinitionManager__AbstractManager_a40677ee7cb91e19c1587bdda9e73d3d5}{setFromArray}($itemConfig);
+00104         \}
+00105         \textcolor{keywordflow}{foreach} ($this->\_data as $i => $item) \{
+00106             \textcolor{keywordflow}{if} (!isset($config[$item->getOriginName()])) \{
+00107                 $item->markDeleted();
+00108             \}
+00109         \}
+00110         \textcolor{keywordflow}{return} $this;
+00111     \}
+00112 
+\hypertarget{AbstractManager_8php_source_l00119}{}\hyperlink{classZendDbSchema__Db__Schema__Table__DefinitionManager__AbstractManager_a6d815884ca03c003ac7f8d633e97f7c6}{00119}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Table__DefinitionManager__AbstractManager_a6d815884ca03c003ac7f8d633e97f7c6}{add}(\hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition}{ZendDbSchema\_Db\_Schema\_Table\_AbstractDefinition}
+       $item)
+00120     \{
+00121         $classname = $this->\hyperlink{classZendDbSchema__Db__Schema__Table__DefinitionManager__AbstractManager_ac62cf058c89132b0ff9223d9fcefdb8a}{\_getItemClass}();
+00122         \textcolor{keywordflow}{if} (!$item instanceof $classname) \{
+00123             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} \hyperlink{classZendDbSchema__Db__Schema__Exception}{ZendDbSchema\_Db\_Schema\_Exception}
+      (
+00124                 \textcolor{stringliteral}{"Definition must be instance of '\{$classname\}'"}
+00125             );
+00126         \}
+00127         $name = $item->\hyperlink{classZendDbSchema__Db__Schema__AbstractSchema_adacb1417b461310c5c87f72c459c1985}{getOriginName}();
+00128         \textcolor{keywordflow}{if} ($name && $this->\hyperlink{classZendDbSchema__Db__Schema__Table__DefinitionManager__AbstractManager_ad0261d0db60ff459f97adc23b2d16931}{has}($name)) \{
+00129             \textcolor{keywordflow}{throw} \textcolor{keyword}{new} \hyperlink{classZendDbSchema__Db__Schema__Exception}{ZendDbSchema\_Db\_Schema\_Exception}
+      (
+00130                 \textcolor{stringliteral}{"Definition by name '$name' already exists in "} . get\_class(
+      $this)
+00131             );
+00132         \}
+00133         $item = \textcolor{keyword}{new} $classname($name, $this->\_table);
+00134 
+00135         $this->\_data[] = $item;
+00136 
+00137         \textcolor{keywordflow}{return} $this;
+00138     \}
+00139 
+\hypertarget{AbstractManager_8php_source_l00145}{}\hyperlink{classZendDbSchema__Db__Schema__Table__DefinitionManager__AbstractManager_a6db6cee271f03bba6072d3a02a3df5d2}{00145}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Table__DefinitionManager__AbstractManager_a6db6cee271f03bba6072d3a02a3df5d2}{isDirty}()
+00146     \{
+00147         \textcolor{keywordflow}{foreach} ($this->\_data as $item) \{
+00148             \textcolor{keywordflow}{if} ($item->isDirty()) \{
+00149                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+00150             \}
+00151         \}
+00152         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00153     \}
+00154 
+\hypertarget{AbstractManager_8php_source_l00160}{}\hyperlink{classZendDbSchema__Db__Schema__Table__DefinitionManager__AbstractManager_ad4a6bb01a812258750793779a8bcae53}{00160}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Table__DefinitionManager__AbstractManager_ad4a6bb01a812258750793779a8bcae53}{toArray}()
+00161     \{
+00162         $data = array();
+00163         \textcolor{keywordflow}{foreach} ($this->\_data as $item) \{
+00164             $data[$item->getName()] = $item->toArray();
+00165         \}
+00166         \textcolor{keywordflow}{return} $data;
+00167     \}
+00168 
+\hypertarget{AbstractManager_8php_source_l00174}{}\hyperlink{classZendDbSchema__Db__Schema__Table__DefinitionManager__AbstractManager_a4e751d6138fb53e57d36c3394dbdc37f}{00174}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Table__DefinitionManager__AbstractManager_a4e751d6138fb53e57d36c3394dbdc37f}{getIterator}()
+00175     \{
+00176         \textcolor{keywordflow}{return} \textcolor{keyword}{new} ArrayIterator($this->\_data);
+00177     \}
+00178 
+\hypertarget{AbstractManager_8php_source_l00185}{}\hyperlink{classZendDbSchema__Db__Schema__Table__DefinitionManager__AbstractManager_ad0261d0db60ff459f97adc23b2d16931}{00185}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Table__DefinitionManager__AbstractManager_ad0261d0db60ff459f97adc23b2d16931}{has}($name)
+00186     \{
+00187         \textcolor{keywordflow}{return} null !== $this->\textcolor{keyword}{get}($name);
+00188     \}
+00189 
+\hypertarget{AbstractManager_8php_source_l00196}{}\hyperlink{classZendDbSchema__Db__Schema__Table__DefinitionManager__AbstractManager_aad9bf04cf5d870b99595df9c2437821d}{00196}     \textcolor{keyword}{public} \textcolor{keyword}{function} \textcolor{keyword}{get}($name)
+00197     \{
+00198         \textcolor{keywordflow}{foreach} ($this->\_data as $i => $item) \{
+00199             \textcolor{keywordflow}{if} ($item->getName() == $name) \{
+00200                 \textcolor{keywordflow}{return} $item;
+00201             \}
+00202         \}
+00203         \textcolor{keywordflow}{return} null;
+00204     \}
+00205 
+\hypertarget{AbstractManager_8php_source_l00211}{}\hyperlink{classZendDbSchema__Db__Schema__Table__DefinitionManager__AbstractManager_ab30d65c78b309ade24112b8eecadaf4e}{00211}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Table__DefinitionManager__AbstractManager_ab30d65c78b309ade24112b8eecadaf4e}{count}()
+00212     \{
+00213         \textcolor{keywordflow}{return} \hyperlink{classZendDbSchema__Db__Schema__Table__DefinitionManager__AbstractManager_ab30d65c78b309ade24112b8eecadaf4e}{count}($this->\_data);
+00214     \}
+00215 \}
+\end{DoxyCode}

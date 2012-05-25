@@ -1,0 +1,20 @@
+\hypertarget{Schema_2File_8php}{\section{File.\-php}
+\label{Schema_2File_8php}\index{Tool/\-Project/\-Context/\-Schema/\-File.\-php@{Tool/\-Project/\-Context/\-Schema/\-File.\-php}}
+}
+
+\begin{DoxyCode}
+00001 <?php
+\hypertarget{Schema_2File_8php_source_l00029}{}\hyperlink{classZendDbSchema__Tool__Project__Context__Schema__File}{00029} \textcolor{keyword}{class }\hyperlink{classZendDbSchema__Tool__Project__Context__Schema__File}{ZendDbSchema\_Tool\_Project\_Context\_Schema\_File}
+00030     \textcolor{keyword}{extends} Zend\_Tool\_Project\_Context\_Filesystem\_File
+00031 \{
+\hypertarget{Schema_2File_8php_source_l00037}{}\hyperlink{classZendDbSchema__Tool__Project__Context__Schema__File_ad1098bd539f1d6ccedca2e6560d72707}{00037}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Tool__Project__Context__Schema__File_ad1098bd539f1d6ccedca2e6560d72707}{getName}()
+00038     \{
+00039         \textcolor{keywordflow}{return} \textcolor{stringliteral}{'schemaFile'};
+00040     \}
+00041 
+\hypertarget{Schema_2File_8php_source_l00045}{}\hyperlink{classZendDbSchema__Tool__Project__Context__Schema__File_ad4a0c4835b8b1948e4118d1069a894ba}{00045}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Tool__Project__Context__Schema__File_ad4a0c4835b8b1948e4118d1069a894ba}{getContents}()
+00046     \{
+00047         \textcolor{keywordflow}{return} $this->\_resource->getAttribute(\textcolor{stringliteral}{'fileContents'});
+00048     \}
+00049 \}
+\end{DoxyCode}

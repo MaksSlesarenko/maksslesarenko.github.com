@@ -1,0 +1,103 @@
+\hypertarget{interfaceZendDbSchema__Db__Adapter__SchemaCompatible}{\section{Zend\-Db\-Schema\-\_\-\-Db\-\_\-\-Adapter\-\_\-\-Schema\-Compatible Interface Reference}
+\label{interfaceZendDbSchema__Db__Adapter__SchemaCompatible}\index{Zend\-Db\-Schema\-\_\-\-Db\-\_\-\-Adapter\-\_\-\-Schema\-Compatible@{Zend\-Db\-Schema\-\_\-\-Db\-\_\-\-Adapter\-\_\-\-Schema\-Compatible}}
+}
+
+
+Inheritance diagram for Zend\-Db\-Schema\-\_\-\-Db\-\_\-\-Adapter\-\_\-\-Schema\-Compatible\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interfaceZendDbSchema__Db__Adapter__SchemaCompatible__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Zend\-Db\-Schema\-\_\-\-Db\-\_\-\-Adapter\-\_\-\-Schema\-Compatible\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{interfaceZendDbSchema__Db__Adapter__SchemaCompatible__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{interfaceZendDbSchema__Db__Adapter__SchemaCompatible_a29af87dd4bb1f743489d92e05c002304}{has\-Database} (\$name)
+\item 
+\hyperlink{interfaceZendDbSchema__Db__Adapter__SchemaCompatible_a4c7951a6b329d2106502dbbaae82e51d}{list\-Databases} ()
+\item 
+\hyperlink{interfaceZendDbSchema__Db__Adapter__SchemaCompatible_abb17e9e12e7c050d8583fb560de9ed8b}{has\-Table} (\$name)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line \hyperlink{SchemaCompatible_8php_source_l00029}{29} of file \hyperlink{SchemaCompatible_8php_source}{Schema\-Compatible.\-php}.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{interfaceZendDbSchema__Db__Adapter__SchemaCompatible_a29af87dd4bb1f743489d92e05c002304}{\index{Zend\-Db\-Schema\-\_\-\-Db\-\_\-\-Adapter\-\_\-\-Schema\-Compatible@{Zend\-Db\-Schema\-\_\-\-Db\-\_\-\-Adapter\-\_\-\-Schema\-Compatible}!has\-Database@{has\-Database}}
+\index{has\-Database@{has\-Database}!ZendDbSchema_Db_Adapter_SchemaCompatible@{Zend\-Db\-Schema\-\_\-\-Db\-\_\-\-Adapter\-\_\-\-Schema\-Compatible}}
+\subsubsection[{has\-Database}]{\setlength{\rightskip}{0pt plus 5cm}Zend\-Db\-Schema\-\_\-\-Db\-\_\-\-Adapter\-\_\-\-Schema\-Compatible\-::has\-Database (
+\begin{DoxyParamCaption}
+\item[{}]{\$name}
+\end{DoxyParamCaption}
+)}}\label{interfaceZendDbSchema__Db__Adapter__SchemaCompatible_a29af87dd4bb1f743489d92e05c002304}
+Check if database exists
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolen 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classZendDbSchema__Db__Adapter__Mysqli_a6ccb0e30dd7c6eae3e91079f1f978444}{Zend\-Db\-Schema\-\_\-\-Db\-\_\-\-Adapter\-\_\-\-Mysqli}, \hyperlink{classZendDbSchema__Db__Adapter__Pdo__Mysql_a5b5112b727eccc4b13c3a04b6b1e49ab}{Zend\-Db\-Schema\-\_\-\-Db\-\_\-\-Adapter\-\_\-\-Pdo\-\_\-\-Mysql}, and \hyperlink{classZendDbSchema__Db__Adapter__Pdo__Pgsql_a6d3d4f9e4f41395ede2f6e8bcc12b553}{Zend\-Db\-Schema\-\_\-\-Db\-\_\-\-Adapter\-\_\-\-Pdo\-\_\-\-Pgsql}.
+
+\hypertarget{interfaceZendDbSchema__Db__Adapter__SchemaCompatible_abb17e9e12e7c050d8583fb560de9ed8b}{\index{Zend\-Db\-Schema\-\_\-\-Db\-\_\-\-Adapter\-\_\-\-Schema\-Compatible@{Zend\-Db\-Schema\-\_\-\-Db\-\_\-\-Adapter\-\_\-\-Schema\-Compatible}!has\-Table@{has\-Table}}
+\index{has\-Table@{has\-Table}!ZendDbSchema_Db_Adapter_SchemaCompatible@{Zend\-Db\-Schema\-\_\-\-Db\-\_\-\-Adapter\-\_\-\-Schema\-Compatible}}
+\subsubsection[{has\-Table}]{\setlength{\rightskip}{0pt plus 5cm}Zend\-Db\-Schema\-\_\-\-Db\-\_\-\-Adapter\-\_\-\-Schema\-Compatible\-::has\-Table (
+\begin{DoxyParamCaption}
+\item[{}]{\$name}
+\end{DoxyParamCaption}
+)}}\label{interfaceZendDbSchema__Db__Adapter__SchemaCompatible_abb17e9e12e7c050d8583fb560de9ed8b}
+Check if db table exists
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolen 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classZendDbSchema__Db__Adapter__Mysqli_a15fe5991fb07fff863ea1bde93baca0a}{Zend\-Db\-Schema\-\_\-\-Db\-\_\-\-Adapter\-\_\-\-Mysqli}, \hyperlink{classZendDbSchema__Db__Adapter__Pdo__Mysql_af4d8bfe8fbba922c879569a3d9db0754}{Zend\-Db\-Schema\-\_\-\-Db\-\_\-\-Adapter\-\_\-\-Pdo\-\_\-\-Mysql}, and \hyperlink{classZendDbSchema__Db__Adapter__Pdo__Pgsql_a48c54011ecf9401c8682838453b65128}{Zend\-Db\-Schema\-\_\-\-Db\-\_\-\-Adapter\-\_\-\-Pdo\-\_\-\-Pgsql}.
+
+\hypertarget{interfaceZendDbSchema__Db__Adapter__SchemaCompatible_a4c7951a6b329d2106502dbbaae82e51d}{\index{Zend\-Db\-Schema\-\_\-\-Db\-\_\-\-Adapter\-\_\-\-Schema\-Compatible@{Zend\-Db\-Schema\-\_\-\-Db\-\_\-\-Adapter\-\_\-\-Schema\-Compatible}!list\-Databases@{list\-Databases}}
+\index{list\-Databases@{list\-Databases}!ZendDbSchema_Db_Adapter_SchemaCompatible@{Zend\-Db\-Schema\-\_\-\-Db\-\_\-\-Adapter\-\_\-\-Schema\-Compatible}}
+\subsubsection[{list\-Databases}]{\setlength{\rightskip}{0pt plus 5cm}Zend\-Db\-Schema\-\_\-\-Db\-\_\-\-Adapter\-\_\-\-Schema\-Compatible\-::list\-Databases (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{interfaceZendDbSchema__Db__Adapter__SchemaCompatible_a4c7951a6b329d2106502dbbaae82e51d}
+List databases
+
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classZendDbSchema__Db__Adapter__Mysqli_abc74258342f5cd4b637feb4561b6ab37}{Zend\-Db\-Schema\-\_\-\-Db\-\_\-\-Adapter\-\_\-\-Mysqli}, \hyperlink{classZendDbSchema__Db__Adapter__Pdo__Mysql_afa634812c724a9fcf35aeea357707d64}{Zend\-Db\-Schema\-\_\-\-Db\-\_\-\-Adapter\-\_\-\-Pdo\-\_\-\-Mysql}, and \hyperlink{classZendDbSchema__Db__Adapter__Pdo__Pgsql_a869a9fd424bcb256dd16682c4b549ece}{Zend\-Db\-Schema\-\_\-\-Db\-\_\-\-Adapter\-\_\-\-Pdo\-\_\-\-Pgsql}.
+
+
+
+The documentation for this interface was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Db/\-Adapter/Schema\-Compatible.\-php\end{DoxyCompactItemize}

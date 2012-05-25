@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node1" href="$interfaceZendDbSchema__Db__Adapter__SchemaCompatible.html" title="ZendDbSchema_Db_Adapter\l_SchemaCompatible" alt="" coords="5,74,197,121"/>
+<area shape="rect" id="node3" href="$classZendDbSchema__Db__Adapter__Mysqli.html" title="ZendDbSchema_Db_Adapter\l_Mysqli" alt="" coords="245,5,437,51"/>
+<area shape="rect" id="node5" href="$classZendDbSchema__Db__Adapter__Pdo__Mysql.html" title="ZendDbSchema_Db_Adapter\l_Pdo_Mysql" alt="" coords="245,74,437,121"/>
+<area shape="rect" id="node7" href="$classZendDbSchema__Db__Adapter__Pdo__Pgsql.html" title="ZendDbSchema_Db_Adapter\l_Pdo_Pgsql" alt="" coords="245,143,437,190"/>
+</map>

@@ -1,0 +1,26 @@
+\hypertarget{Adapter_2Pdo_2Mysql_8php_source}{\section{\-Db/\-Adapter/\-Pdo/\-Mysql.php}
+}
+
+\begin{DoxyCode}
+00001 <?php
+\hypertarget{Adapter_2Pdo_2Mysql_8php_source_l00029}{}\hyperlink{classZendDbSchema__Db__Adapter__Pdo__Mysql}{00029} \textcolor{keyword}{class }\hyperlink{classZendDbSchema__Db__Adapter__Pdo__Mysql}{ZendDbSchema_Db_Adapter_Pdo_Mysql} \textcolor{keyword}{extends} Zend\_Db\_Adapter\_Pdo\_Mysql
+00030     implements \hyperlink{interfaceZendDbSchema__Db__Adapter__SchemaCompatible}{ZendDbSchema_Db_Adapter_SchemaCompatible}
+00031 \{
+\hypertarget{Adapter_2Pdo_2Mysql_8php_source_l00038}{}\hyperlink{classZendDbSchema__Db__Adapter__Pdo__Mysql_a5b5112b727eccc4b13c3a04b6b1e49ab}{00038}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Adapter__Pdo__Mysql_a5b5112b727eccc4b13c3a04b6b1e49ab}{hasDatabase}($name)
+00039     \{
+00040         \textcolor{keywordflow}{return} in\_array($name, $this->\hyperlink{classZendDbSchema__Db__Adapter__Pdo__Mysql_afa634812c724a9fcf35aeea357707d64}{listDatabases}());
+00041     \}
+00042 
+\hypertarget{Adapter_2Pdo_2Mysql_8php_source_l00048}{}\hyperlink{classZendDbSchema__Db__Adapter__Pdo__Mysql_afa634812c724a9fcf35aeea357707d64}{00048}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Adapter__Pdo__Mysql_afa634812c724a9fcf35aeea357707d64}{listDatabases}()
+00049     \{
+00050         \textcolor{keywordflow}{return} $this->fetchCol(\textcolor{stringliteral}{"SHOW DATABASES"});
+00051     \}
+00052 
+\hypertarget{Adapter_2Pdo_2Mysql_8php_source_l00059}{}\hyperlink{classZendDbSchema__Db__Adapter__Pdo__Mysql_af4d8bfe8fbba922c879569a3d9db0754}{00059}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Adapter__Pdo__Mysql_af4d8bfe8fbba922c879569a3d9db0754}{hasTable}($name)
+00060     \{
+00061         $tables = $this->listTables();
+00062 
+00063         \textcolor{keywordflow}{return} in\_array($name, $tables);
+00064     \}
+00065 \}
+\end{DoxyCode}

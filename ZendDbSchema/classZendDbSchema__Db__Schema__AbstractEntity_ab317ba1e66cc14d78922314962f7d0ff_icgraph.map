@@ -1,7 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classZendDbSchema__Db__Schema__AbstractEntity.html#aa35a80275bd3c811dd8ad39835a985a9" title="ZendDbSchema_Db_Schema_AbstractEntity\\reload" alt="" coords="407,59,729,88"/>
-<area shape="rect" id="node5" href="$classZendDbSchema__Db__Schema__AbstractEntity.html#abee9675e11d86dace1abed3d94a0fda1" title="ZendDbSchema_Db_Schema_AbstractEntity\\refresh" alt="" coords="789,32,1117,61"/>
-<area shape="rect" id="node11" href="$classZendDbSchema__Db__Schema__AbstractEntity.html#ad92ca2449257a587b336367f109cdde2" title="ZendDbSchema_Db_Schema_AbstractEntity\\__wakeup" alt="" coords="780,85,1127,115"/>
-<area shape="rect" id="node7" href="$classZendDbSchema__Db__Schema__AbstractEntity.html#a5b1c93da76c3708f90d330b4643e55b2" title="ZendDbSchema_Db_Schema_AbstractEntity\\save" alt="" coords="1180,5,1497,35"/>
-<area shape="rect" id="node9" href="$classZendDbSchema__Db__Schema__AbstractEntity.html#a26fcff2268495fcdbfa265f394ee93d9" title="ZendDbSchema_Db_Schema_AbstractEntity\\delete" alt="" coords="1177,59,1500,88"/>
-</map>

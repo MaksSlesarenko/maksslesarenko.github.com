@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classZendDbSchema__Db__Migration__Manager.html#a87a8f6699a75e4b89a0657ae0999203b" title="ZendDbSchema_Db_Migration\l_Manager\\isDirty" alt="" coords="251,39,451,86"/>
+<area shape="rect" id="node5" href="$classZendDbSchema__Db__Migration__Manager.html#a3d4f62489e72876f97bec3cd4448979d" title="ZendDbSchema_Db_Migration\l_Manager\\getChange" alt="" coords="499,39,699,86"/>
+<area shape="rect" id="node7" href="$classZendDbSchema__Db__Migration__Manager.html#ab66af8a9dc5cdb099b8266b68166c4e0" title="ZendDbSchema_Db_Migration\l_Manager\\getVersion" alt="" coords="747,5,947,51"/>
+<area shape="rect" id="node9" href="$classZendDbSchema__Db__Migration__Manager.html#a9973d07f9ffe306e00ea2f9f4beb92e4" title="ZendDbSchema_Db_Migration\l_Manager\\hasChange" alt="" coords="747,74,947,121"/>
+</map>

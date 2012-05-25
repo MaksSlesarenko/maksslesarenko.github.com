@@ -1,0 +1,44 @@
+\hypertarget{Migration_2Directory_8php}{\section{Directory.\-php}
+\label{Migration_2Directory_8php}\index{Tool/\-Project/\-Context/\-Migration/\-Directory.\-php@{Tool/\-Project/\-Context/\-Migration/\-Directory.\-php}}
+}
+
+\begin{DoxyCode}
+00001 <?php
+\hypertarget{Migration_2Directory_8php_source_l00029}{}\hyperlink{classZendDbSchema__Tool__Project__Context__Migration__Directory}{00029} \textcolor{keyword}{class }\hyperlink{classZendDbSchema__Tool__Project__Context__Migration__Directory}{ZendDbSchema\_Tool\_Project\_Context\_Migration\_Directory}
+00030     \textcolor{keyword}{extends} Zend\_Tool\_Project\_Context\_Filesystem\_Directory
+00031 \{
+00035     \textcolor{keyword}{protected} $\_filesystemName = \textcolor{stringliteral}{'migrations'};
+00036 
+00040     \textcolor{keyword}{protected} $\_version;
+00041 
+\hypertarget{Migration_2Directory_8php_source_l00047}{}\hyperlink{classZendDbSchema__Tool__Project__Context__Migration__Directory_a2365b3a467489206406ec6123bddb301}{00047}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Tool__Project__Context__Migration__Directory_a2365b3a467489206406ec6123bddb301}{getName}()
+00048     \{
+00049         \textcolor{keywordflow}{return} \textcolor{stringliteral}{'MigrationsDirectory'};
+00050     \}
+00051 
+\hypertarget{Migration_2Directory_8php_source_l00057}{}\hyperlink{classZendDbSchema__Tool__Project__Context__Migration__Directory_adc340a1246adc9051ddaf577cdf2d98b}{00057}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Tool__Project__Context__Migration__Directory_adc340a1246adc9051ddaf577cdf2d98b}{init}()
+00058     \{
+00059         $this->\_version = $this->\_resource->getAttribute(\textcolor{stringliteral}{'version'});
+00060         \hyperlink{classZendDbSchema__Tool__Project__Context__Migration__Directory_adc340a1246adc9051ddaf577cdf2d98b}{parent::init}();
+00061         \textcolor{keywordflow}{return} $this;
+00062     \}
+00063 
+\hypertarget{Migration_2Directory_8php_source_l00069}{}\hyperlink{classZendDbSchema__Tool__Project__Context__Migration__Directory_a8d8f5a5f33ede8a65548650bea56f999}{00069}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Tool__Project__Context__Migration__Directory_a8d8f5a5f33ede8a65548650bea56f999}{getPersistentAttributes}()
+00070     \{
+00071         \textcolor{keywordflow}{return} array(
+00072             \textcolor{stringliteral}{'version'} => $this->\hyperlink{classZendDbSchema__Tool__Project__Context__Migration__Directory_a142d2626f9d58cdb451a135092788d3c}{getVersion}()
+00073         );
+00074     \}
+00075 
+\hypertarget{Migration_2Directory_8php_source_l00082}{}\hyperlink{classZendDbSchema__Tool__Project__Context__Migration__Directory_ad7af044bf3098d97a0fb978e358946e0}{00082}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Tool__Project__Context__Migration__Directory_ad7af044bf3098d97a0fb978e358946e0}{setVersion}($version)
+00083     \{
+00084         $this->\_version = $version;
+00085         \textcolor{keywordflow}{return} $this;
+00086     \}
+00087 
+\hypertarget{Migration_2Directory_8php_source_l00093}{}\hyperlink{classZendDbSchema__Tool__Project__Context__Migration__Directory_a142d2626f9d58cdb451a135092788d3c}{00093}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Tool__Project__Context__Migration__Directory_a142d2626f9d58cdb451a135092788d3c}{getVersion}()
+00094     \{
+00095         \textcolor{keywordflow}{return} $this->\_version;
+00096     \}
+00097 \}
+\end{DoxyCode}

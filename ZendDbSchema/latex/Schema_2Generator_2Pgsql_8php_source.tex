@@ -1,0 +1,323 @@
+\hypertarget{Schema_2Generator_2Pgsql_8php_source}{\section{\-Db/\-Schema/\-Generator/\-Pgsql.php}
+}
+
+\begin{DoxyCode}
+00001 <?php
+00029 \textcolor{keyword}{class }\hyperlink{classZendDbSchema__Db__Schema__Generator__Mysql}{ZendDbSchema_Db_Schema_Generator_Mysql}
+00030     \textcolor{keyword}{implements} \hyperlink{interfaceZendDbSchema__Db__Schema__Generator__Interface}{ZendDbSchema_Db_Schema_Generator_Interface}
+00031 \{
+\hypertarget{Schema_2Generator_2Pgsql_8php_source_l00038}{}\hyperlink{classZendDbSchema__Db__Schema__Generator__Mysql_a823d987af06bbcaa2142f2da3c6fd3c2}{00038}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Generator__Mysql_a823d987af06bbcaa2142f2da3c6fd3c2}{createDatabase}(\hyperlink{classZendDbSchema__Db__Schema__Database}{ZendDbSchema_Db_Schema_Database} $schema)
+00039     \{
+00040         $props = array();
+00041 
+00042         \textcolor{keywordflow}{if} ($schema->owner) \{
+00043             $props[] = \textcolor{stringliteral}{"OWNER \{$schema->owner\}"};
+00044         \}
+00045         \textcolor{keywordflow}{if} ($schema->\hyperlink{classZendDbSchema__Db__Schema__Database_a71126f98bb7da60fcd0ac00c101467c8}{getCharset}()) \{
+00046             $props[] = \textcolor{stringliteral}{"ENCODING "} . $schema->\hyperlink{classZendDbSchema__Db__Schema__Database_a71126f98bb7da60fcd0ac00c101467c8}{getCharset}();
+00047         \}
+00048 
+00049         \textcolor{keywordflow}{if} ($schema->template) \{
+00050             $props[] = \textcolor{stringliteral}{"TEMPLATE \{$schema->template\}"};
+00051         \}
+00052 
+00053         \textcolor{keywordflow}{if} ($schema->tablespace) \{
+00054             $props[] = \textcolor{stringliteral}{"TABLESPACE \{$schema->tablespace\}"};
+00055         \}
+00056 
+00057         \textcolor{keywordflow}{if} ($schema->connlimit) \{
+00058             $props[] = \textcolor{stringliteral}{"CONNECTION LIMIT \{$schema->connlimit\}"};
+00059         \}
+00060 
+00061         $name    = $schema->\hyperlink{classZendDbSchema__Db__Schema__AbstractSchema_a55787c21deddba427842809d589c2df6}{getName}();
+00062         $query = array();
+00063         $query[] = \textcolor{stringliteral}{"DROP DATABASE IF EXISTS \{$name\}"};
+00064         $query[] = \textcolor{stringliteral}{"CREATE DATABASE \{$name\} "} . join(\textcolor{charliteral}{' '}, $props);
+00065 
+00066         \textcolor{keywordflow}{return} join(\textcolor{charliteral}{';'} . PHP\_EOL, $query);
+00067     \}
+00068 
+\hypertarget{Schema_2Generator_2Pgsql_8php_source_l00075}{}\hyperlink{classZendDbSchema__Db__Schema__Generator__Mysql_a5ffe10ce956b3e189c364d2bd03acf88}{00075}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Generator__Mysql_a5ffe10ce956b3e189c364d2bd03acf88}{alterDatabase}(\hyperlink{classZendDbSchema__Db__Schema__Database}{ZendDbSchema_Db_Schema_Database} $schema)
+00076     \{
+00077         \textcolor{keywordflow}{if} (!$schema->\hyperlink{classZendDbSchema__Db__Schema__AbstractSchema_a1680a8fd22360f74d29b641d7257a52f}{isExist}()) \{
+00078             \textcolor{keywordflow}{return} null;
+00079         \}
+00080 
+00081         $props = array();
+00082         \textcolor{keywordflow}{if} ($schema->template) \{
+00083             $props[] = \textcolor{stringliteral}{"ENCODING \{$schema->template\}"};
+00084         \}
+00085 
+00086         \textcolor{keywordflow}{if} ($schema->tablespace) \{
+00087             $props[] = \textcolor{stringliteral}{"TABLESPACE \{$schema->tablespace\}"};
+00088         \}
+00089 
+00090         \textcolor{keywordflow}{if} ($schema->connlimit) \{
+00091             $props[] = \textcolor{stringliteral}{"CONNECTION LIMIT \{$schema->connlimit\}"};
+00092         \}
+00093 
+00094         $name = $schema->\hyperlink{classZendDbSchema__Db__Schema__AbstractSchema_a55787c21deddba427842809d589c2df6}{getName}();
+00095 
+00096         $query = \textcolor{stringliteral}{''};
+00097         \textcolor{keywordflow}{if} ($schema->\hyperlink{classZendDbSchema__Db__Schema__AbstractSchema_ae859790a91bbcb9c4dc52a6139e5999e}{isDirty}(\textcolor{stringliteral}{'charset'})) \{
+00098             $charset = $schema->\hyperlink{classZendDbSchema__Db__Schema__Database_a71126f98bb7da60fcd0ac00c101467c8}{getCharset}();
+00099             $query = \textcolor{stringliteral}{"ALTER DATABASE \{$name\} DEFAULT CHARACTER SET \{$charset\}"};
+00100         \}
+00101         \textcolor{keywordflow}{return} $query;
+00102     \}
+00103 
+\hypertarget{Schema_2Generator_2Pgsql_8php_source_l00110}{}\hyperlink{classZendDbSchema__Db__Schema__Generator__Mysql_ab3c87af9fdc6ba8d911b1162a67dc0be}{00110}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Generator__Mysql_ab3c87af9fdc6ba8d911b1162a67dc0be}{dropDatabase}(\hyperlink{classZendDbSchema__Db__Schema__Database}{ZendDbSchema_Db_Schema_Database} $schema)
+00111     \{
+00112         \textcolor{keywordflow}{if} (!$schema->\hyperlink{classZendDbSchema__Db__Schema__AbstractSchema_a1680a8fd22360f74d29b641d7257a52f}{isExist}()) \{
+00113             \textcolor{keywordflow}{return} null;
+00114         \}
+00115         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"DROP DATABASE IF EXISTS \{$schema->getOriginName()\}"};
+00116     \}
+00117 
+\hypertarget{Schema_2Generator_2Pgsql_8php_source_l00124}{}\hyperlink{classZendDbSchema__Db__Schema__Generator__Mysql_add2a0dcdb35c6ef230b09ad31d141b29}{00124}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Generator__Mysql_add2a0dcdb35c6ef230b09ad31d141b29}{createTable}(\hyperlink{classZendDbSchema__Db__Schema__Table}{ZendDbSchema_Db_Schema_Table} $schema)
+00125     \{
+00126         $props = array();
+00127         \textcolor{keywordflow}{if} ($schema->inherits) \{
+00128             \textcolor{comment}{//$props [] = "INHERITS \{$schema->inherits\}";}
+00129         \}
+00130         \textcolor{comment}{/*}
+00131 \textcolor{comment}{        if (true === $schema->oids) \{}
+00132 \textcolor{comment}{            $props [] = "WITH OIDS";}
+00133 \textcolor{comment}{        \} elseif (false === $schema->oids) \{}
+00134 \textcolor{comment}{            $props [] = "WITHOUT OIDS";}
+00135 \textcolor{comment}{        \}}
+00136 \textcolor{comment}{        */}
+00137         \textcolor{keywordflow}{if} ($schema->commit) \{
+00138             $props [] = \textcolor{stringliteral}{"ON COMMIT \{$schema->commit\}"};
+00139         \}
+00140         \textcolor{keywordflow}{if} ($schema->tablespace) \{
+00141             $props [] = \textcolor{stringliteral}{"TABLESPACE \{$schema->tablespace\}"};
+00142         \}
+00143 
+00144         $columns = array();
+00145         \textcolor{keywordflow}{foreach} ($schema->\hyperlink{classZendDbSchema__Db__Schema__Table_a214354faa96de67a26b787c2c8741850}{columns}() as $column) \{
+00146             $columns[] = $column->toSql();
+00147         \}
+00148 
+00149         $columns = array\_filter($columns);
+00150         $columns = join(\textcolor{stringliteral}{', '} . PHP\_EOL, $columns);
+00151 
+00152         $name = $schema->\hyperlink{classZendDbSchema__Db__Schema__AbstractSchema_a55787c21deddba427842809d589c2df6}{getName}();
+00153         $query = array();
+00154         $query[] = \textcolor{stringliteral}{"DROP TABLE IF EXISTS \{$name\}"};
+00155         $query[] = \textcolor{stringliteral}{"CREATE TABLE \{$name\} ("} . PHP\_EOL
+00156                  . $columns . PHP\_EOL
+00157                  . \textcolor{stringliteral}{")"} . PHP\_EOL
+00158                  . join(\textcolor{charliteral}{' '} . PHP\_EOL, $props);
+00159 
+00160         \textcolor{keywordflow}{return} join(\textcolor{charliteral}{';'} . PHP\_EOL, $query);
+00161     \}
+00162 
+\hypertarget{Schema_2Generator_2Pgsql_8php_source_l00169}{}\hyperlink{classZendDbSchema__Db__Schema__Generator__Mysql_aebe278ab07f38d58f8f440f9cad01565}{00169}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Generator__Mysql_aebe278ab07f38d58f8f440f9cad01565}{alterTable}(\hyperlink{classZendDbSchema__Db__Schema__Table}{ZendDbSchema_Db_Schema_Table} $schema)
+00170     \{
+00171         \textcolor{keywordflow}{if} (!$schema->\hyperlink{classZendDbSchema__Db__Schema__AbstractSchema_a1680a8fd22360f74d29b641d7257a52f}{isExist}()) \{
+00172             \textcolor{keywordflow}{return} null;
+00173         \}
+00174 
+00175         $query = array();
+00176 
+00177         $name = $schema->\hyperlink{classZendDbSchema__Db__Schema__AbstractSchema_a55787c21deddba427842809d589c2df6}{getName}();
+00178         \textcolor{keywordflow}{if} ($schema->\hyperlink{classZendDbSchema__Db__Schema__Table_a21a2a75870207a989576655fec7507c3}{isDirty}(ZendDbSchema\_Db\_Schema\_Table::NAME\_KEY)) \{
+00179             $oldName = $schema->\hyperlink{classZendDbSchema__Db__Schema__AbstractSchema_adacb1417b461310c5c87f72c459c1985}{getOriginName}();
+00180             \textcolor{keywordflow}{if} ($oldName && $oldName != $name) \{
+00181                 $query[] = \textcolor{stringliteral}{"ALTER TABLE \{$oldName\} RENAME TO \{$name\}"};
+00182             \}
+00183         \}
+00184 
+00185         \textcolor{keywordflow}{if} ($schema->\hyperlink{classZendDbSchema__Db__Schema__Table_a21a2a75870207a989576655fec7507c3}{isDirty}(\textcolor{stringliteral}{'owner'})) \{
+00186             $query[] = \textcolor{stringliteral}{"ALTER TABLE \{$name\} OWNER TO \{$schema->owner\}"};
+00187         \}
+00188 
+00189         \textcolor{keywordflow}{if} ($schema->\hyperlink{classZendDbSchema__Db__Schema__Table_a21a2a75870207a989576655fec7507c3}{isDirty}(\textcolor{stringliteral}{'tablespace'})) \{
+00190             $query[] = \textcolor{stringliteral}{"ALTER TABLE \{$name\} SET TABLESPACE
+       \{$schema->tablespace\}"};
+00191         \}
+00192 
+00193         \textcolor{keywordflow}{if} ($schema->\hyperlink{classZendDbSchema__Db__Schema__Table_a21a2a75870207a989576655fec7507c3}{isDirty}(\textcolor{stringliteral}{'schema'})) \{
+00194            \textcolor{comment}{// $query[] = "ALTER TABLE \{$name\} SET SCHEMA \{$schema->schema\}";}
+00195         \}
+00196 
+00197         \textcolor{keywordflow}{return} join(\textcolor{charliteral}{';'} . PHP\_EOL, $query);
+00198     \}
+00199 
+\hypertarget{Schema_2Generator_2Pgsql_8php_source_l00206}{}\hyperlink{classZendDbSchema__Db__Schema__Generator__Mysql_a963a138b593e5e9e3a6b9a8e540a4a10}{00206}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Generator__Mysql_a963a138b593e5e9e3a6b9a8e540a4a10}{dropTable}(\hyperlink{classZendDbSchema__Db__Schema__Table}{ZendDbSchema_Db_Schema_Table} $schema)
+00207     \{
+00208         \textcolor{keywordflow}{if} (!$schema->\hyperlink{classZendDbSchema__Db__Schema__AbstractSchema_a1680a8fd22360f74d29b641d7257a52f}{isExist}()) \{
+00209             \textcolor{keywordflow}{return} null;
+00210         \}
+00211         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"DROP TABLE IF EXISTS \{$schema->getOriginName()\}"};
+00212     \}
+00213 
+\hypertarget{Schema_2Generator_2Pgsql_8php_source_l00220}{}\hyperlink{classZendDbSchema__Db__Schema__Generator__Mysql_ab808aafb85b6359cacdb4cc3fe757d6b}{00220}     \textcolor{keyword}{protected} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Generator__Mysql_ab808aafb85b6359cacdb4cc3fe757d6b}{_columnSql}(\hyperlink{classZendDbSchema__Db__Schema__Table__Column}{ZendDbSchema_Db_Schema_Table_Column} $schema)
+00221     \{
+00222         $query = array();
+00223 
+00224         $query[] = $schema->type;
+00225 
+00226         \textcolor{keywordflow}{if} ($schema->getLength()) \{
+00227             $query[] = \textcolor{stringliteral}{"(\{$schema->getLength()\})"};
+00228         \}
+00229 
+00230         \textcolor{keywordflow}{if} (!$schema->\hyperlink{classZendDbSchema__Db__Schema__Table__Column_aeeed5820cfc4fac67507a196e9faa638}{isNullable}()) \{
+00231             $query[] = \textcolor{stringliteral}{"NOT NULL"};
+00232         \} elseif (null === $schema->default) \{
+00233             $query[] = \textcolor{stringliteral}{"DEFAULT NULL"};
+00234         \}
+00235 
+00236         \textcolor{keywordflow}{if} (null !== $schema->default) \{
+00237             $query[] = \textcolor{stringliteral}{"DEFAULT \{$schema->default\}"};
+00238         \}
+00239         \textcolor{keywordflow}{return} join(\textcolor{charliteral}{' '}, $query);
+00240     \}
+00241 
+\hypertarget{Schema_2Generator_2Pgsql_8php_source_l00248}{}\hyperlink{classZendDbSchema__Db__Schema__Generator__Mysql_a86040ff7c424a0ad7e5f4aadeec20a4c}{00248}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Generator__Mysql_a86040ff7c424a0ad7e5f4aadeec20a4c}{createColumn}(\hyperlink{classZendDbSchema__Db__Schema__Table__Column}{ZendDbSchema_Db_Schema_Table_Column} $schema)
+00249     \{
+00250         $name = $schema->\hyperlink{classZendDbSchema__Db__Schema__AbstractSchema_a55787c21deddba427842809d589c2df6}{getName}();
+00251         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"\{$name\}"} . \textcolor{charliteral}{' '} . $this->\hyperlink{classZendDbSchema__Db__Schema__Generator__Mysql_ab808aafb85b6359cacdb4cc3fe757d6b}{_columnSql}($schema);
+00252     \}
+00253 
+\hypertarget{Schema_2Generator_2Pgsql_8php_source_l00260}{}\hyperlink{classZendDbSchema__Db__Schema__Generator__Mysql_a57a5e637e2c19faee40597d96d6b71b3}{00260}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Generator__Mysql_a57a5e637e2c19faee40597d96d6b71b3}{alterColumn}(\hyperlink{classZendDbSchema__Db__Schema__Table__Column}{ZendDbSchema_Db_Schema_Table_Column} $schema)
+00261     \{
+00262         \textcolor{keywordflow}{if} (!$schema->\hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_a224b6a0c1df1d6ed40e03657782ef6fc}{getTable}()->isExist() || !$schema->\hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_a92b77fa23ce49db1c39edcc583ec6cfe}{isDirty}()) \{
+00263             \textcolor{keywordflow}{return} null;
+00264         \}
+00265         $name   = $schema->\hyperlink{classZendDbSchema__Db__Schema__AbstractSchema_a55787c21deddba427842809d589c2df6}{getName}();
+00266 
+00267         $query = array();
+00268         $prefix = \textcolor{stringliteral}{"ALTER TABLE \{$schema->getTable()->getName()\}"};
+00269 
+00270         \textcolor{keywordflow}{if} ($schema->\hyperlink{classZendDbSchema__Db__Schema__AbstractSchema_a1680a8fd22360f74d29b641d7257a52f}{isExist}()) \{
+00271             $oldName = $schema->\hyperlink{classZendDbSchema__Db__Schema__AbstractSchema_adacb1417b461310c5c87f72c459c1985}{getOriginName}();
+00272             \textcolor{keywordflow}{if} ($oldName && $oldName != $name) \{
+00273                 $oldName = $schema->\hyperlink{classZendDbSchema__Db__Schema__AbstractSchema_adacb1417b461310c5c87f72c459c1985}{getOriginName}();
+00274                 $query[] = $prefix . \textcolor{stringliteral}{" RENAME \{$oldName\} TO \{$name\}"};
+00275             \} elseif ($schema->\hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_a92b77fa23ce49db1c39edcc583ec6cfe}{isDirty}(\textcolor{stringliteral}{'type'}) || $schema->\hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_a92b77fa23ce49db1c39edcc583ec6cfe}{isDirty}(\textcolor{stringliteral}{'length'})) \{
+00276                 $query[] = $prefix . \textcolor{stringliteral}{" ALTER \{$name\} "} . $this->\hyperlink{classZendDbSchema__Db__Schema__Generator__Mysql_ab808aafb85b6359cacdb4cc3fe757d6b}{_columnSql}(
+      $schema);
+00277             \}
+00278         \} \textcolor{keywordflow}{else} \{
+00279             $query[] = $prefix . \textcolor{stringliteral}{" ADD \{$name\} "} . $this->\hyperlink{classZendDbSchema__Db__Schema__Generator__Mysql_ab808aafb85b6359cacdb4cc3fe757d6b}{_columnSql}($schema);
+00280         \}
+00281 
+00282         \textcolor{keywordflow}{return} join(\textcolor{charliteral}{' '}, $query);
+00283     \}
+00284 
+\hypertarget{Schema_2Generator_2Pgsql_8php_source_l00291}{}\hyperlink{classZendDbSchema__Db__Schema__Generator__Mysql_a6fef0a3176c0e99d533b1790c7ae0301}{00291}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Generator__Mysql_a6fef0a3176c0e99d533b1790c7ae0301}{dropColumn}(\hyperlink{classZendDbSchema__Db__Schema__Table__Column}{ZendDbSchema_Db_Schema_Table_Column} $schema)
+00292     \{
+00293         $name   = $schema->\hyperlink{classZendDbSchema__Db__Schema__AbstractSchema_a55787c21deddba427842809d589c2df6}{getName}();
+00294         $table =  $schema->\hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_a224b6a0c1df1d6ed40e03657782ef6fc}{getTable}()->getName();
+00295 
+00296         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"ALTER TABLE \{$table\} DROP COLUMN \{$name\}"};
+00297     \}
+00298 
+\hypertarget{Schema_2Generator_2Pgsql_8php_source_l00305}{}\hyperlink{classZendDbSchema__Db__Schema__Generator__Mysql_a5546e56c0c78f9c9d3e830fb5ffcd72d}{00305}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Generator__Mysql_a5546e56c0c78f9c9d3e830fb5ffcd72d}{createIndex}(\hyperlink{classZendDbSchema__Db__Schema__Table__Index}{ZendDbSchema_Db_Schema_Table_Index} $schema)
+00306     \{
+00307         $name   = $schema->\hyperlink{classZendDbSchema__Db__Schema__AbstractSchema_a55787c21deddba427842809d589c2df6}{getName}();
+00308         $table =  $schema->\hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_a224b6a0c1df1d6ed40e03657782ef6fc}{getTable}()->getName();
+00309 
+00310         $columns = \textcolor{stringliteral}{""};
+00311         \textcolor{keywordflow}{if} ($schema->\hyperlink{classZendDbSchema__Db__Schema__Table__Index_ad0edf2869c08ce408566798f4305b8dc}{getColumns}()) \{
+00312             $columns = \textcolor{stringliteral}{"("} . join(\textcolor{stringliteral}{', '}, $schema->\hyperlink{classZendDbSchema__Db__Schema__Table__Index_ad0edf2869c08ce408566798f4305b8dc}{getColumns}()) . \textcolor{stringliteral}{")"};
+00313         \}
+00314         $type = strtoupper($schema->type);
+00315 
+00316         $query = array();
+00317         \textcolor{keywordflow}{if} ($schema->\hyperlink{classZendDbSchema__Db__Schema__AbstractSchema_a1680a8fd22360f74d29b641d7257a52f}{isExist}()) \{
+00318             $query[] = $this->\hyperlink{classZendDbSchema__Db__Schema__Generator__Mysql_a196fb89cf511d31c7124169247de1a6d}{dropIndex}($schema);
+00319         \}
+00320         $query[] = \textcolor{stringliteral}{"CREATE \{$type\} INDEX \{$name\} ON \{$table\} \{$columns\}"};
+00321 
+00322         \textcolor{keywordflow}{return} join(\textcolor{charliteral}{';'} . PHP\_EOL, $query);
+00323     \}
+00324 
+\hypertarget{Schema_2Generator_2Pgsql_8php_source_l00331}{}\hyperlink{classZendDbSchema__Db__Schema__Generator__Mysql_a0f94d6cabe125b387efa64fc7160a9e5}{00331}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Generator__Mysql_a0f94d6cabe125b387efa64fc7160a9e5}{alterIndex}(\hyperlink{classZendDbSchema__Db__Schema__Table__Index}{ZendDbSchema_Db_Schema_Table_Index} $schema)
+00332     \{
+00333         \textcolor{keywordflow}{return} $this->\hyperlink{classZendDbSchema__Db__Schema__Generator__Mysql_a5546e56c0c78f9c9d3e830fb5ffcd72d}{createIndex}($schema);
+00334     \}
+00335 
+\hypertarget{Schema_2Generator_2Pgsql_8php_source_l00342}{}\hyperlink{classZendDbSchema__Db__Schema__Generator__Mysql_a196fb89cf511d31c7124169247de1a6d}{00342}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Generator__Mysql_a196fb89cf511d31c7124169247de1a6d}{dropIndex}(\hyperlink{classZendDbSchema__Db__Schema__Table__Index}{ZendDbSchema_Db_Schema_Table_Index} $schema)
+00343     \{
+00344         $name   = $schema->\hyperlink{classZendDbSchema__Db__Schema__AbstractSchema_a55787c21deddba427842809d589c2df6}{getName}();
+00345         $table =  $schema->\hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_a224b6a0c1df1d6ed40e03657782ef6fc}{getTable}()->getName();
+00346 
+00347         $query = \textcolor{stringliteral}{"DROP INDEX IF EXISTS \{$name\} ON \{$table\}"};
+00348         \textcolor{keywordflow}{return} $query;
+00349     \}
+00350 
+\hypertarget{Schema_2Generator_2Pgsql_8php_source_l00357}{}\hyperlink{classZendDbSchema__Db__Schema__Generator__Mysql_ad1d5ebbad469fcd572d46f08f9f0e5ab}{00357}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Generator__Mysql_ad1d5ebbad469fcd572d46f08f9f0e5ab}{addPrimaryKey}(\hyperlink{classZendDbSchema__Db__Schema__Table__PrimaryKey}{ZendDbSchema_Db_Schema_Table_PrimaryKey} 
+      $schema)
+00358     \{
+00359         $columns = join(\textcolor{stringliteral}{', '}, $schema->\hyperlink{classZendDbSchema__Db__Schema__Table__PrimaryKey_a228207d6e07e3ab95b8b25415077a6a1}{getColumns}());
+00360         $table = $schema->\hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_a224b6a0c1df1d6ed40e03657782ef6fc}{getTable}()->getName();
+00361 
+00362         $query = \textcolor{stringliteral}{"ALTER TABLE \{$table\} ADD PRIMARY KEY (\{$columns\})"};
+00363 
+00364         \textcolor{keywordflow}{return} $query;
+00365     \}
+00366 
+\hypertarget{Schema_2Generator_2Pgsql_8php_source_l00373}{}\hyperlink{classZendDbSchema__Db__Schema__Generator__Mysql_acc787f589296a3638f713b91456acafb}{00373}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Generator__Mysql_acc787f589296a3638f713b91456acafb}{dropPrimaryKey}(\hyperlink{classZendDbSchema__Db__Schema__Table__PrimaryKey}{ZendDbSchema_Db_Schema_Table_PrimaryKey} 
+      $schema)
+00374     \{
+00375         $table =  $schema->\hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_a224b6a0c1df1d6ed40e03657782ef6fc}{getTable}()->getName();
+00376 
+00377         $query = \textcolor{stringliteral}{"ALTER TABLE \{$table\} DROP PRIMARY KEY"};
+00378         \textcolor{keywordflow}{return} $query;
+00379     \}
+00380 
+\hypertarget{Schema_2Generator_2Pgsql_8php_source_l00387}{}\hyperlink{classZendDbSchema__Db__Schema__Generator__Mysql_a4b0c6d7fbd4d21f027facb6e495d1f6b}{00387}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Generator__Mysql_a4b0c6d7fbd4d21f027facb6e495d1f6b}{addForeignKey}(\hyperlink{classZendDbSchema__Db__Schema__Table__ForeignKey}{ZendDbSchema_Db_Schema_Table_ForeignKey} 
+      $schema)
+00388     \{
+00389         $query = array();
+00390 
+00391         \textcolor{keywordflow}{if} ($name = $schema->\hyperlink{classZendDbSchema__Db__Schema__AbstractSchema_adacb1417b461310c5c87f72c459c1985}{getOriginName}()) \{
+00392             $query[] = \textcolor{stringliteral}{"CONSTRAINT \{$name\}"};
+00393         \}
+00394 
+00395         $columns = $schema->\hyperlink{classZendDbSchema__Db__Schema__Table__ForeignKey_a5cd45e4bc92ac5975975753e459b4c8c}{getColumns}();
+00396 
+00397         $refColumns = join(\textcolor{charliteral}{','}, array\_values($columns));
+00398         $columns = join(\textcolor{charliteral}{','}, array\_keys($columns));
+00399         $refTable = $schema->\hyperlink{classZendDbSchema__Db__Schema__Table__ForeignKey_a39c9a3febcb98b77692566eed81220c7}{getReferences}();
+00400 
+00401         $query[] = \textcolor{stringliteral}{" FOREIGN KEY (\{$columns\}) REFERENCES \{$refTable\}
+       (\{$refColumns\})"};
+00402 
+00403         \textcolor{keywordflow}{if} ($delete = $schema->\hyperlink{classZendDbSchema__Db__Schema__Table__ForeignKey_a83644a5b874f111e17dbf08ffa3ea803}{getOnDelete}()) \{
+00404             $query[] = \textcolor{stringliteral}{" ON DELETE \{$delete\}"};
+00405         \}
+00406         \textcolor{keywordflow}{if} ($update = $schema->\hyperlink{classZendDbSchema__Db__Schema__Table__ForeignKey_afb55f45baab8357ce8c295e4d71bf700}{getOnUpdate}()) \{
+00407             $query[] = \textcolor{stringliteral}{" ON UPDATE \{$update\}"};
+00408         \}
+00409 
+00410         $table =  $schema->\hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_a224b6a0c1df1d6ed40e03657782ef6fc}{getTable}()->getName();
+00411 
+00412         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"ALTER TABLE \{$table\} ADD "} . join(\textcolor{charliteral}{' '}, $query);
+00413     \}
+00414 
+\hypertarget{Schema_2Generator_2Pgsql_8php_source_l00421}{}\hyperlink{classZendDbSchema__Db__Schema__Generator__Mysql_a16b347a1c95888775b09d14505bae2b2}{00421}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Generator__Mysql_a16b347a1c95888775b09d14505bae2b2}{alterForeignKey}(\hyperlink{classZendDbSchema__Db__Schema__Table__ForeignKey}{ZendDbSchema_Db_Schema_Table_ForeignKey} 
+      $schema)
+00422     \{
+00423         $query = array();
+00424         \textcolor{keywordflow}{if} ($schema->\hyperlink{classZendDbSchema__Db__Schema__AbstractSchema_a1680a8fd22360f74d29b641d7257a52f}{isExist}()) \{
+00425             $query[] = $this->\hyperlink{classZendDbSchema__Db__Schema__Generator__Mysql_afa7990c889464576d30d4a110e9b0fac}{dropForeignKey}($schema);
+00426         \}
+00427         $query[] = $this->\hyperlink{classZendDbSchema__Db__Schema__Generator__Mysql_a4b0c6d7fbd4d21f027facb6e495d1f6b}{addForeignKey}($schema);
+00428         \textcolor{keywordflow}{return} join(\textcolor{charliteral}{';'} . PHP\_EOL, $query);
+00429     \}
+00430 
+\hypertarget{Schema_2Generator_2Pgsql_8php_source_l00437}{}\hyperlink{classZendDbSchema__Db__Schema__Generator__Mysql_afa7990c889464576d30d4a110e9b0fac}{00437}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Generator__Mysql_afa7990c889464576d30d4a110e9b0fac}{dropForeignKey}(\hyperlink{classZendDbSchema__Db__Schema__Table__ForeignKey}{ZendDbSchema_Db_Schema_Table_ForeignKey} 
+      $schema)
+00438     \{
+00439         $table =  $schema->\hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_a224b6a0c1df1d6ed40e03657782ef6fc}{getTable}()->getName();
+00440         $name = $schema->\hyperlink{classZendDbSchema__Db__Schema__AbstractSchema_adacb1417b461310c5c87f72c459c1985}{getOriginName}();
+00441 
+00442         $query = \textcolor{stringliteral}{"ALTER TABLE \{$table\} DROP FOREIGN KEY \{$name\}"};
+00443         \textcolor{keywordflow}{return} $query;
+00444     \}
+00445 \}
+\end{DoxyCode}

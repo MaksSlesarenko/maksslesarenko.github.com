@@ -1,0 +1,40 @@
+\hypertarget{Db_2Schema_2Table_2Column_8php}{\section{Column.\-php}
+\label{Db_2Schema_2Table_2Column_8php}\index{Db/\-Schema/\-Table/\-Column.\-php@{Db/\-Schema/\-Table/\-Column.\-php}}
+}
+
+\begin{DoxyCode}
+00001 <?php
+\hypertarget{Db_2Schema_2Table_2Column_8php_source_l00041}{}\hyperlink{classZendDbSchema__Db__Schema__Table__Column}{00041} \textcolor{keyword}{class }\hyperlink{classZendDbSchema__Db__Schema__Table__Column}{ZendDbSchema\_Db\_Schema\_Table\_Column}
+00042     \textcolor{keyword}{extends} \hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition}{ZendDbSchema\_Db\_Schema\_Table\_AbstractDefinition}
+00043 \{
+\hypertarget{Db_2Schema_2Table_2Column_8php_source_l00049}{}\hyperlink{classZendDbSchema__Db__Schema__Table__Column_a0d59e2cdf61520d8e9813cb890cc8eca}{00049}     \textcolor{keyword}{protected} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Table__Column_a0d59e2cdf61520d8e9813cb890cc8eca}{\_getSchemaKey}()
+00050     \{
+00051         \textcolor{keywordflow}{return} ZendDbSchema\_Db\_Schema\_Table::COLUMNS\_KEY;
+00052     \}
+00053 
+\hypertarget{Db_2Schema_2Table_2Column_8php_source_l00057}{}\hyperlink{classZendDbSchema__Db__Schema__Table__Column_af3a3fb0c74c60844c282de6286543a56}{00057}     \textcolor{keyword}{protected} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Table__Column_af3a3fb0c74c60844c282de6286543a56}{\_getDropSql}()
+00058     \{
+00059         \textcolor{keywordflow}{return} $this->\hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_a224b6a0c1df1d6ed40e03657782ef6fc}{getTable}()->getGenerator()->dropColumn($this);
+00060     \}
+00061 
+\hypertarget{Db_2Schema_2Table_2Column_8php_source_l00065}{}\hyperlink{classZendDbSchema__Db__Schema__Table__Column_ae49fb9ae5b0f6d6258dc71f644e00991}{00065}     \textcolor{keyword}{protected} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Table__Column_ae49fb9ae5b0f6d6258dc71f644e00991}{\_getAlterSql}()
+00066     \{
+00067         \textcolor{keywordflow}{return} $this->\hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_a224b6a0c1df1d6ed40e03657782ef6fc}{getTable}()->getGenerator()->alterColumn($this);
+00068     \}
+00069 
+\hypertarget{Db_2Schema_2Table_2Column_8php_source_l00073}{}\hyperlink{classZendDbSchema__Db__Schema__Table__Column_a2312222bd78d06775dacb19b92638b69}{00073}     \textcolor{keyword}{protected} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Table__Column_a2312222bd78d06775dacb19b92638b69}{\_getCreateSql}()
+00074     \{
+00075         \textcolor{keywordflow}{return} $this->\hyperlink{classZendDbSchema__Db__Schema__Table__AbstractDefinition_a224b6a0c1df1d6ed40e03657782ef6fc}{getTable}()->getGenerator()->createColumn($this);
+00076     \}
+00077 
+\hypertarget{Db_2Schema_2Table_2Column_8php_source_l00083}{}\hyperlink{classZendDbSchema__Db__Schema__Table__Column_aeeed5820cfc4fac67507a196e9faa638}{00083}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Table__Column_aeeed5820cfc4fac67507a196e9faa638}{isNullable}()
+00084     \{
+00085         \textcolor{keywordflow}{return} (\textcolor{keywordtype}{bool}) $this->\hyperlink{classZendDbSchema__Db__Schema__AbstractSchema_a54d32c6f15463eaad2321a9f0e7225d7}{\_\_get}(\textcolor{stringliteral}{'nullable'});
+00086     \}
+00087 
+\hypertarget{Db_2Schema_2Table_2Column_8php_source_l00093}{}\hyperlink{classZendDbSchema__Db__Schema__Table__Column_a49887d783c47fa509e229ca61dd113ef}{00093}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Table__Column_a49887d783c47fa509e229ca61dd113ef}{isSigned}()
+00094     \{
+00095         \textcolor{keywordflow}{return} (\textcolor{keywordtype}{bool}) $this->\hyperlink{classZendDbSchema__Db__Schema__AbstractSchema_a54d32c6f15463eaad2321a9f0e7225d7}{\_\_get}(\textcolor{stringliteral}{'signed'});
+00096     \}
+00097 \}
+\end{DoxyCode}

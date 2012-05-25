@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classZendDbSchema__Db__Schema__Generator__Mysql__Table.html#a86ed47276429129c5962489dcd370e0e" title="ZendDbSchema_Db_Schema\l_Generator_Mysql_Table\l\\_columnSql" alt="" coords="248,49,443,113"/>
+<area shape="rect" id="node5" href="$classZendDbSchema__Db__Schema__Generator__Mysql__Table.html#aa8814727b4633316559e8865c62d9146" title="ZendDbSchema_Db_Schema\l_Generator_Mysql_Table\l\\alterColumn" alt="" coords="491,5,685,69"/>
+<area shape="rect" id="node7" href="$classZendDbSchema__Db__Schema__Generator__Mysql__Table.html#adaf38c64fd149c2a51273e1485fc3202" title="ZendDbSchema_Db_Schema\l_Generator_Mysql_Table\l\\createColumn" alt="" coords="491,93,685,157"/>
+</map>

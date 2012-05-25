@@ -1,0 +1,39 @@
+\hypertarget{Database_2Mysql_2SqlToSchema_8php}{\section{Sql\-To\-Schema.\-php}
+\label{Database_2Mysql_2SqlToSchema_8php}\index{Filter/\-Db/\-Schema/\-Database/\-Mysql/\-Sql\-To\-Schema.\-php@{Filter/\-Db/\-Schema/\-Database/\-Mysql/\-Sql\-To\-Schema.\-php}}
+}
+
+\begin{DoxyCode}
+00001 <?php
+\hypertarget{Database_2Mysql_2SqlToSchema_8php_source_l00029}{}\hyperlink{classZendDbSchema__Filter__Db__Schema__Database__Mysql__SqlToSchema}{00029} \textcolor{keyword}{class }\hyperlink{classZendDbSchema__Filter__Db__Schema__Database__Mysql__SqlToSchema}{ZendDbSchema\_Filter\_Db\_Schema\_Database\_Mysql\_SqlToSchema}
+00030     \textcolor{keyword}{implements} Zend\_Filter\_Interface
+00031 \{
+00035     \textcolor{keyword}{protected} $\_asObject;
+00036 
+\hypertarget{Database_2Mysql_2SqlToSchema_8php_source_l00042}{}\hyperlink{classZendDbSchema__Filter__Db__Schema__Database__Mysql__SqlToSchema_a59acdfdaf2bea985f9427e61876069bb}{00042}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Filter__Db__Schema__Database__Mysql__SqlToSchema_a59acdfdaf2bea985f9427e61876069bb}{\_\_construct}($asObject = \textcolor{keyword}{true})
+00043     \{
+00044         $this->\_asObject = (bool) $asObject;
+00045     \}
+00046 
+\hypertarget{Database_2Mysql_2SqlToSchema_8php_source_l00053}{}\hyperlink{classZendDbSchema__Filter__Db__Schema__Database__Mysql__SqlToSchema_a1fa11c8a5dcb3b630e67550667378c04}{00053}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Filter__Db__Schema__Database__Mysql__SqlToSchema_a1fa11c8a5dcb3b630e67550667378c04}{filter}($value)
+00054     \{
+00055         $schema = array();
+00056         \textcolor{keywordflow}{if} (!empty($value)) \{
+00057             \textcolor{keywordflow}{if} (preg\_match(\textcolor{stringliteral}{'|CREATE DATABASE `([\(\backslash\)w\(\backslash\)d\(\backslash\)\_\(\backslash\)-]+)|i'}, $value, 
+      $matches)) \{
+00058                 $schema[ZendDbSchema\_Db\_Schema\_Database::NAME\_KEY] = $matches[\textcolor{charliteral}{
+      '1'}];
+00059             \}
+00060             \textcolor{keywordflow}{if} (preg\_match(\textcolor{stringliteral}{'|DEFAULT CHARACTER SET ([\(\backslash\)w\(\backslash\)d\(\backslash\)\_\(\backslash\)-]+)|i'}, $value, 
+      $matches)) \{
+00061                 $schema[ZendDbSchema\_Db\_Schema\_Database::CHARSET\_KEY] = 
+      $matches[\textcolor{charliteral}{'1'}];
+00062             \}
+00063         \}
+00064         \textcolor{keywordflow}{if} (!$this->\_asObject) \{
+00065             \textcolor{keywordflow}{return} $schema;
+00066         \}
+00067         \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classZendDbSchema__Db__Schema__Database}{ZendDbSchema\_Db\_Schema\_Database}
+      ($schema[ZendDbSchema\_Db\_Schema\_Database::NAME\_KEY], $schema);
+00068     \}
+00069 \}
+\end{DoxyCode}

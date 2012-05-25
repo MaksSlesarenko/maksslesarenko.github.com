@@ -1,0 +1,22 @@
+\hypertarget{Loader_2Mysql_2Table_8php}{\section{Table.\-php}
+\label{Loader_2Mysql_2Table_8php}\index{Db/\-Schema/\-Loader/\-Mysql/\-Table.\-php@{Db/\-Schema/\-Loader/\-Mysql/\-Table.\-php}}
+}
+
+\begin{DoxyCode}
+00001 <?php
+\hypertarget{Loader_2Mysql_2Table_8php_source_l00029}{}\hyperlink{classZendDbSchema__Db__Schema__Loader__Mysql__Table}{00029} \textcolor{keyword}{class }\hyperlink{classZendDbSchema__Db__Schema__Loader__Mysql__Table}{ZendDbSchema\_Db\_Schema\_Loader\_Mysql\_Table}
+00030     \textcolor{keyword}{implements} \hyperlink{interfaceZendDbSchema__Db__Schema__Loader__Table}{ZendDbSchema\_Db\_Schema\_Loader\_Table}
+00031 \{
+\hypertarget{Loader_2Mysql_2Table_8php_source_l00038}{}\hyperlink{classZendDbSchema__Db__Schema__Loader__Mysql__Table_a51e793d97887513663ab517ff6f36511}{00038}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Loader__Mysql__Table_a51e793d97887513663ab517ff6f36511}{load}(Zend\_Db\_Adapter\_Abstract $adapter, $name)
+00039     \{
+00040         \textcolor{keywordflow}{if} ($adapter->hasTable($name)) \{
+00041             $result = $adapter->fetchRow(\textcolor{stringliteral}{"SHOW CREATE TABLE \{$name\}"});
+00042 
+00043             $filter = \textcolor{keyword}{new} \hyperlink{classZendDbSchema__Filter__Db__Schema__Table__Mysql__SqlToSchema}{ZendDbSchema\_Filter\_Db\_Schema\_Table\_Mysql\_SqlToSchema}
+      (\textcolor{keyword}{false});
+00044             \textcolor{keywordflow}{return} $filter->filter($result[\textcolor{stringliteral}{'Create Table'}]);
+00045         \}
+00046         \textcolor{keywordflow}{return} array();
+00047     \}
+00048 \}
+\end{DoxyCode}

@@ -1,0 +1,128 @@
+\hypertarget{Schema_2Parser_2Mysql_8php_source}{\section{\-Db/\-Schema/\-Parser/\-Mysql.php}
+}
+
+\begin{DoxyCode}
+00001 <?php
+\hypertarget{Schema_2Parser_2Mysql_8php_source_l00029}{}\hyperlink{classZendDbSchema__Db__Schema__Parser__Mysql}{00029} \textcolor{keyword}{class }\hyperlink{classZendDbSchema__Db__Schema__Parser__Mysql}{ZendDbSchema_Db_Schema_Parser_Mysql}
+00030     \textcolor{keyword}{implements} \hyperlink{interfaceZendDbSchema__Db__Schema__Parser__Interface}{ZendDbSchema_Db_Schema_Parser_Interface}
+00031 \{
+\hypertarget{Schema_2Parser_2Mysql_8php_source_l00037}{}\hyperlink{classZendDbSchema__Db__Schema__Parser__Mysql_a6fef3d76437a3c4b8815f50db818618c}{00037}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Parser__Mysql_a6fef3d76437a3c4b8815f50db818618c}{parseDatabase}($sql)
+00038     \{
+00039         $schema = array();
+00040 
+00041         \textcolor{keywordflow}{if} (preg\_match(\textcolor{stringliteral}{'|DEFAULT CHARACTER SET (\(\backslash\)w+)|i'}, $sql, $matches)) \{
+00042             $schema[\textcolor{stringliteral}{'charset'}] = $matches[\textcolor{charliteral}{'1'}];
+00043         \}
+00044         \textcolor{keywordflow}{return} $schema;
+00045     \}
+00046 
+\hypertarget{Schema_2Parser_2Mysql_8php_source_l00052}{}\hyperlink{classZendDbSchema__Db__Schema__Parser__Mysql_aaf36af5205b7906b12dc61f6f098f1f6}{00052}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Db__Schema__Parser__Mysql_aaf36af5205b7906b12dc61f6f098f1f6}{parseTable}($sql)
+00053     \{
+00054         $schema = array(
+00055             \textcolor{stringliteral}{'charset'}    => \textcolor{stringliteral}{'utf8'},
+00056             \textcolor{stringliteral}{'engine'}     => \textcolor{stringliteral}{'InnoDb'},
+00057             \textcolor{stringliteral}{'columns'}    => array(),
+00058             \textcolor{stringliteral}{'index'}      => array(),
+00059             \textcolor{stringliteral}{'constraint'} => array()
+00060         );
+00061 
+00062         \textcolor{keywordflow}{if} ($sql) \{
+00063             $data = explode(PHP\_EOL, $sql);
+00064             unset($data[\textcolor{charliteral}{'0'}]);
+00065             $data = array\_map(\textcolor{stringliteral}{'trim'}, $data);
+00066 
+00067             $tableInfo = array\_pop($data);
+00068 
+00069             \textcolor{keywordflow}{if} (preg\_match(\textcolor{stringliteral}{'|ENGINE=(\(\backslash\)w+)|i'}, $tableInfo, $matches)) \{
+00070                 $schema[\textcolor{stringliteral}{'engine'}] = $matches[\textcolor{charliteral}{'1'}];
+00071             \}
+00072             \textcolor{keywordflow}{if} (preg\_match(\textcolor{stringliteral}{'|CHARSET=(\(\backslash\)w+)|i'}, $tableInfo, $matches)) \{
+00073                 $schema[\textcolor{stringliteral}{'charset'}] = $matches[\textcolor{charliteral}{'1'}];
+00074             \}
+00075 
+00076             \textcolor{keywordflow}{foreach} ($data as $row) \{
+00077                 $row = trim($row, \textcolor{stringliteral}{","});
+00078 
+00079                 \textcolor{keywordflow}{if} (0 === stripos($row, \textcolor{stringliteral}{'PRIMARY KEY'})) \{
+00080                     preg\_match\_all(\textcolor{stringliteral}{'|\(\backslash\)w+|'}, substr($row, 14), $matches);
+00081                     $schema[\textcolor{stringliteral}{'primary'}] = array(
+00082                         \textcolor{stringliteral}{'name'}    => \textcolor{stringliteral}{'primary'},
+00083                         \textcolor{stringliteral}{'type'}    => \textcolor{stringliteral}{'primary'},
+00084                         \textcolor{stringliteral}{'columns'} => $matches[\textcolor{charliteral}{'0'}]
+00085                     );
+00086                 \} elseif (0 === stripos($row, \textcolor{stringliteral}{'FULLTEXT'})) \{
+00087                     $row = preg\_replace(\textcolor{stringliteral}{'/^FULLTEXT (KEY|INDEX)?/i'}, \textcolor{stringliteral}{''}, $row, 
+      1);
+00088                     preg\_match\_all(\textcolor{stringliteral}{'|\(\backslash\)w+|'}, $row, $matches);
+00089                     $name = array\_shift($matches[\textcolor{charliteral}{'0'}]);
+00090                     $schema[\textcolor{stringliteral}{'index'}][$name] = array(
+00091                         \textcolor{stringliteral}{'name'}    => $name,
+00092                         \textcolor{stringliteral}{'type'}    => \textcolor{stringliteral}{'fulltext'},
+00093                         \textcolor{stringliteral}{'columns'} => $matches[\textcolor{charliteral}{'0'}]
+00094                     );
+00095                 \} elseif (0 === stripos($row, \textcolor{stringliteral}{'UNIQUE'})) \{
+00096                     $row = preg\_replace(\textcolor{stringliteral}{'/^UNIQUE (KEY|INDEX)?/i'}, \textcolor{stringliteral}{''}, $row, 1)
+      ;
+00097                     preg\_match\_all(\textcolor{stringliteral}{'|\(\backslash\)w+|'}, $row, $matches);
+00098                     $name = array\_shift($matches[\textcolor{charliteral}{'0'}]);
+00099                     $schema[\textcolor{stringliteral}{'index'}][$name] = array(
+00100                         \textcolor{stringliteral}{'name'}    => $name,
+00101                         \textcolor{stringliteral}{'type'}    => \textcolor{stringliteral}{'unique'},
+00102                         \textcolor{stringliteral}{'columns'} => $matches[\textcolor{charliteral}{'0'}]
+00103                     );
+00104                 \} elseif (0 === stripos($row, \textcolor{stringliteral}{'CONSTRAINT'})) \{
+00105                     preg\_match(\textcolor{stringliteral}{'|CONSTRAINT ?`(\(\backslash\)w+)|i'}, $row, $matches);
+00106 
+00107                     $keyName = $matches[\textcolor{charliteral}{'1'}];
+00108                     $key = array();
+00109 
+00110                     \textcolor{keywordflow}{if} (preg\_match(\textcolor{stringliteral}{'|FOREIGN KEY \(\backslash\)(?`(\(\backslash\)w+)|i'}, $row, $matches))
+       \{
+00111                         $key[\textcolor{stringliteral}{'foreign'}] = $matches[\textcolor{charliteral}{'1'}];
+00112                     \}
+00113                     \textcolor{keywordflow}{if} (preg\_match(\textcolor{stringliteral}{'|REFERENCES ?`(\(\backslash\)w+)|i'}, $row, $matches)) \{
+00114                         $key[\textcolor{stringliteral}{'references'}] = $matches[\textcolor{charliteral}{'1'}];
+00115                     \}
+00116                     \textcolor{keywordflow}{if} (preg\_match(\textcolor{stringliteral}{'|ON DELETE (\(\backslash\)w+)|i'}, $row, $matches)) \{
+00117                         $key[\textcolor{stringliteral}{'delete'}] = $matches[\textcolor{charliteral}{'1'}];
+00118                     \}
+00119                     \textcolor{keywordflow}{if} (preg\_match(\textcolor{stringliteral}{'|ON UPDATE (\(\backslash\)w+)|i'}, $row, $matches)) \{
+00120                         $key[\textcolor{stringliteral}{'update'}] = $matches[\textcolor{charliteral}{'1'}];
+00121                     \}
+00122 
+00123                     $schema[\textcolor{stringliteral}{'constraint'}][$keyName] = $key;
+00124                 \} elseif (0 === stripos($row, \textcolor{charliteral}{'`'})) \{
+00125                     $key = array(
+00126                         \textcolor{stringliteral}{'type'}     => null,
+00127                         \textcolor{stringliteral}{'default'}  => null,
+00128                         \textcolor{stringliteral}{'nullable'} => null,
+00129                         \textcolor{stringliteral}{'signed'} => null,
+00130                         \textcolor{stringliteral}{'comment'}  => null,
+00131                     );
+00132                     \textcolor{keywordflow}{if} (preg\_match(\textcolor{stringliteral}{'|DEFAULT (\(\backslash\)w+)|i'}, $row, $matches)) \{
+00133                         $key[\textcolor{stringliteral}{'default'}] = $matches[\textcolor{charliteral}{'1'}];
+00134                     \}
+00135                     \textcolor{keywordflow}{if} (preg\_match(\textcolor{stringliteral}{'|COMMENT \(\backslash\)'([^\(\backslash\)']+)\(\backslash\)'|i'}, $row, $matches)) 
+      \{
+00136                         $key[\textcolor{stringliteral}{'comment'}] = $matches[\textcolor{charliteral}{'1'}];
+00137                     \}
+00138                     \textcolor{keywordflow}{if} (preg\_match(\textcolor{stringliteral}{'|NOT NULL|i'}, $row, $matches)) \{
+00139                         $key[\textcolor{stringliteral}{'nullable'}] = \textcolor{keyword}{false};
+00140                     \} \textcolor{keywordflow}{else} \{
+00141                         $key[\textcolor{stringliteral}{'nullable'}] = \textcolor{keyword}{true};
+00142                     \}
+00143                     \textcolor{keywordflow}{if} (preg\_match(\textcolor{stringliteral}{'|AUTO\_INCREMENT|i'}, $row, $matches)) \{
+00144                         $key[\textcolor{stringliteral}{'autoincrement'}] = \textcolor{keyword}{true};
+00145                     \}
+00146                     \textcolor{keywordflow}{if} (preg\_match(\textcolor{stringliteral}{'|^`(\(\backslash\)w+)` (\(\backslash\)S+)|i'}, $row, $matches)) \{
+00147                         $key[\textcolor{stringliteral}{'type'}] = $matches[\textcolor{charliteral}{'2'}];
+00148                         $keyName = $matches[\textcolor{charliteral}{'1'}];
+00149                         $schema[\textcolor{stringliteral}{'columns'}][$keyName] = $key;
+00150                     \}
+00151                 \}
+00152             \}
+00153         \}
+00154         \textcolor{keywordflow}{return} $schema;
+00155     \}
+00156 \}
+\end{DoxyCode}

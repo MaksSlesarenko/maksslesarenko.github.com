@@ -1,4 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node5" href="$classZendDbSchema__Validate__Db__Schema__Table__MysqlTable.html" title="{ZendDbSchema_Validate_Db_Schema_Table_MysqlTable\n||+ __construct()\l}" alt="" coords="5,448,368,533"/>
-<area shape="rect" id="node2" href="$classZendDbSchema__Validate__Db__Schema__Chain.html" title="{ZendDbSchema_Validate_Db_Schema_Chain\n|# $_validators\l# $_messages\l# $_errors\l|+ addValidator()\l+ isValid()\l+ getMessages()\l+ getErrors()\l}" alt="" coords="41,6,332,178"/>
-</map>

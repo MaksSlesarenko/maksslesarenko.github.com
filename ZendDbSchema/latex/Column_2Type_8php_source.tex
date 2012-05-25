@@ -1,0 +1,77 @@
+\hypertarget{Column_2Type_8php}{\section{Type.\-php}
+\label{Column_2Type_8php}\index{Validate/\-Db/\-Schema/\-Table/\-Mysql/\-Column/\-Type.\-php@{Validate/\-Db/\-Schema/\-Table/\-Mysql/\-Column/\-Type.\-php}}
+}
+
+\begin{DoxyCode}
+00001 <?php
+\hypertarget{Column_2Type_8php_source_l00029}{}\hyperlink{classZendDbSchema__Validate__Db__Schema__Table__Mysql__Column__Type}{00029} \textcolor{keyword}{class }\hyperlink{classZendDbSchema__Validate__Db__Schema__Table__Mysql__Column__Type}{ZendDbSchema\_Validate\_Db\_Schema\_Table\_Mysql\_Column\_Type}
+00030     \textcolor{keyword}{extends} Zend\_Validate\_Abstract
+00031 \{
+00032     \textcolor{keyword}{const} NAME\_EMPTY = \textcolor{stringliteral}{'columnTypeEmpty'};
+00033     \textcolor{keyword}{const} INVALID    = \textcolor{stringliteral}{'columnTypeInvalid'};
+00034 
+00038     \textcolor{keyword}{protected} $\_messageTemplates = array(
+00039         self::NAME\_EMPTY => \textcolor{stringliteral}{"Column type can not be empty"},
+00040         self::INVALID    => \textcolor{stringliteral}{"Column type %value% is not a valid type"}
+00041     );
+00042 
+00046     \textcolor{keyword}{protected} $\_columnTypes = array(
+00047         \textcolor{stringliteral}{'TINYINT'},
+00048         \textcolor{stringliteral}{'SMALLINT'},
+00049         \textcolor{stringliteral}{'MEDIUMINT'},
+00050         \textcolor{stringliteral}{'INT'},
+00051         \textcolor{stringliteral}{'INTEGER'},
+00052         \textcolor{stringliteral}{'BIGINT'},
+00053         \textcolor{stringliteral}{'FLOAT'},
+00054         \textcolor{stringliteral}{'DOUBLE'},
+00055         \textcolor{stringliteral}{'DECIMAL'},
+00056         \textcolor{stringliteral}{'PRECISION'},
+00057         \textcolor{stringliteral}{'REAL'},
+00058         \textcolor{stringliteral}{'NUMERIC'},
+00059 
+00060         \textcolor{stringliteral}{'CHAR'},
+00061         \textcolor{stringliteral}{'VARCHAR'},
+00062         \textcolor{stringliteral}{'TINYTEXT'},
+00063         \textcolor{stringliteral}{'TINYBLOB'},
+00064         \textcolor{stringliteral}{'TEXT'},
+00065         \textcolor{stringliteral}{'BLOB'},
+00066         \textcolor{stringliteral}{'MEDIUMTEXT'},
+00067         \textcolor{stringliteral}{'MEDIUMBLOB'},
+00068         \textcolor{stringliteral}{'LONGTEXT'},
+00069         \textcolor{stringliteral}{'LONGBLOB'},
+00070 
+00071         \textcolor{stringliteral}{'DATE'},
+00072         \textcolor{stringliteral}{'DATETIME'},
+00073         \textcolor{stringliteral}{'TIMESTAMP'},
+00074         \textcolor{stringliteral}{'TIME'},
+00075         \textcolor{stringliteral}{'YEAR'},
+00076 
+00077         \textcolor{stringliteral}{'ENUM'},
+00078         \textcolor{stringliteral}{'SET'},
+00079 
+00080         \textcolor{stringliteral}{'BINARY'},
+00081         \textcolor{stringliteral}{'VARBINARY'},
+00082     );
+00083 
+\hypertarget{Column_2Type_8php_source_l00090}{}\hyperlink{classZendDbSchema__Validate__Db__Schema__Table__Mysql__Column__Type_a9d09e82df24eda87790229013c3b9caf}{00090}     \textcolor{keyword}{public} \textcolor{keyword}{function} \hyperlink{classZendDbSchema__Validate__Db__Schema__Table__Mysql__Column__Type_a9d09e82df24eda87790229013c3b9caf}{isValid}($value)
+00091     \{
+00092         $schema = null;
+00093         \textcolor{keywordflow}{if} ($value instanceof \hyperlink{classZendDbSchema__Db__Schema__Table__Column}{ZendDbSchema\_Db\_Schema\_Table\_Column}
+      ) \{
+00094             $schema = $value;
+00095             $value = $schema->\_\_get(\textcolor{stringliteral}{'type'});
+00096         \}
+00097         \textcolor{keywordflow}{if} (empty($value)) \{
+00098             $this->\_error(self::NAME\_EMPTY);
+00099             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00100         \}
+00101         \textcolor{keywordflow}{if} ($schema && $schema->isDirty(\textcolor{stringliteral}{'type'})) \{
+00102             \textcolor{keywordflow}{if} (!in\_array(strtoupper($value), $this->\_columnTypes)) \{
+00103                 $this->\_error(self::INVALID, $value);
+00104                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00105             \}
+00106         \}
+00107         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+00108     \}
+00109 \}
+\end{DoxyCode}

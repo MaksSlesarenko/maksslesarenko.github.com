@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classZendDbSchema__Db__Schema__Table__DefinitionManager__Column.html" title="{ZendDbSchema_Db_Schema\l_Table_DefinitionManager\l_Column\n||# _getItemClass()\l# _getSchemaKey()\l}" alt="" coords="5,382,200,519"/>
+<area shape="rect" id="node5" href="$classZendDbSchema__Db__Schema__Table__DefinitionManager__ForeignKey.html" title="{ZendDbSchema_Db_Schema\l_Table_DefinitionManager\l_ForeignKey\n||# _getItemClass()\l# _getSchemaKey()\l}" alt="" coords="224,382,419,519"/>
+<area shape="rect" id="node7" href="$classZendDbSchema__Db__Schema__Table__DefinitionManager__Index.html" title="{ZendDbSchema_Db_Schema\l_Table_DefinitionManager_Index\n||# _getItemClass()\l# _getSchemaKey()\l}" alt="" coords="443,391,653,511"/>
+</map>
